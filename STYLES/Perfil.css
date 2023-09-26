@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: red;
+
+}
+
+.text{
+    width: 80%;
+    height: 40px;
+    margin-left: 10%;
+    background-color: white;
+    
+}
+
+
+
