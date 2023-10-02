@@ -13,31 +13,17 @@ body{
 
 /* Cabeçalho */
 
-header{
+header {
     width: 100%;
-    height: 100px;
+    height: 80px;
+    background-color: brown;
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
-white-background-first-section{
-    background: white;
-    height: 100vb;
-    width: 80%;
-}
-
-section{
-    width: 100%;
-    height: 800px;
-    background: red;
-}
-
-h1{
+h2{
     font-family: 'DM Serif Display', serif;
     font-family: 'Press Start 2P', cursive;
-}
-
-.box-informacoes-do-paciente{
-    width: 350px;
-    height: 100px;
-    background-image: url();
 }
 
