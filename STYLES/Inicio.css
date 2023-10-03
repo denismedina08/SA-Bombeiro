@@ -7,6 +7,7 @@
 
 body{
     margin: 0;
+    height: 500vb;
 }
 
 /* Cabeçalho */
@@ -39,3 +40,14 @@ h2{
     font-family: 'Press Start 2P', cursive;
 }
 
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Profile__img{
+    width: 50px;
+    height: 50px;
+}
+
+/*  */
