@@ -11,8 +11,11 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Press+Start+2P&display=swap" 
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <!-- Link necessário para o Bootstrap funcionar! -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <!-- Cabeçalho -->
@@ -23,64 +26,127 @@
             <a href="Inicio.html">
                 <img src="/IMG/logo_pequena.png" class="logo_pequena__img" alt="logo_pequena__img">
             </a>
-            <h2>MENU</h2>
+            <h2 style="font-family: 'DM Serif Display', serif; font-family: 'Press Start 2P', cursive;">MENU</h2>
         </div>
 
-    <nav class="nav">
-    <div class="nav__numero">
-        <div class="nav__numero-emergencia">
-            <img src="/ASSETS/Phone.svg" class="Phone__img" style="width: 50px; height: 50px;" alt="Phone__img">
-            <p style="font-size: 15px; font-weight: 600; color: #fff;">Emergência<br>ligue para</p>
-            <h3 style="font-size: 50px; color: rgba(236, 236, 69, 0.966);">193</h3>
-        </div>
-    </div>
-
-    <div class="nav__perfil">
-        <a href="/PAGES/Perfil.html">
-            <div class="nav__link">
-                <img src="/ASSETS/Profile.svg" class="Profile__img" alt="Profile__img">
+        <nav class="nav">
+            <div class="nav__numero">
+                <div class="nav__numero-emergencia">
+                    <img src="/ASSETS/Phone.svg" class="Phone__img" style="width: 50px; height: 50px;" alt="Phone__img">
+                    <p style="font-size: 15px; font-weight: 600; color: #fff;">Emergência<br>ligue para</p>
+                    <h3 style="font-weight: 600; font-size: 50px; color: rgba(236, 236, 69, 0.966);">193</h3>
+                </div>
             </div>
-        </a>
-    </div>
-    </nav>
+
+            <div class="nav__perfil">
+                <a href="/PAGES/Perfil.html">
+                    <div class="nav__link">
+                        <img src="/ASSETS/Profile.svg" class="Profile__img" alt="Profile__img">
+                    </div>
+                </a>
+            </div>
+        </nav>
     </header>
 
     <!-- Boxes -->
 
-    <div>
-        <div class="box-informacoes-do-paciente">
-            <img src="" alt="">
-            <div class="">Informacoes do Paciente</div>
+    <div class="container-acordeon">
+        <h2>Imformações</h2>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon1" class="btn-acordeon">
+            <label for="btn-acordeon1">
+                Informacoes do Paciente
+            </label>
+            <div class="conteudo-acordeon">
+                .
+            </div>
         </div>
-        <div class="box-tipo-de-ocorréncia">
-            <div class="">Tipo de ocorréncia</div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon2" class="btn-acordeon">
+            <label for="btn-acordeon2">
+                Tipo de ocorréncia
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-problemas-suspeitos">
-            <div class="">Problemas Suspeitos</div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon3" class="btn-acordeon">
+            <label for="btn-acordeon3">
+                Problemas Suspeitos
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-sinais-e-sintomas">
-            <div class="">Sinais e Sintomas</div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon4" class="btn-acordeon">
+            <label for="btn-acordeon4">
+                Sinais e Sintomas
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon5" class="btn-acordeon">
+            <label for="btn-acordeon5">
+                Localização dos Traumas
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon6" class="btn-acordeon">
+            <label for="btn-acordeon6">
+                Avaliação do Paciente
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon7" class="btn-acordeon">
+            <label for="btn-acordeon7">
+                Sinais Vitais
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-localização-dos-traumas">
-            <div class=""></div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon8" class="btn-acordeon">
+            <label for="btn-acordeon8">
+                Forma de Condução
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-avaliação-do-paciente">
-            <div class=""></div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon9" class="btn-acordeon">
+            <label for="btn-acordeon9">
+                Decisão Transporte
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-sinais-vitais">
-            <div class=""></div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon10" class="btn-acordeon">
+            <label for="btn-acordeon10">
+                Vitima Era
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
-        <div class="box-forma-de-condução">
-            <div class=""></div>
-        </div>
-        <div class="box-decisão-transporte">
-            <div class=""></div>
-        </div>
-        <div class="box-vitima-era">
-            <div class=""></div>
-        </div>
-        <div class="box-objetos-recolhidos">
-            <div class=""></div>
+        <div class="acordeon">
+            <input type="checkbox" name="acordeon" id="btn-acordeon11" class="btn-acordeon">
+            <label for="btn-acordeon11">
+                Objetos Recolhidos
+            </label>
+            <div class="conteudo-acordeon">
+                <p></p>
+            </div>
         </div>
     </div>
 </body>
