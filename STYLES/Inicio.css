@@ -12,7 +12,7 @@ body{
 
 /* Cabeçalho */
 
-header {
+header{
     height: 100px;
     background-color: #EA2927;
     display: flex;
@@ -21,13 +21,14 @@ header {
     padding: 10px;
 }
 
-.logo_pequena__header{
+.header__menu{
     display: flex;
     align-items: center;
 }
 
-.logo_pequena__img{
-    height: 75px;
+.menu__img{
+    width: 70px;
+    height: 70px;
 }
 
 .nav__numero-emergencia{
@@ -38,11 +39,6 @@ header {
 .nav{
     display: flex;
     justify-content: space-between;
-}
-
-.Profile__img{
-    width: 50px;
-    height: 50px;
 }
 
 /* Boxes */
@@ -90,6 +86,10 @@ header {
     max-height: 0px;
     overflow: hidden;
     transition: all 300ms ease;
+    background-color: #EA2927;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 10px;
 }
 
 .btn-acordeon:checked ~ .conteudo-acordeon{
