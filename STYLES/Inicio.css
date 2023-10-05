@@ -37,8 +37,34 @@ header{
 }
 
 .nav{
+    width: 600px;
     display: flex;
     justify-content: space-between;
+}
+
+.pai__h2-menu{
+    height: 90px;
+}
+
+.header__menu h2{
+    align-items: center;
+
+}
+
+.hr_1{
+    margin-top: 0px;
+    margin-left: 380px;
+    height: 125px;
+    width: 10px;
+    border: solid 10px;
+    color: white;
+    opacity: 2.0;
+}
+.hr_2{
+    margin-top: 20px;
+    border: solid 10px ;
+    color: white;
+    opacity: 2.0;
 }
 
 /* Boxes */
