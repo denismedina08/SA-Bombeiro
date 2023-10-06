@@ -5,46 +5,67 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.fixed-bbb{
-    width: 100%;
-}
-
-body {
-    height: 120vh;
+body{
     margin: 0;
-    background: red;
-    background-size: cover;
+    height: 200vb;
 }
 
-header {
+/* Boxes */
+
+.container-acordeon{
     width: 100%;
-    height: 80px;
-    background-color:black;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-.hr1{
-    margin-top: 0px;
-    margin-left: 380px;
-    height: 80px;
-    width: 10px;
-    border: solid 10px;
-    color: white;
-}
-.logo-img{
-    margin-top: 30px;
-    margin-left: -10px;
-    height: 100px;
-    width: 100px;
+    max-width: 850px;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 25px;
 }
 
+.container-acordeon h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+    font-family: 'DM Serif Display', serif; font-family: 'Press Start 2P', cursive;
+}
 
-.hr2{
-    margin-top: 0px;
-    margin-right: 50%;
-    height: 10px;
-    width:5px;
-    border: solid 10px;
-    color: white;
+.acordeon{
+    background: #fff;
+}
+.acordeon label{
+    display: block;
+    padding: 20px;
+    font-size: 30px;
+    background: black;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+    font-weight: 600;
+    font-family: 'Audiowide', cursive;
+    border-radius: 25px;
+}
+
+.acordeon label:hover{
+    background: red;
+    opacity: 0.7;
+}
+
+.acordeon .conteudo-acordeon{
+    padding: 0px;
+    margin: 0px 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+    background-color: #EA2927;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.btn-acordeon:checked ~ .conteudo-acordeon{
+    max-height: 600px;
+    padding: 15px 0px;
+}
+
+.btn-acordeon{
+    display: none;
 }
