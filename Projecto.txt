@@ -1,5 +1,4 @@
 Porta LIVE SERVER: http://127.0.0.1:5500/PAGES/
 
-nav: representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página.
-ul: representa uma lista.
-li: representa os items da lista.
+Bootstrap:
+row: fila

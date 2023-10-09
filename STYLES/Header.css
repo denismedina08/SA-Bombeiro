@@ -1,77 +1,9 @@
-* {
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+@media (min-width: 990px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /**optional offset from top**/
+        top: 2%;
+    }
 }
-
-header{
-    height: 130px;
-    background-color: #EA2927;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.subheader{
-    display: flex;
-}
-
-.header__menu{
-    display: flex;
-    align-items: center;
-}
-
-.menu__img{
-    width: 70px;
-    height: 70px;
-}
-
-.nav__numero-emergencia{
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav{
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.pai__h2-menu{
-    height: 90px;
-}
-
-.header__menu h2{
-    align-items: center;
-
-}
-
-.hr_1-logo_grande{
-    width: 150px;
-    height: 150px;
-    position: relative;
-}
-
-.pai__hr_1{
-    display: flex;
-}
-
-.hr_1{
-    margin-top: 0px;
-    margin-left: 380px;
-    height: 125px;
-    width: 10px;
-    border: solid 10px;
-    color: white;
-    opacity: 2.0;
-}
-
-/* .hr_2{
-    width: 100%;
-    margin-top: 20px;
-    border: solid 10px ;
-    color: white;
-    opacity: 2.0;
-    z-index: var();
-} */
