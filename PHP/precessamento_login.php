@@ -9,7 +9,7 @@
             $result = mysqli_query($conn, $sql);
     
             if (mysqli_num_rows($result) > 0) { 
-              header("Location: https://www.google.com"); /*local para onde deseja redirecionar o usuário*/
+                header("Location: https://www.google.com"); /*local para onde deseja redirecionar o usuário*/
             } else {
                 header("Location: Teste.html"); /*local para onde deseja redirecionar o usuário*/
                 /*echo "<script>document.querySelector('#form-text').innerText = 'E-mail ou senha inválidos'</script>";*/
