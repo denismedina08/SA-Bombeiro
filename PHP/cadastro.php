@@ -1,18 +1,31 @@
 <?php
-        include('conexao.php'); 
-        if(isset($_POST['submit-button'])) {
-            $usuario = $_POST['usuario']; 
-            $senha = $_POST['senha']; 
-            
-            $sql = "INSERT bombeiro.login, senha TO cadastro WHERE usuario = '$usuario' && senha = '$senha'"; /*informações de tabela e campos de acordo como seu BD*/
-            $result = mysqli_query($conn, $sql);
-            
-            if (mysqli_num_rows($result) > 0) { 
-                header("Location: https://www.google.com"); 
-            } else {
-                header("Location: login.php"); 
-            }
-        }
-        
-        mysqli_close($conn);
-    ?>
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "bombeiros";
+
+$conn =   mysqli_connect($servername, $username, $password, $dbname);
+
+// Verifica a conexão
+if ($conn->connect_error) {
+ die("Conexão falhou: " . $conn->connect_error);
+}
+
+// Coleta os dados do formulário
+$nome = $_POST['nome'];
+$matricula = $_POST['matricula'];
+$senha =($_POST['senha']);
+
+// Insere os dados na tabela de usuários
+$sql = "INSERT INTO cadastro (id_cadastro, nome, matricula, senha) VALUES (NULL, '$nome', '$matricula', '$senha')";
+
+if ($conn->query($sql) === TRUE) {
+ echo "Usuário cadastrado com sucesso!";
+} else {
+ echo "Erro ao cadastrar o usuário: " . $conn->error;
+}
+
+// Fecha a conexão com o banco de dados
+$conn->close();
+?>

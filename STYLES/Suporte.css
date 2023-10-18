@@ -69,3 +69,8 @@ body{
 .btn-acordeon{
     display: none;
 }
+
+#sec__principal{
+    background-color: lightgrey;
+    border-radius: 25px;
+}

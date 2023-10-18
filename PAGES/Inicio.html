@@ -13,7 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +25,7 @@
 
 <body>
     <!-- Header -->
-    <nav id="topNav" class="navbar fixed-to navbar-expand-lg navbar-dark p-4 ">
+    <nav id="topNav" class="navbar navbar-expand-lg navbar-dark p-4 ">
         <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark" id="">
             <div class="p-4">
                 <h5 class="text-body-emphasis h5">Perfil</h5>
@@ -44,7 +45,8 @@
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav">
-                <li class="nav-item"> <a class="nav-link" style="font-family: 'Audiowide', cursive; font-weight: 700;" href="#">MENU</a>
+                <li class="nav-item"> <a class="nav-link" style="font-family: 'Audiowide', cursive; font-weight: 700;"
+                        href="#">MENU</a>
                 </li>
             </ul>
         </div>
@@ -62,12 +64,14 @@
         </div>
     </nav>
 
+    <div class="mt-4 py-4"></div>
+
     <!-- Accordion -->
 
-    <main class="vh-100 bg-light d-flex align-items-center">
+    <main class="bg-light d-flex align-items-center">
 
         <!-- Container das Imformações -->
-        <section id="sec__principal" class="h-75 container-sm mx-auto" style="max-width: 800px;">
+        <section id="sec__principal" class="container-sm mx-auto" style="max-width: 800px;">
 
             <h1 class="fs-1 text-dark text-center py-3" style="font-family: 'Audiowide', cursive; font-weight: 700;
             font-family: 'Pixelify Sans', cursive;">Imformações</h1>
@@ -81,14 +85,90 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                             <i class="bi bi-truck-flatbed"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">IMFORMAÇÕES DO
-                                PACIENTE</span>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">IMFORMAÇÕES
+                                DO PACIENTE</span>
                         </button>
                     </h2>
                     <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            
+                            <div class="btn-group d-block" role="group" aria-label="Basic checkbox toggle button group">
+
+                                <!-- Primeira Coluna -->
+
+                                <div class="row-cols-md-4">
+                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Causado por Animais</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck2">Com meio de Transporte</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                    <label class="btn btn-outline-dark"
+                                        for="btncheck3">Desmoronamento<br>Deslizamento</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck4">EmergÊncia médica</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck5">Queda de altura de 2m</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck6">Tentativa de suicídio</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck7">Queda própia Altura</label>
+
+                                    <!-- Segunda Coluna -->
+
+                                </div>
+
+                                <div class="row-cols-md-4">
+                                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck8">Afogamento</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck9">Agressão</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck10">Atropelamento</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck11">Choque eléctrico</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12">Desabamento</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck13">Doméstico</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck14">Esportivo</label>
+                                </div>
+
+                                <!-- Terceira Coluna -->
+
+                                <div class="row-cols-md-4">
+                                    <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck15">Intoxicação</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck16">Queda bibicleta</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck17" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck17">Queda moto</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck18" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck18">Queda nivel 2m</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck19" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck19">Trabalho</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck20" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck20">TransferÊncia</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,19 +180,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                             <i class="bi bi-credit-card"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO DE
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO DE
                                 OCORRÊNCIA</span>
                         </button>
                     </h2>
                     <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -124,19 +200,16 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                             <i class="bi bi-arrow-return-left"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SUSPEITOS PROBLEMOS
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SUSPEITOS
+                                PROBLEMOS
                                 ENCONTRADOS</span>
                         </button>
                     </h2>
                     <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -148,19 +221,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SINAIS E
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SINAIS E
                                 SÍNTOMAS</span>
                         </button>
                     </h2>
                     <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -172,19 +241,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">LOCALIZAÇÃO DOS
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">LOCALIZAÇÃO DOS
                                 TRAUMAS</span>
                         </button>
                     </h2>
                     <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -196,19 +261,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO DO
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO DO
                                 PACIENTE</span>
                         </button>
                     </h2>
                     <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -220,18 +281,14 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS VITAIS</span>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS VITAIS</span>
                         </button>
                     </h2>
                     <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -243,19 +300,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">FORMA DE
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">FORMA DE
                                 CONDUÇÃO</span>
                         </button>
                     </h2>
                     <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -267,19 +320,15 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">DECISÃO
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">DECISÃO
                                 TRANSPORTE</span>
                         </button>
                     </h2>
                     <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -291,18 +340,14 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">VÍTIMA ERA</span>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">VÍTIMA ERA</span>
                         </button>
                     </h2>
                     <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -314,28 +359,45 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
                             <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark" style="font-family: 'Audiowide', cursive; font-weight: 700;">OBJETOS
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">OBJETOS
                                 RECOLHIDOS</span>
                         </button>
                     </h2>
                     <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <h2 class="fs-6 fw-semibold">1. ¿Dónde está mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
-                            <h2 class="fs-6 fw-semibold">2. ¿Cúando llegará mi pedido?</h2>
-                            <div class="my-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, odit.
-                            </div>
+
                         </div>
                     </div>
                 </div>
-
         </section>
-
     </main>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/PAGES/Inicio.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/IMG/logo_pequena.png" alt="logo" width="40" height="40">
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="#">
+                        <img src="/ASSETS/Facebook.svg" alt="logo__facebook">
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="#">
+                        <img src="/ASSETS/Instagram.svg" alt="logo__instagram">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
-<!-- A -->
+
 </body>
 
 </html>

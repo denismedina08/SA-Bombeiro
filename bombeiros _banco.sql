@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Out-2023 às 16:36
+-- Tempo de geração: 18-Out-2023 às 16:39
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -24,15 +24,82 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `anamnses_emergencia`
+--
+
+CREATE TABLE `anamnses_emergencia` (
+  `id_ocorrencia` int NOT NULL,
+  `sinais_sintomas` int NOT NULL,
+  `quanto_tempo` varchar(50) NOT NULL,
+  `problemas_saude` varchar(50) NOT NULL,
+  `alergias` varchar(50) NOT NULL,
+  `ingeriu_alimento_liquido` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `anamnses_gestacional`
+--
+
+CREATE TABLE `anamnses_gestacional` (
+  `id_ocorrencia` int NOT NULL,
+  `periodo_gestacao` varchar(50) NOT NULL,
+  `pre-natal` tinyint(1) NOT NULL,
+  `nome_medico` int NOT NULL,
+  `existe_complicaçoes` tinyint(1) NOT NULL,
+  `primeiro_filhos` tinyint(1) NOT NULL,
+  `quantos_filhos` int NOT NULL,
+  `horas_contracao` time NOT NULL,
+  `contracao_duracao` int NOT NULL,
+  `contracao_intervalo` int NOT NULL,
+  `pressao_quadril` tinyint(1) NOT NULL,
+  `ruptura_bolsa` tinyint(1) NOT NULL,
+  `inspecao_visual` tinyint(1) NOT NULL,
+  `parto_relizado` tinyint(1) NOT NULL,
+  `sexo_f` tinyint(1) NOT NULL,
+  `sexo_m` tinyint(1) NOT NULL,
+  `hora_nascimento` time NOT NULL,
+  `nome_bebe` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `avalicao_da_cinematica`
+--
+
+CREATE TABLE `avalicao_da_cinematica` (
+  `id_ocorrencia` int NOT NULL,
+  `encontrado_de_capacete` tinyint(1) NOT NULL,
+  `encontrado_de_cinto` tinyint(1) NOT NULL,
+  `para-brisa_avariado` tinyint(1) NOT NULL,
+  `disturbio_de_comportamento` tinyint(1) NOT NULL,
+  `caminhando_na_cena` tinyint(1) NOT NULL,
+  `painel_avariado` tinyint(1) NOT NULL,
+  `volante_torcido` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `cadastro`
 --
 
 CREATE TABLE `cadastro` (
   `id_cadastro` int NOT NULL,
-  `usuario` varchar(20) NOT NULL,
+  `matricula` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `senha` varchar(20) NOT NULL,
-  `confirmaçao_senha` varchar(20) NOT NULL
+  `nome` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `cadastro`
+--
+
+INSERT INTO `cadastro` (`id_cadastro`, `matricula`, `senha`, `nome`) VALUES
+(1, 'sas', 'sa', 'albertos'),
+(2, '6969', 'cotnire', 'eudoucomcalor');
 
 -- --------------------------------------------------------
 
@@ -424,6 +491,24 @@ CREATE TABLE `vitima_era` (
 --
 
 --
+-- Índices para tabela `anamnses_emergencia`
+--
+ALTER TABLE `anamnses_emergencia`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
+-- Índices para tabela `anamnses_gestacional`
+--
+ALTER TABLE `anamnses_gestacional`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
+-- Índices para tabela `avalicao_da_cinematica`
+--
+ALTER TABLE `avalicao_da_cinematica`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
 -- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
@@ -506,10 +591,28 @@ ALTER TABLE `vitima_era`
 --
 
 --
+-- AUTO_INCREMENT de tabela `anamnses_emergencia`
+--
+ALTER TABLE `anamnses_emergencia`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `anamnses_gestacional`
+--
+ALTER TABLE `anamnses_gestacional`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `avalicao_da_cinematica`
+--
+ALTER TABLE `avalicao_da_cinematica`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id_cadastro` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cadastro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `glasgow`
