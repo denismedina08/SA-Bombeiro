@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOAR</title>
+    <link rel="icon" href="/IMG/logo_grande.png">
     <link rel="stylesheet" href="/STYLES/Header.css">
     <link rel="stylesheet" href="/STYLES/Inicio.css">
-    <link rel="icon" href="/IMG/logo_grande.png">
+    <link rel="stylesheet" href="/JS/Inicio.js">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -30,7 +31,7 @@
             <div class="p-4">
                 <h5 class="text-body-emphasis h5">Perfil</h5>
                 <h5 class="text-body-emphasis h5">Suporte</h5>
-                <span class="text-body-secondary">Suporte</span>
+                <span class="">Suporte</span>
             </div>
         </div>
         <nav class="navbar navbar-dark" id="nav__menu">
@@ -58,7 +59,7 @@
         <div class="navbar-nav justify-content-end">
             <div class="navbar-nav ml-auto">
                 <a class="" href="/PAGES/Perfil.html">
-                    <img src="/ASSETS/Profile.svg" width="40" height="40" alt="">
+                    <img class="" src="/ASSETS/Profile.svg" width="40" height="40" alt="">
                 </a>
             </div>
         </div>
@@ -71,10 +72,10 @@
     <main class="bg-light d-flex align-items-center">
 
         <!-- Container das Imformações -->
-        <section id="sec__principal" class="container-sm mx-auto" style="max-width: 800px;">
+        <section id="sec__principal" class="container-sm" style="max-width: 800px;">
 
             <h1 class="fs-1 text-dark text-center py-3" style="font-family: 'Audiowide', cursive; font-weight: 700;
-            font-family: 'Pixelify Sans', cursive;">Imformações</h1>
+            font-family: 'Pixelify Sans', cursive;">Informações</h1>
 
             <!-- Primeira Imformação -->
 
@@ -86,14 +87,15 @@
                             data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                             <i class="bi bi-truck-flatbed"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">IMFORMAÇÕES
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">INFORMAÇÕES
                                 DO PACIENTE</span>
                         </button>
                     </h2>
                     <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="btn-group d-inline" role="group" aria-label="Basic checkbox toggle button group">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
                                 <div class="row-cols-4 d-flex justify-content-center text-center">
                                     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btncheck1">Causado por Animais</label>
@@ -102,8 +104,8 @@
                                     <label class="btn btn-outline-dark" for="btncheck2">Com meio de Transporte</label>
 
                                     <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                    <label class="btn btn-outline-dark"
-                                        for="btncheck3">Desmoronamento<br>Deslizamento</label>
+                                    <label class="btn btn-outline-dark" for="btncheck3">Desmoronamento
+                                        Deslizamento</label>
                                 </div>
 
                                 <div class="row-cols-4 d-flex justify-content-center">
@@ -180,39 +182,40 @@
                     <h2 class="accordion-header" id="heading2">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            <i class="bi bi-credit-card"></i>
+                            <i class="bi bi-arrow-return-left"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO
-                                DE
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO DE
                                 OCORRÊNCIA</span>
                         </button>
                     </h2>
                     <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="btn-group d-inline" role="group" aria-label="Basic checkbox toggle button group">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
                                 <div class="row-cols-4 d-flex justify-content-center text-center">
                                     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Causado por Animais</label>
+                                    <label class="btn btn-outline-dark" for="btncheck1">PSIQUIÀTRICO</label>
 
                                     <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck2">Com meio de Transporte</label>
+                                    <label class="btn btn-outline-dark" for="btncheck2">OBSTETRICO</label>
 
                                     <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                    <label class="btn btn-outline-dark"
-                                        for="btncheck3">Desmoronamento<br>Deslizamento</label>
+                                    <label class="btn btn-outline-dark" for="btncheck3">RESPIRATÒRIO</label>
                                 </div>
 
                                 <div class="row-cols-4 d-flex justify-content-center">
                                     <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4">EmergÊncia médica</label>
+                                    <label class="btn btn-outline-dark" for="btncheck4">DIABETES</label>
 
                                     <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck5">Queda de altura de 2m</label>
+                                    <label class="btn btn-outline-dark" for="btncheck5">OUTROS</label>
 
                                     <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck6">Tentativa de suicídio</label>
+                                    <label class="btn btn-outline-dark" for="btncheck6">TRANSPORTE</label>
                                 </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -274,7 +277,21 @@
                     <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
+                            <map name="meu_mapeamento">
+                                <area href="#" shape="poly" coords="168,221,180,217,184,225,170,229"
+                                    onclick="Gravar('Frente pulso esquerdo',168,221,180,217,184,225,170,229);">
+                                
+                                <area href="#" shape="poly" coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
+                                    onclick="Gravar('Pe esquerdo',119,377,130,378,131,386,140,394,138,398,119,398,116,395,116,384);">
+                            </map>
 
+                            <div class="d-flex justify-content-center">
+                                <img src="/IMG/Corpo.png" class="img-fluid rounded-4" usemap="#meu_mapeamento">
+                            </div>
+
+                            <div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -307,7 +324,8 @@
                             data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS VITAIS</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS
+                                VITAIS</span>
                         </button>
                     </h2>
                     <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
@@ -333,7 +351,19 @@
                     <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Deitado</label>
 
+                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck2">Sentado</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck3">Semi-sentado</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -372,7 +402,40 @@
                     <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Ciclista</label>
 
+                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck2">Condutor moto</label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck3">Gestante</label>
+                                </div>
+                                <div class="row-cols-4 d-flex justify-content-center">
+                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck4"></label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck5"></label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck6"></label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center">
+                                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck7"></label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck8"></label>
+
+                                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck9"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,25 +459,214 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Dezima Segunda Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">PROCEDIMENTOS EFETUADOS</span>
+                        </button>
+                    </h2>
+                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="avaliacao_inicial" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Avaliação Inicial</label>
+
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="avaliacao_dirigida" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Avaliação Dirigida</label>
+
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center text-center">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dezima Terceira Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS UTILIZADOS DESCARÀVEL</span>
+                        </button>
+                    </h2>
+                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dezima Quarta Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS UTILIZADOS DEIXADO NO HOSPITAL</span>
+                        </button>
+                    </h2>
+                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dezima Quinta Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE DA EMERGÊNCIA MÈDICA</span>
+                        </button>
+                    </h2>
+                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dezima Sexta Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading16">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE GESTACIONAL</span>
+                        </button>
+                    </h2>
+                    <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dezima Septima Imformação  -->
+
+                <div class="accordion-item my-4">
+                    <h2 class="accordion-header" id="heading17">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                            <i class="bi bi-percent"></i>
+                            <span class="px-3 text-dark"
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO CINEMÀTICA</span>
+                        </button>
+                    </h2>
+                    <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div>
+
+        </div>
+
         </section>
     </main>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
-                <a href="/PAGES/Inicio.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                <a href="/PAGES/Inicio.html" class="mb-3 me-2 mb-md-0  text-decoration-none lh-1">
                     <img src="/IMG/logo_pequena.png" alt="logo" width="40" height="40">
                 </a>
-                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+                <span class="mb-3 mb-md-0">© 2023 Company, Inc</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="ms-3">
-                    <a class="text-body-secondary" href="#">
+                    <a class="" href="#">
                         <img src="/ASSETS/Facebook.svg" alt="logo__facebook">
                     </a>
                 </li>
                 <li class="ms-3">
-                    <a class="text-body-secondary" href="#">
+                    <a class="" href="#">
                         <img src="/ASSETS/Instagram.svg" alt="logo__instagram">
                     </a>
                 </li>
