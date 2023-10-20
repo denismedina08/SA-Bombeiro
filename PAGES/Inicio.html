@@ -26,15 +26,18 @@
 
 <body>
     <!-- Header -->
-    <nav id="topNav" class="navbar navbar-dark p-4 ">
+    <nav id="topNav" class="navbar navbar-dark p-4">
         <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark" id="">
-            <div class="p-4">
-                <h5 class="text-body-emphasis h5">Perfil</h5>
-                <h5 class="text-body-emphasis h5">Suporte</h5>
-                <span class="">Suporte</span>
+            <div class="bg-light">
+                <h5 class="text-body-emphasis h5">
+                    <a href="/PAGES/Perfil.html" style="text-decoration: none;">Perfil</a>
+                </h5>
+                <h5 class="text-body-emphasis h5">
+                    <a href="" style="text-decoration: none;">Suporte</a>
+                </h5>
             </div>
         </div>
-        <nav class="navbar navbar-dark" id="nav__menu">
+        <div class="navbar navbar-dark" id="nav__menu">
             <div class="container-fluid" id="nav__container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
@@ -42,7 +45,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-        </nav>
+        </div>
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav">
@@ -56,9 +59,13 @@
             <img class="shadow-sm rounded-circle" src="/IMG/logo_pequena.png" width="160" height="160" alt="logo/brand">
         </a>
 
+        <div class="">
+            <img src="" alt="">
+        </div>
+
         <div class="navbar-nav justify-content-end">
             <div class="navbar-nav ml-auto">
-                <a class="" href="/PAGES/Perfil.html">
+                <a class="" href="/PAGES/Cadastro.html">
                     <img class="" src="/ASSETS/Profile.svg" width="40" height="40" alt="">
                 </a>
             </div>
@@ -93,83 +100,138 @@
                     </h2>
                     <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="btn-group d-inline" role="group"
+                        <div class="accordion-body d-flex justify-content-center">
+                            <div class="btn-group d-inline-block" role="group"
                                 aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Causado por Animais</label>
+                                <!-- Linha 1° -->
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck1">Causado por Animais</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck2">Com meio de Transporte</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2">Com meio de
+                                            Transporte</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck3">Desmoronamento
-                                        Deslizamento</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check bnt-fixed-height" id="btncheck3" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck3">Desmoronamento
+                                            Deslizamento</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4">EmergÊncia médica</label>
+                                <!-- Linha 2° -->
 
-                                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck5">Queda de altura de 2m</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4">Emergência médica</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck6">Tentativa de suicídio</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck5">Queda de altura de
+                                            2m</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck6">Tentativa de
+                                            suicídio</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck7">Queda própia Altura</label>
+                                <!-- Linha 3° -->
 
-                                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck8">Afogamento</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck7">Queda própia Altura</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck9">Agressão</label>
-                                </div>
-                                <div class="row-cols-4 d-flex justify-content-center">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck8">Afogamento</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck10">Atropelamento</label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck11">Choque eléctrico</label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12">Desabamento</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck9">Agressão</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck13">Doméstico</label>
+                                <!-- Linha 4° -->
 
-                                    <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck14">Esportivo</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck10">Atropelamento</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck15">Intoxicação</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck11">Choque eléctrico</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12">Desabamento</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
+                                <!-- Linha 5° -->
 
-                                    <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck16">Queda bibicleta</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck13">Doméstico</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck17" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck17">Queda moto</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck14">Esportivo</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck18" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck18">Queda nivel 2m</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck15">Intoxicação</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck19" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck19">Trabalho</label>
+                                <!-- Linha 6° -->
 
-                                    <input type="checkbox" class="btn-check" id="btncheck20" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck20">TransferÊncia</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck16">Queda bibicleta</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck17" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17">Queda moto</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck18" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck18">Queda nivel 2m</label>
+                                    </div>
+                                </div>
+
+                                <!-- Linha 7° -->
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck19" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck19">Trabalho</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck20" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck20">Transferência</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -184,38 +246,51 @@
                             data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                             <i class="bi bi-arrow-return-left"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO DE
+                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO
+                                DE
                                 OCORRÊNCIA</span>
                         </button>
                     </h2>
+                    
                     <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="btn-group d-inline" role="group"
                                 aria-label="Basic checkbox toggle button group">
                                 <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">PSIQUIÀTRICO</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.1" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.1">PSIQUIÀTRICO</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck2">OBSTETRICO</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.2" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.2">OBSTETRICO</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck3">RESPIRATÒRIO</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.3" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.3">RESPIRATÒRIO</label>
+                                    </div>
                                 </div>
 
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4">DIABETES</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.4" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.4">DIABETES</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck5">OUTROS</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.5" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.5">OUTROS</label>
+                                    </div>
 
-                                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck6">TRANSPORTE</label>
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck2.6" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck2.6">TRANSPORTE</label>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -257,6 +332,269 @@
                     <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
+                            <div class="btn-group d-inline" role="group"
+                                aria-label="Basic checkbox toggle button group">
+
+                            </h2>
+                            <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="btn-group d-inline" role="group"
+                                        aria-label="Basic checkbox toggle button group">
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck4_1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_1">Aspiração</label>
+                            
+                                            <input name="avaliacao_inicial" type="checkbox" class="btn-check" id="btncheck4_2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_2">Avaliação Inicial</label>
+                            
+                                            <input name="avaliacao_dirigida" type="checkbox" class="btn-check"
+                                                id="btncheck4_3" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_3">Avaliação Dirigida</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="avaliacao_continua" type="checkbox" class="btn-check"
+                                                id="btncheck4_4" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_4">Avaliação Continuada</label>
+                            
+                                            <input name="chave_rautek" type="checkbox" class="btn-check" id="btncheck4_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_5">Chave Rautek</label>
+                            
+                                            <input name="canula_guedel" type="checkbox" class="btn-check" id="btncheck4_6"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_6">Canula Guedel</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="desobstrucao_v_a" type="checkbox" class="btn-check" id="btncheck4_7"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_7">Desobstrução V.A</label>
+                            
+                                            <input name="emprego_d_e_a" type="checkbox" class="btn-check" id="btncheck4_8"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_8">Emprego D.E.A</label>
+                            
+                                            <input name="gerenciamento_risco" type="checkbox" class="btn-check"
+                                                id="btncheck4_9" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_9">Gerenciamento Risco</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="limpeza_ferimento" type="checkbox" class="btn-check" id="btncheck4_10"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_10">Limpeza de Ferimento</label>
+                            
+                                            <input name="curativo" type="checkbox" class="btn-check" id="btncheck4_11"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_11">Curativo</label>
+                            
+                                            <input name="compressivo" type="checkbox" class="btn-check" id="btncheck4_12"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck4_12">Compressivo</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="encravamento" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Encravamento</label>
+                            
+                                            <input name="ocular" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Ocular</label>
+                            
+                                            <input name="queimadura" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Queimadura</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="simples" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Simples</label>
+                            
+                                            <input name="3_pontos" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">3 Pontos</label>
+                            
+                                            <input name="imobilizacoes" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Imobilizações</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Membro Inf.Direito</label>
+                            
+                                            <input name="membro_inf_esq" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Membro Inf.Esquerdo</label>
+                            
+                                            <input name="membro_sup_dir" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Membro Sup.Direito</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="membro_sup_esq" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Membro Sup.Esquerdo</label>
+                            
+                                            <input name="quadril" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Quadril</label>
+                            
+                                            <input name="cervical" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Cervical</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="maca_sobre_rodas" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Maca Sobre Rodas</label>
+                            
+                                            <input name="macas_rigidas" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Macas Rigidas</label>
+                            
+                                            <input name="ponte" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Ponte</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="retirado_capacete" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Retirado Capacete</label>
+                            
+                                            <input name="r_c_p" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">R.C.P.</label>
+                            
+                                            <input name="rolamento_90" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Rolamento 90°</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Rolamento 180°</label>
+                            
+                                            <input name="tomada_decisao" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Tomada de Decisão</label>
+                            
+                                            <input name="tratado_choque" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Tratado de Choque</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="uso_canula" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Uso Canula</label>
+                            
+                                            <input name="uso_colar" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Uso Colar</label>
+                            
+                                            <input name="uso_ked" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Uso Ked</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="uso_ttf" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Uso TTF</label>
+                            
+                                            <input name="ventilacao_suporte" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Ventilção Suporte</label>
+                            
+                                            <input name="oxigeniterapia" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Oxigenioterapia</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="renimador" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Reanimador</label>
+                            
+                                            <input name="meios_auxiliares" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Meios Auxiliares</label>
+                            
+                                            <input name="celesc" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Celesc</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="def_civil" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Def.Civil</label>
+                            
+                                            <input name="igp_pc" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">IGP PC</label>
+                            
+                                            <input name="policia_civil" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Policia Civil</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="policial_militar" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">Policia Militar</label>
+                            
+                                            <input name="policial_pre" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">Policia PRE</label>
+                            
+                                            <input name="policia_prf" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">Policia PRF</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                            <input name="samu" type="checkbox" class="btn-check" id="btncheck1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck1">SAMU</label>
+                            
+                                            <input name="usa" type="checkbox" class="btn-check" id="btncheck2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2">USA</label>
+                            
+                                            <input name="usb" type="checkbox" class="btn-check" id="btncheck3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3">USB</label>
+                                        </div>
+                            
+                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                          <input name="cit" type="checkbox" class="btn-check" id="btncheck1"
+                                              autocomplete="off">
+                                          <label class="btn btn-outline-dark" for="btncheck1">CIT</label>
+                            
+                                          <input name="outro" type="checkbox" class="btn-check" id="btncheck2"
+                                              autocomplete="off">
+                                          <label class="btn btn-outline-dark" for="btncheck2">Outro</label>
+                            
+                                      </div>
+                                    </div>
+                                </div>
+                          </div>
+
+                                </div>
 
                         </div>
                     </div>
@@ -280,17 +618,14 @@
                             <map name="meu_mapeamento">
                                 <area href="#" shape="poly" coords="168,221,180,217,184,225,170,229"
                                     onclick="Gravar('Frente pulso esquerdo',168,221,180,217,184,225,170,229);">
-                                
-                                <area href="#" shape="poly" coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
+
+                                <area href="#" shape="poly"
+                                    coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
                                     onclick="Gravar('Pe esquerdo',119,377,130,378,131,386,140,394,138,398,119,398,116,395,116,384);">
                             </map>
 
                             <div class="d-flex justify-content-center">
                                 <img src="/IMG/Corpo.png" class="img-fluid rounded-4" usemap="#meu_mapeamento">
-                            </div>
-
-                            <div>
-                                
                             </div>
                         </div>
                     </div>
@@ -383,7 +718,26 @@
                     <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
+                            <div class="btn-group d-inline-block" role="group" aria-label="Basic checkbox toggle button group">
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                        <img class="" src="/ASSETS/Smiley-1.svg" alt="">
+                                    </div>
 
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck9">Com meio de
+                                            Transporte</label>
+                                    </div>
+
+                                    <div class="p-2 g-col-4">
+                                        <input type="checkbox" class="btn-check bnt-fixed-height" id="btncheck9" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck9">Desmoronamento
+                                            Deslizamento</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -414,27 +768,7 @@
                                     <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btncheck3">Gestante</label>
                                 </div>
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4"></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck5"></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck6"></label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center">
-                                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck7"></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck8"></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck9"></label>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -468,82 +802,288 @@
                             data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">PROCEDIMENTOS EFETUADOS</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">PROCEDIMENTOS
+                                EFETUADOS</span>
                         </button>
                     </h2>
+
                     <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="btn-group d-inline" role="group"
                                 aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
 
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="avaliacao_inicial" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Avaliação Inicial</label>
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck12.1"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.1">Aspiração</label>
 
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="avaliacao_dirigida" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Avaliação Dirigida</label>
+                                    <input name="avaliacao_inicial" type="checkbox" class="btn-check" id="btncheck12.2"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.2">Avaliação
+                                        Inicial</label>
 
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
-                                    <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center text-center">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck1">Aspiração</label>
+                                    <input name="avaliacao_dirigida" type="checkbox" class="btn-check" id="btncheck12.3"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.3">Avaliação
+                                        Dirigida</label>
+                                </div>
 
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="avaliacao_continua" type="checkbox" class="btn-check" id="btncheck12.4"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.4">Avaliação
+                                        Continuada</label>
 
+                                    <input name="chave_rautek" type="checkbox" class="btn-check" id="btncheck12.5"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.5">Chave Rautek</label>
+
+                                    <input name="canula_guedel" type="checkbox" class="btn-check" id="btncheck12.6"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.6">Canula
+                                        Guedel</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="desobstrucao_v_a_" type="checkbox" class="btn-check" id="btncheck12.7"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.7">Desobstrução
+                                        V.A</label>
+
+                                    <input name="emprego_d_e_a" type="checkbox" class="btn-check" id="btncheck12.8"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.8">Emprego
+                                        D.E.A</label>
+
+                                    <input name="gerenciamento_risco" type="checkbox" class="btn-check" id="btncheck12.9"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.9">Gerenciamento
+                                        Risco</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="limpeza_ferimento" type="checkbox" class="btn-check" id="btncheck12.10"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.10">Limpeza de
+                                        Ferimento</label>
+
+                                    <input name="curativo" type="checkbox" class="btn-check" id="btncheck12.11"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.11">Curativo</label>
+
+                                    <input name="compressivo" type="checkbox" class="btn-check" id="btncheck12.12"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.12">Compressivo</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="encravamento" type="checkbox" class="btn-check" id="btncheck12.13"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.13">Encravamento</label>
+
+                                    <input name="ocular" type="checkbox" class="btn-check" id="btncheck12.14"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.14">Ocular</label>
+
+                                    <input name="queimadura" type="checkbox" class="btn-check" id="btncheck12.15"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.15">Queimadura</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="simples" type="checkbox" class="btn-check" id="btncheck12.16"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.16">Simples</label>
+
+                                    <input name="3_pontos" type="checkbox" class="btn-check" id="btncheck12.17"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.17">3 Pontos</label>
+
+                                    <input name="imobilizacoes" type="checkbox" class="btn-check" id="btncheck12.18"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.18">Imobilizações</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.19"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.19">Membro
+                                        Inf.Direito</label>
+
+                                    <input name="membro_inf_esq" type="checkbox" class="btn-check" id="btncheck12.20"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.20">Membro
+                                        Inf.Esquerdo</label>
+
+                                    <input name="membro_sup_dir" type="checkbox" class="btn-check" id="btncheck12.21"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.21">Membro
+                                        Sup.Direito</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="membro_sup_esq" type="checkbox" class="btn-check" id="btncheck12.22"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.22">Membro
+                                        Sup.Esquerdo</label>
+
+                                    <input name="quadril" type="checkbox" class="btn-check" id="btncheck12.23"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.23">Quadril</label>
+
+                                    <input name="cervical" type="checkbox" class="btn-check" id="btncheck12.24"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.24">Cervical</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="maca_sobre_rodas" type="checkbox" class="btn-check" id="btncheck12.25"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.25">Maca Sobre
+                                        Rodas</label>
+
+                                    <input name="macas_rigidas" type="checkbox" class="btn-check" id="btncheck12.26"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.26">Macas
+                                        Rigidas</label>
+
+                                    <input name="ponte" type="checkbox" class="btn-check" id="btncheck12.27"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.27">Ponte</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="retirado_capacete" type="checkbox" class="btn-check" id="btncheck12.28"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.28">Retirado
+                                        Capacete</label>
+
+                                    <input name="r_c_p" type="checkbox" class="btn-check" id="btncheck12.29"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.29">R.C.P.</label>
+
+                                    <input name="rolamento_90" type="checkbox" class="btn-check" id="btncheck12.30"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.30">Rolamento
+                                        90°</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.31"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.31">Rolamento
+                                        180°</label>
+
+                                    <input name="tomada_decisao" type="checkbox" class="btn-check" id="btncheck12.32"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.32">Tomada de
+                                        Decisão</label>
+
+                                    <input name="tratado_choque" type="checkbox" class="btn-check" id="btncheck12.33"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.33">Tratado de
+                                        Choque</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="uso_canula" type="checkbox" class="btn-check" id="btncheck12.34"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.34">Uso Canula</label>
+
+                                    <input name="uso_colar" type="checkbox" class="btn-check" id="btncheck12.35"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.35">Uso Colar</label>
+
+                                    <input name="uso_ked" type="checkbox" class="btn-check" id="btncheck12.36"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.36">Uso Ked</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="uso_ttf" type="checkbox" class="btn-check" id="btncheck12.37"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.37">Uso TTF</label>
+
+                                    <input name="ventilacao_suporte" type="checkbox" class="btn-check" id="btncheck12.38"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.38">Ventilção
+                                        Suporte</label>
+
+                                    <input name="oxigeniterapia" type="checkbox" class="btn-check" id="btncheck12.39"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.39">Oxigenioterapia</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="renimador" type="checkbox" class="btn-check" id="btncheck12.40"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.40">Reanimador</label>
+
+                                    <input name="meios_auxiliares" type="checkbox" class="btn-check" id="btncheck12.41"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.41">Meios
+                                        Auxiliares</label>
+
+                                    <input name="celesc" type="checkbox" class="btn-check" id="btncheck12.42"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.42">Celesc</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="def_civil" type="checkbox" class="btn-check" id="btncheck12.43"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.43">Def.Civil</label>
+
+                                    <input name="igp_pc" type="checkbox" class="btn-check" id="btncheck12.44"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.44">IGP PC</label>
+
+                                    <input name="policia_civil" type="checkbox" class="btn-check" id="btncheck12.45"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.45">Policia
+                                        Civil</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="policial_militar" type="checkbox" class="btn-check" id="btncheck12.46"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.46">Policia
+                                        Militar</label>
+
+                                    <input name="policial_pre" type="checkbox" class="btn-check" id="btncheck12.47"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.47">Policia PRE</label>
+
+                                    <input name="policia_prf" type="checkbox" class="btn-check" id="btncheck12.48"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.48">Policia PRF</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="samu" type="checkbox" class="btn-check" id="btncheck12.49"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.49">SAMU</label>
+
+                                    <input name="usa" type="checkbox" class="btn-check" id="btncheck12.50"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.50">USA</label>
+
+                                    <input name="usb" type="checkbox" class="btn-check" id="btncheck12.51"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.51">USB</label>
+                                </div>
+
+                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                    <input name="cit" type="checkbox" class="btn-check" id="btncheck12.52"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.52">CIT</label>
+
+                                    <input name="outro" type="checkbox" class="btn-check" id="btncheck12.53"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-dark" for="btncheck12.53">Outro</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -556,7 +1096,8 @@
                             data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS UTILIZADOS DESCARÀVEL</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
+                                UTILIZADOS DESCARÀVEL</span>
                         </button>
                     </h2>
                     <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
@@ -575,7 +1116,8 @@
                             data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS UTILIZADOS DEIXADO NO HOSPITAL</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
+                                UTILIZADOS DEIXADO NO HOSPITAL</span>
                         </button>
                     </h2>
                     <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
@@ -594,7 +1136,8 @@
                             data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE DA EMERGÊNCIA MÈDICA</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
+                                DA EMERGÊNCIA MÈDICA</span>
                         </button>
                     </h2>
                     <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
@@ -613,7 +1156,8 @@
                             data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE GESTACIONAL</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
+                                GESTACIONAL</span>
                         </button>
                     </h2>
                     <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
@@ -632,7 +1176,8 @@
                             data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
                             <i class="bi bi-percent"></i>
                             <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO CINEMÀTICA</span>
+                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO
+                                CINEMÀTICA</span>
                         </button>
                     </h2>
                     <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
@@ -643,11 +1188,8 @@
                     </div>
                 </div>
             </div>
-
-        <div>
-
-        </div>
-
+            </div>
+            </div>
         </section>
     </main>
     <div class="container">

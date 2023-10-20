@@ -219,15 +219,15 @@ CREATE TABLE `materias_utilizados_deixados_hospital` (
   `colar_m` tinyint(1) NOT NULL,
   `colar_g` tinyint(1) NOT NULL,
   `coxins_estabiliza` tinyint(1) NOT NULL,
-  `ked_adul.` tinyint(1) NOT NULL,
+  `ked_adul` tinyint(1) NOT NULL,
   `ked_infa` tinyint(1) NOT NULL,
   `maca_rigida` tinyint(1) NOT NULL,
-  `T.T.F_adul.` tinyint(1) NOT NULL,
-  `T.T.F_infa.` tinyint(1) NOT NULL,
+  `T_T_F_adul` tinyint(1) NOT NULL,
+  `T_T_F_infa` tinyint(1) NOT NULL,
   `tirante_ranha` tinyint(1) NOT NULL,
   `tirante_cabeca` tinyint(1) NOT NULL,
   `canula` tinyint(1) NOT NULL,
-  `outros` varchar(20) NOT NULL
+  `outros_deixados` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -241,20 +241,20 @@ CREATE TABLE `materias_utilizados_descartaveis` (
   `ataduras_8` int NOT NULL,
   `ataduras_12` int NOT NULL,
   `ataduras_20` int NOT NULL,
-  `cateter_tp._oculos` int NOT NULL,
+  `cateter_tp_oculos` int NOT NULL,
   `compressa` int NOT NULL,
   `kits_h` int NOT NULL,
   `kits_p` int NOT NULL,
   `kits_q` int NOT NULL,
-  `luvas_desc.` int NOT NULL,
-  `mascara_desc.` int NOT NULL,
+  `luvas_desc` int NOT NULL,
+  `mascara_desc` int NOT NULL,
   `manto_aluminizado` int NOT NULL,
   `pas_do_dea` int NOT NULL,
   `sonda_aspiracao` int NOT NULL,
   `soro_fisiologico` int NOT NULL,
-  `talas_pap._p` int NOT NULL,
-  `talas_pap._g` int NOT NULL,
-  `outros` varchar(20) NOT NULL
+  `talas_pap_p` int NOT NULL,
+  `talas_pap_g` int NOT NULL,
+  `outros_utilizados` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -311,7 +311,7 @@ CREATE TABLE `problemas_encontrados_suspeitos` (
   `respiratorio_inalacao_fumacao` int NOT NULL,
   `diabetes_hiperglicemia` int NOT NULL,
   `diabetes_hipoglicemia` int NOT NULL,
-  `outros` int NOT NULL,
+  `outros_problemas` int NOT NULL,
   `obstetrico_parto_emergencial` int NOT NULL,
   `obstetrico_gestante` int NOT NULL,
   `obstetrico_hemor_excessiva` int NOT NULL,
@@ -337,8 +337,8 @@ CREATE TABLE `procedimento_efetuado` (
   `avaliacao_continua` tinyint(1) NOT NULL,
   `chave_rautek` tinyint(1) NOT NULL,
   `canula_guedel` tinyint(1) NOT NULL,
-  `desobstrucao_v.a.` tinyint(1) NOT NULL,
-  `emprego_d.e.a` tinyint(1) NOT NULL,
+  `desobstrucao_v_a` tinyint(1) NOT NULL,
+  `emprego_d_e_a` tinyint(1) NOT NULL,
   `gerenciamento_risco` tinyint(1) NOT NULL,
   `limpeza_ferimento` tinyint(1) NOT NULL,
   `curativo` tinyint(1) NOT NULL,
@@ -349,17 +349,17 @@ CREATE TABLE `procedimento_efetuado` (
   `simples` tinyint(1) NOT NULL,
   `3_pontos` tinyint(1) NOT NULL,
   `imobilizacoes` tinyint(1) NOT NULL,
-  `membro_inf.dir.` tinyint(1) NOT NULL,
-  `membro_inf.esq.` tinyint(1) NOT NULL,
-  `membro_sup.dir.` tinyint(1) NOT NULL,
-  `membro_sup.esq.` tinyint(1) NOT NULL,
+  `membro_inf_dir` tinyint(1) NOT NULL,
+  `membro_inf_esq` tinyint(1) NOT NULL,
+  `membro_sup_dir` tinyint(1) NOT NULL,
+  `membro_sup_esq` tinyint(1) NOT NULL,
   `quadril` tinyint(1) NOT NULL,
   `cervical` tinyint(1) NOT NULL,
   `maca_sobre_rodas` tinyint(1) NOT NULL,
   `macas_rigidas` tinyint(1) NOT NULL,
   `ponte` tinyint(1) NOT NULL,
   `retirado_capacete` tinyint(1) NOT NULL,
-  `r.c.p.` tinyint(1) NOT NULL,
+  `r_c_p` tinyint(1) NOT NULL,
   `rolamento_90` tinyint(1) NOT NULL,
   `rolamento_180` tinyint(1) NOT NULL,
   `tomada_decisao` tinyint(1) NOT NULL,
@@ -373,7 +373,7 @@ CREATE TABLE `procedimento_efetuado` (
   `renimador` varchar(10) NOT NULL,
   `meios_auxiliares` tinyint(1) NOT NULL,
   `celesc` tinyint(1) NOT NULL,
-  `def.civil` tinyint(1) NOT NULL,
+  `def_civil` tinyint(1) NOT NULL,
   `igp_pc` tinyint(1) NOT NULL,
   `policia_civil` tinyint(1) NOT NULL,
   `policial_militar` tinyint(1) NOT NULL,
@@ -383,7 +383,7 @@ CREATE TABLE `procedimento_efetuado` (
   `usa` tinyint(1) NOT NULL,
   `usb` tinyint(1) NOT NULL,
   `cit` tinyint(1) NOT NULL,
-  `outro` varchar(30) NOT NULL
+  `outros_procedimentos` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -428,7 +428,7 @@ CREATE TABLE `sinais_sintomas` (
   `obito` tinyint(1) NOT NULL,
   `otorreia` tinyint(1) NOT NULL,
   `otorragia` tinyint(1) NOT NULL,
-  `o.v.a.c.e` tinyint(1) NOT NULL,
+  `o_v_a_c_e` tinyint(1) NOT NULL,
   `parada_cardiaca` tinyint(1) NOT NULL,
   `parada_respiratoria` tinyint(1) NOT NULL,
   `priaprismo` tinyint(1) NOT NULL,
@@ -446,7 +446,7 @@ CREATE TABLE `sinais_sintomas` (
   `taquiapneia` tinyint(1) NOT NULL,
   `taquicardia` tinyint(1) NOT NULL,
   `tontura` tinyint(1) NOT NULL,
-  `outro` varchar(100) NOT NULL
+  `outro_sinais` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -476,10 +476,10 @@ CREATE TABLE `vitima_era` (
   `id_ocorrencia` int NOT NULL,
   `ciclista` tinyint(1) NOT NULL,
   `condutor_moto` tinyint(1) NOT NULL,
-  `ps._moto` tinyint(1) NOT NULL,
+  `ps_moto` tinyint(1) NOT NULL,
   `condutor_carro` tinyint(1) NOT NULL,
-  `ps._bco._frente` tinyint(1) NOT NULL,
-  `ps._bco._tras` tinyint(1) NOT NULL,
+  `ps_bco_frente` tinyint(1) NOT NULL,
+  `ps_bco_tras` tinyint(1) NOT NULL,
   `gestante` tinyint(1) NOT NULL,
   `clinico` tinyint(1) NOT NULL,
   `trauma` tinyint(1) NOT NULL,
