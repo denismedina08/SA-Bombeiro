@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Out-2023 às 16:39
+-- Tempo de geração: 23-Out-2023 às 17:17
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bombeiros`
+-- Banco de dados: `bombeiros_banco`
 --
 
 -- --------------------------------------------------------
@@ -167,6 +167,35 @@ CREATE TABLE `glasgow` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `info_paciente`
+--
+
+CREATE TABLE `info_paciente` (
+  `id_ocorrencia` int NOT NULL,
+  `data` date NOT NULL,
+  `sexo_f` tinyint(1) NOT NULL,
+  `sexo_m` tinyint(1) NOT NULL,
+  `hospital` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `cpf` varchar(50) NOT NULL,
+  `acompanhante` varchar(50) NOT NULL,
+  `idade_paciente` int NOT NULL,
+  `fone` int NOT NULL,
+  `idade_acompanhante` int NOT NULL,
+  `local_ocorrencia` varchar(50) NOT NULL,
+  `n_usb` int NOT NULL,
+  `n_ocorr` int NOT NULL,
+  `cod_ir` int NOT NULL,
+  `cod_ps` int NOT NULL,
+  `desp` varchar(50) NOT NULL,
+  `h_ch` int NOT NULL,
+  `km_final` int NOT NULL,
+  `cod_sia/sus` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `localizacao_do_trauma`
 --
 
@@ -277,7 +306,7 @@ CREATE TABLE `pre-hospitalar` (
   `id_ocorrencia` int NOT NULL,
   `causado_por_animais` tinyint(1) NOT NULL,
   `por_meio_de_transporte` tinyint(1) NOT NULL,
-  `desmoronamento/deslizamento` tinyint(1) NOT NULL,
+  `desmoronamento_deslizamento` tinyint(1) NOT NULL,
   `emergencia_medica` tinyint(1) NOT NULL,
   `queda_de_2M` tinyint(1) NOT NULL,
   `tentativa_suicidio` tinyint(1) NOT NULL,
@@ -291,7 +320,7 @@ CREATE TABLE `pre-hospitalar` (
   `intoxicao` tinyint(1) NOT NULL,
   `queda_bicicleta` tinyint(1) NOT NULL,
   `queda_moto` tinyint(1) NOT NULL,
-  `queda_nivel_<2M` tinyint(1) NOT NULL,
+  `queda_nivel_maior_2M` tinyint(1) NOT NULL,
   `trabalho` tinyint(1) NOT NULL,
   `transaferencia` tinyint(1) NOT NULL,
   `esportivo` tinyint(1) NOT NULL,
@@ -462,8 +491,8 @@ CREATE TABLE `sinais_vitais` (
   `pulso` int NOT NULL,
   `repiracao` int NOT NULL,
   `temperatura` int NOT NULL,
-  `perfusao_>2` tinyint(1) NOT NULL,
-  `perfusao_<2` tinyint(1) NOT NULL
+  `perfusao_menor_2` tinyint(1) NOT NULL,
+  `perfusao_maior_2` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -539,6 +568,12 @@ ALTER TABLE `glasgow`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
 --
+-- Índices para tabela `info_paciente`
+--
+ALTER TABLE `info_paciente`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
 -- Índices para tabela `localizacao_do_trauma`
 --
 ALTER TABLE `localizacao_do_trauma`
@@ -548,6 +583,18 @@ ALTER TABLE `localizacao_do_trauma`
 -- Índices para tabela `login`
 --
 ALTER TABLE `login`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
+-- Índices para tabela `materias_utilizados_deixados_hospital`
+--
+ALTER TABLE `materias_utilizados_deixados_hospital`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
+-- Índices para tabela `materias_utilizados_descartaveis`
+--
+ALTER TABLE `materias_utilizados_descartaveis`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
 --
@@ -566,6 +613,12 @@ ALTER TABLE `pre-hospitalar`
 -- Índices para tabela `problemas_encontrados_suspeitos`
 --
 ALTER TABLE `problemas_encontrados_suspeitos`
+  ADD PRIMARY KEY (`id_ocorrencia`);
+
+--
+-- Índices para tabela `procedimento_efetuado`
+--
+ALTER TABLE `procedimento_efetuado`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
 --
@@ -621,16 +674,68 @@ ALTER TABLE `glasgow`
   MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `info_paciente`
+--
+ALTER TABLE `info_paciente`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
   MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de tabela `materias_utilizados_deixados_hospital`
+--
+ALTER TABLE `materias_utilizados_deixados_hospital`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `materias_utilizados_descartaveis`
+--
+ALTER TABLE `materias_utilizados_descartaveis`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `ocorrencia`
 --
 ALTER TABLE `ocorrencia`
   MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `procedimento_efetuado`
+--
+ALTER TABLE `procedimento_efetuado`
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `ocorrencia`
+--
+ALTER TABLE `ocorrencia`
+  ADD CONSTRAINT `ocorrencia_ibfk_1` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_emergencia` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_10` FOREIGN KEY (`id_ocorrencia`) REFERENCES `login` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_11` FOREIGN KEY (`id_ocorrencia`) REFERENCES `pre-hospitalar` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_12` FOREIGN KEY (`id_ocorrencia`) REFERENCES `problemas_encontrados_suspeitos` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_13` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_sintomas` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_14` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_vitais` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_15` FOREIGN KEY (`id_ocorrencia`) REFERENCES `vitima_era` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_16` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_deixados_hospital` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_17` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_descartaveis` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_18` FOREIGN KEY (`id_ocorrencia`) REFERENCES `procedimento_efetuado` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_19` FOREIGN KEY (`id_ocorrencia`) REFERENCES `info_paciente` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_2` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_gestacional` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_3` FOREIGN KEY (`id_ocorrencia`) REFERENCES `avalicao_da_cinematica` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_4` FOREIGN KEY (`id_ocorrencia`) REFERENCES `cadastro` (`id_cadastro`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_5` FOREIGN KEY (`id_ocorrencia`) REFERENCES `características` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_6` FOREIGN KEY (`id_ocorrencia`) REFERENCES `decisao_transporte` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_7` FOREIGN KEY (`id_ocorrencia`) REFERENCES `formas_de_conducao` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_8` FOREIGN KEY (`id_ocorrencia`) REFERENCES `glasgow` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_9` FOREIGN KEY (`id_ocorrencia`) REFERENCES `localizacao_do_trauma` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
