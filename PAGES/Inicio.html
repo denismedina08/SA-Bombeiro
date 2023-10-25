@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +25,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 </head>
 
+<script>
+    $(document).ready(function () {
+        $('#preNatal').change(function () {
+            if ($(this).val() === 'nao') {
+                $('#nomedomedicogroup').hide();
+            } else {
+                $('#nomedomedicogroup').show();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#primeiroFilho').change(function () {
+            if ($(this).val() === 'sim') {
+                $('#quantosFilhosGroup').hide();
+            } else {
+                $('#quantosFilhosGroup').show();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#parto').change(function () {
+            if ($(this).val() === 'nao') {
+                $('#horariopartogroup').hide();
+            } else {
+                $('#horariopartogroup').show();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#sexo').change(function () {
+            if ($(this).val() === 'masculino') {
+                $('#anamnesegestacional').hide();
+            } else {
+                $('#anamnesegestacional').show();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#idadepaci').change(function () {
+            if ($(this).val() === 'menos5') {
+                $('#aberturaocu').hide();
+            } else {
+                $('#aberturaocu').show();
+            }
+        });
+    });
+</script>
 
 <body>
     <!-- Header -->
@@ -79,25 +128,25 @@
             font-family: 'Pixelify Sans', cursive;">Informações</h1>
 
             <!-- Primeira Imformação -->
+            <form action="processamentos.php">
+                <div class="accordion" id="sec__accordion">
 
-            <div class="accordion" id="sec__accordion">
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading1">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                            <i class="bi bi-truck-flatbed"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">INFORMAÇÕES
-                                DO PACIENTE</span>
-                        </button>
-                    </h2>
-                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline" role="group">
-                                <h1>Registro de Paciente</h1>
-                                <form action="#" method="post">
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true"
+                                aria-controls="collapse1">
+                                <i class="bi bi-truck-flatbed"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">INFORMAÇÕES
+                                    DO PACIENTE</span>
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline" role="group">
+                                    <h1>Registro de Paciente</h1>
                                     <div class="form-group">
                                         <label for="data">Data:</label>
                                         <input type="date" id="data" name="data" required>
@@ -141,1310 +190,1438 @@
                                         <label for="local_ocorrencia">Local da Ocorrência:</label>
                                         <input type="text" id="local_ocorrencia" name="local_ocorrencia" required>
                                     </div>
-                                    <button type="submit">Registrar</button>
-                                </form>
-
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- Segunda Imformação  -->
+                    <!-- Segunda Imformação  -->
 
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading2">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            <i class="bi bi-arrow-return-left"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO
-                                DE OCORRÈNCIA</span>
-                        </button>
-                    </h2>
-                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <!-- Linha 1° -->
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="causado_por_animais" type="checkbox" class="btn-check"
-                                            id="btncheck2_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_1">Causado por
-                                            Animais</label>
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                aria-controls="collapse2">
+                                <i class="bi bi-arrow-return-left"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">TIPO
+                                    DE OCORRÈNCIA</span>
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <!-- Linha 1° -->
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="causado_por_animais" type="checkbox" class="btn-check"
+                                                id="btncheck2_1" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_1">Causado por
+                                                Animais</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="por_meio_de_transporte" type="checkbox" class="btn-check"
+                                                id="btncheck2_2" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_2">Com meio de
+                                                Transporte</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="desmoronamento/deslizamento" type="checkbox" class="btn-check"
+                                                id="btncheck2_3" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_3">Desmoronamento
+                                                Deslizamento</label>
+                                        </div>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="por_meio_de_transporte" type="checkbox" class="btn-check"
-                                            id="btncheck2_2" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_2">Com meio de
-                                            Transporte</label>
+                                    <!-- Linha 2° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="emergencia_medica" type="checkbox" class="btn-check"
+                                                id="btncheck2_4" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_4">Emergência
+                                                médica</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck2_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_5">Queda de altura de
+                                                2m</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="tentativa_suicidio" type="checkbox" class="btn-check"
+                                                id="btncheck2_6" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_6">Tentativa de
+                                                suicídio</label>
+                                        </div>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="desmoronamento/deslizamento" type="checkbox" class="btn-check"
-                                            id="btncheck2_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_3">Desmoronamento
-                                            Deslizamento</label>
+                                    <!-- Linha 3° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_propria_altura" type="checkbox" class="btn-check"
+                                                id="btncheck2_7" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_7">Queda própia
+                                                Altura</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="afogamento" type="checkbox" class="btn-check" id="btncheck2_8"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_8">Afogamento</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="agressao" type="checkbox" class="btn-check" id="btncheck2_9"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_9">Agressão</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 4° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="atropelamento" type="checkbox" class="btn-check"
+                                                id="btncheck2_10" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_10">Atropelamento</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="choque_eletrico" type="checkbox" class="btn-check"
+                                                id="btncheck2_11" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_11">Choque
+                                                eléctrico</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="desabamento" type="checkbox" class="btn-check"
+                                                id="btncheck2_12" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_12">Desabamento</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 5° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="domestico" type="checkbox" class="btn-check" id="btncheck2_13"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_13">Doméstico</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="" type="checkbox" class="btn-check" id="btncheck2_14"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_14">Esportivo</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="intoxicao" type="checkbox" class="btn-check" id="btncheck2_15"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_15">Intoxicação</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 6° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_bicicleta" type="checkbox" class="btn-check"
+                                                id="btncheck2_16" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_16">Queda
+                                                bibicleta</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_moto" type="checkbox" class="btn-check" id="btncheck2_17"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_17">Queda moto</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_nivel_<2M" type="checkbox" class="btn-check"
+                                                id="btncheck2_18" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_18">Queda nivel
+                                                2m</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 7° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="" type="checkbox" class="btn-check" id="btncheck2_19"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_19">Trabalho</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="" type="checkbox" class="btn-check" id="btncheck2_20"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_20">Transferência</label>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <!-- Linha 2° -->
+                    <!-- Terceira Imformação  -->
 
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="emergencia_medica" type="checkbox" class="btn-check"
-                                            id="btncheck2_4" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_4">Emergência
-                                            médica</label>
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                aria-controls="collapse3">
+                                <i class="bi bi-arrow-return-left"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SUSPEITOS
+                                    PROBLEMOS
+                                    ENCONTRADOS</span>
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <!-- Linha 1° -->
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck3_1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_1">PSIQUIÁTRICO</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input name="" type="checkbox" class="btn-check" id="btncheck3_2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_2">OBSTETRICO</label>
+                                        </div>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck2_5"
+                                    <!-- Linha 2° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck3_3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_3">RESPIRATORIO</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck3_4"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_4">TRANSPORTE</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 3° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck3_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_5">DIABETES</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck3_6"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck3_6">OUTROS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cuarta Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                aria-controls="collapse4">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SINAIS
+                                    E
+                                    SÍNTOMAS</span>
+                            </button>
+                        </h2>
+
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <div class="btn-group d-inline" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="abdomen_sensivel/rigido" type="checkbox" class="btn-check"
+                                            id="btncheck4_1" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_1">Abdomen
+                                            Sensivel/Rigido</label>
+
+                                        <input name="afundamento_cranio" type="checkbox" class="btn-check"
+                                            id="btncheck4_2" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_2">Afundamento de
+                                            Cranio</label>
+
+                                        <input name="avaliacao_dirigida" type="checkbox" class="btn-check"
+                                            id="btncheck4_3" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_3">Avaliação Dirigida</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="agitacao" type="checkbox" class="btn-check" id="btncheck4_4"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_5">Queda de altura de
-                                            2m</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_4">Agitação</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="tentativa_suicidio" type="checkbox" class="btn-check"
-                                            id="btncheck2_6" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_6">Tentativa de
-                                            suicídio</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 3° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_propria_altura" type="checkbox" class="btn-check"
-                                            id="btncheck2_7" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_7">Queda própia
-                                            Altura</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="afogamento" type="checkbox" class="btn-check" id="btncheck2_8"
+                                        <input name="amnesia" type="checkbox" class="btn-check" id="btncheck4_5"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_8">Afogamento</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_5">Amnesia</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="agressao" type="checkbox" class="btn-check" id="btncheck2_9"
+                                        <input name="angina_de_peito" type="checkbox" class="btn-check" id="btncheck4_6"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_9">Agressão</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_6">Angina de Peito</label>
                                     </div>
-                                </div>
 
-                                <!-- Linha 4° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="atropelamento" type="checkbox" class="btn-check" id="btncheck2_10"
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="apineia" type="checkbox" class="btn-check" id="btncheck4_7"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_10">Atropelamento</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_7">Apneia</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="choque_eletrico" type="checkbox" class="btn-check"
-                                            id="btncheck2_11" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_11">Choque
-                                            eléctrico</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="desabamento" type="checkbox" class="btn-check" id="btncheck2_12"
+                                        <input name="bradicadia" type="checkbox" class="btn-check" id="btncheck4_8"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_12">Desabamento</label>
-                                    </div>
-                                </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_8">Bradicardia</label>
 
-                                <!-- Linha 5° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="domestico" type="checkbox" class="btn-check" id="btncheck2_13"
+                                        <input name="bradipneia" type="checkbox" class="btn-check" id="btncheck4_9"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_13">Doméstico</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_9">Bradipneia</label>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="" type="checkbox" class="btn-check" id="btncheck2_14"
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="bronco-aspirando" type="checkbox" class="btn-check"
+                                            id="btncheck4_10" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_10">Bronco Aspirando</label>
+
+                                        <input name="cefaleia" type="checkbox" class="btn-check" id="btncheck4_11"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_14">Esportivo</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_11">Cefaleia</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="intoxicao" type="checkbox" class="btn-check" id="btncheck2_15"
+                                        <input name="cianose_labial" type="checkbox" class="btn-check" id="btncheck4_12"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_15">Intoxicação</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 6° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_bicicleta" type="checkbox" class="btn-check"
-                                            id="btncheck2_16" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_16">Queda
-                                            bibicleta</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_12">Cianose Labial</label>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_moto" type="checkbox" class="btn-check" id="btncheck2_17"
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="cianose_extremidade" type="checkbox" class="btn-check"
+                                            id="btncheck4_13" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_13">Cianose
+                                            Extremidade</label>
+
+                                        <input name="convulsao" type="checkbox" class="btn-check" id="btncheck4_14"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_17">Queda moto</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_14">Convulsão</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_nivel_<2M" type="checkbox" class="btn-check"
-                                            id="btncheck2_18" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_18">Queda nivel
-                                            2m</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 7° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="" type="checkbox" class="btn-check" id="btncheck2_19"
+                                        <input name="descorticacao" type="checkbox" class="btn-check" id="btncheck4_15"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_19">Trabalho</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_15">Descorticação</label>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="" type="checkbox" class="btn-check" id="btncheck2_20"
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="simples" type="checkbox" class="btn-check" id="btncheck4_16"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_20">Transferência</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_16">Simples</label>
 
-                <!-- Terceira Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading3">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                            <i class="bi bi-arrow-return-left"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SUSPEITOS
-                                PROBLEMOS
-                                ENCONTRADOS</span>
-                        </button>
-                    </h2>
-                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <!-- Linha 1° -->
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck3_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_1">PSIQUIÁTRICO</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-6">
-                                        <input name="" type="checkbox" class="btn-check" id="btncheck3_2"
+                                        <input name="deformidade" type="checkbox" class="btn-check" id="btncheck4_17"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_2">OBSTETRICO</label>
-                                    </div>
-                                </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_17">Deformidade</label>
 
-                                <!-- Linha 2° -->
-
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck3_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_3">RESPIRATORIO</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck3_4" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_4">TRANSPORTE</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 3° -->
-
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck3_5" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_5">DIABETES</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck3_6" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck3_6">OUTROS</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cuarta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading4">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700; font-weight: 700;">SINAIS
-                                E
-                                SÍNTOMAS</span>
-                        </button>
-                    </h2>
-
-                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                            <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="abdomen_sensivel/rigido" type="checkbox" class="btn-check"
-                                        id="btncheck4_1" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_1">Abdomen
-                                        Sensivel/Rigido</label>
-
-                                    <input name="afundamento_cranio" type="checkbox" class="btn-check" id="btncheck4_2"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_2">Afundamento de
-                                        Cranio</label>
-
-                                    <input name="avaliacao_dirigida" type="checkbox" class="btn-check" id="btncheck4_3"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_3">Avaliação Dirigida</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="agitacao" type="checkbox" class="btn-check" id="btncheck4_4"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_4">Agitação</label>
-
-                                    <input name="amnesia" type="checkbox" class="btn-check" id="btncheck4_5"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_5">Amnesia</label>
-
-                                    <input name="angina_de_peito" type="checkbox" class="btn-check" id="btncheck4_6"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_6">Angina de Peito</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="apineia" type="checkbox" class="btn-check" id="btncheck4_7"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_7">Apneia</label>
-
-                                    <input name="bradicadia" type="checkbox" class="btn-check" id="btncheck4_8"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_8">Bradicardia</label>
-
-                                    <input name="bradipneia" type="checkbox" class="btn-check" id="btncheck4_9"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_9">Bradipneia</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="bronco-aspirando" type="checkbox" class="btn-check" id="btncheck4_10"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_10">Bronco Aspirando</label>
-
-                                    <input name="cefaleia" type="checkbox" class="btn-check" id="btncheck4_11"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_11">Cefaleia</label>
-
-                                    <input name="cianose_labial" type="checkbox" class="btn-check" id="btncheck4_12"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_12">Cianose Labial</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="cianose_extremidade" type="checkbox" class="btn-check"
-                                        id="btncheck4_13" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_13">Cianose
-                                        Extremidade</label>
-
-                                    <input name="convulsao" type="checkbox" class="btn-check" id="btncheck4_14"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_14">Convulsão</label>
-
-                                    <input name="descorticacao" type="checkbox" class="btn-check" id="btncheck4_15"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_15">Descorticação</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="simples" type="checkbox" class="btn-check" id="btncheck4_16"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_16">Simples</label>
-
-                                    <input name="deformidade" type="checkbox" class="btn-check" id="btncheck4_17"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_17">Deformidade</label>
-
-                                    <input name="descerebracao" type="checkbox" class="btn-check" id="btncheck4_18"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_18">Descerberação</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="desmaio" type="checkbox" class="btn-check" id="btncheck4_19"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_19">Desmaio</label>
-
-                                    <input name="desvio_traqueia" type="checkbox" class="btn-check" id="btncheck4_20"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_20">Desvio Traqueia</label>
-
-                                    <input name="dispneia" type="checkbox" class="btn-check" id="btncheck4_21"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_21">Dispneia</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="dor_local" type="checkbox" class="btn-check" id="btncheck4_22"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_22">Dor Local</label>
-
-                                    <input name="adema_generalizada" type="checkbox" class="btn-check" id="btncheck4_23"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_23">Adema
-                                        Generalizada</label>
-
-                                    <input name="adema_localizada" type="checkbox" class="btn-check" id="btncheck4_24"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_24">Adema Localizada</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="enfisema_subcutaneo" type="checkbox" class="btn-check"
-                                        id="btncheck4_25" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_25">Enfisema
-                                        Subcutaneo</label>
-
-                                    <input name="estade_jugular" type="checkbox" class="btn-check" id="btncheck4_26"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_26">Estase Jugular</label>
-
-                                    <input name="face_palida" type="checkbox" class="btn-check" id="btncheck4_27"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_27">Face Pálida</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="hemorragia_interna" type="checkbox" class="btn-check" id="btncheck4_28"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_28">Hemorragia
-                                        Interna</label>
-
-                                    <input name="hipertensao" type="checkbox" class="btn-check" id="btncheck4_29"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_29">Hipertensão</label>
-
-                                    <input name="hipotensia" type="checkbox" class="btn-check" id="btncheck4_30"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_30">Hipotensia</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="nauseas_vomitos" type="checkbox" class="btn-check" id="btncheck4_31"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_31">Nauseas e Vomitos</label>
-
-                                    <input name="nasoragia" type="checkbox" class="btn-check" id="btncheck4_32"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_32">Nasoragia</label>
-
-                                    <input name="obito" type="checkbox" class="btn-check" id="btncheck4_33"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_33">Óbito</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="otorreia" type="checkbox" class="btn-check" id="btncheck4_34"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_34">Otorreia</label>
-
-                                    <input name="otorragia" type="checkbox" class="btn-check" id="btncheck4_35"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_35">Otorragia</label>
-
-                                    <input name="o_v_a_c_e" type="checkbox" class="btn-check" id="btncheck4_36"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_36">O.V.A.C.E</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="parada_cardiaca" type="checkbox" class="btn-check" id="btncheck4_37"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_37">Parada Cardiaca</label>
-
-                                    <input name="parada_respiratoria" type="checkbox" class="btn-check"
-                                        id="btncheck4_38" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_38">Parada
-                                        Respiratoria</label>
-
-                                    <input name="priaprismo" type="checkbox" class="btn-check" id="btncheck4_39"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_39">Priaprismo</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="prurido_pele" type="checkbox" class="btn-check" id="btncheck4_40"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_40">Prurido na Pele</label>
-
-                                    <input name="pupilas_ansocoria" type="checkbox" class="btn-check" id="btncheck4_41"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_41">Pupilas
-                                        Ansiocoria</label>
-
-                                    <input name="pupilas_isocoria" type="checkbox" class="btn-check" id="btncheck4_42"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_42">Pupilas Isocoria</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="pupilas_miose" type="checkbox" class="btn-check" id="btncheck4_43"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_43">Pupilas Miose</label>
-
-                                    <input name="pupilas_midriase" type="checkbox" class="btn-check" id="btncheck4_44"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_44">Pupilas Midriase</label>
-
-                                    <input name="pupilas_regente" type="checkbox" class="btn-check" id="btncheck4_45"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_45">Pupilas Reagente</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="pupilas_n_reagente" type="checkbox" class="btn-check" id="btncheck4_46"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_46">Pupilas não
-                                        Reagentes</label>
-
-                                    <input name="sede" type="checkbox" class="btn-check" id="btncheck4_47"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_47">Sede</label>
-
-                                    <input name="sinal_battle" type="checkbox" class="btn-check" id="btncheck4_48"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_48">Sinal Battle</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="sinal_guaxinim" type="checkbox" class="btn-check" id="btncheck4_49"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_49">Sinal Guaxinim</label>
-
-                                    <input name="sudorese" type="checkbox" class="btn-check" id="btncheck4_50"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_50">Sudorese</label>
-
-                                    <input name="taquiapneia" type="checkbox" class="btn-check" id="btncheck4_51"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_51">Taquiapneia</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="taquicardia" type="checkbox" class="btn-check" id="btncheck4_52"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_52">Taquicardia</label>
-
-                                    <input name="tontura" type="checkbox" class="btn-check" id="btncheck4_53"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_53">Tontura</label>
-
-                                    <input name="outro_sinais" type="checkbox" class="btn-check" id="btncheck4_54"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck4_54">Outros</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quinta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading5">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">LOCALIZAÇÃO DOS
-                                TRAUMAS</span>
-                        </button>
-                    </h2>
-                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <map name="meu_mapeamento">
-                                <area href="#" shape="poly" coords="168,221,180,217,184,225,170,229"
-                                    onclick="Gravar('Frente pulso esquerdo',168,221,180,217,184,225,170,229);">
-
-                                <area href="#" shape="poly"
-                                    coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
-                                    onclick="Gravar('Pe esquerdo',119,377,130,378,131,386,140,394,138,398,119,398,116,395,116,384);">
-                            </map>
-
-                            <div class="d-flex justify-content-center">
-                                <img src="/IMG/Corpo.png" class="img-fluid rounded-4" usemap="#meu_mapeamento">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sexta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading6">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÂO DO
-                                PACIENTE</span>
-                        </button>
-                    </h2>
-                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <!-- Linha 1° -->
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="causado_por_animais" type="checkbox" class="btn-check"
-                                            id="btncheck6_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck6_1">Causado por
-                                            Animais</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="por_meio_de_transporte" type="checkbox" class="btn-check"
-                                            id="btncheck6_2" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck6_2">Com meio de
-                                            Transporte</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="desmoronamento/deslizamento" type="checkbox" class="btn-check"
-                                            id="btncheck6_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck6_3">Desmoronamento
-                                            Deslizamento</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 2° -->
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="emergencia_medica" type="checkbox" class="btn-check"
-                                            id="btncheck2_4" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_4">Emergência
-                                            médica</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck2_5"
+                                        <input name="descerebracao" type="checkbox" class="btn-check" id="btncheck4_18"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_5">Queda de altura de
-                                            2m</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_18">Descerberação</label>
                                     </div>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="tentativa_suicidio" type="checkbox" class="btn-check"
-                                            id="btncheck2_6" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck2_6">Tentativa de
-                                            suicídio</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Septima Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading7">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS
-                                VITAIS</span>
-                        </button>
-                    </h2>
-                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Oitava Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading8">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">FORMA DE
-                                CONDUÇÃO</span>
-                        </button>
-                    </h2>
-                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input name="emergencia_medica" type="checkbox" class="btn-check"
-                                            id="btncheck8_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck8_1">Deitado</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck8_2"
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="desmaio" type="checkbox" class="btn-check" id="btncheck4_19"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck8_2">Semi-Sentado</label>
-                                    </div>
+                                        <label class="btn btn-outline-dark" for="btncheck4_19">Desmaio</label>
 
-                                    <div class="p-2 g-col-4">
-                                        <input name="tentativa_suicidio" type="checkbox" class="btn-check"
-                                            id="btncheck8_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck8_3">Sentado</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                        <input name="desvio_traqueia" type="checkbox" class="btn-check"
+                                            id="btncheck4_20" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_20">Desvio Traqueia</label>
 
-                <!-- Nona Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading9">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">DECISÃO
-                                TRANSPORTE</span>
-                        </button>
-                    </h2>
-                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                        <img class="img-fluid" src="/ASSETS/Smiley-1.svg" width="300" alt="">
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                        <img class="img-fluid" src="/ASSETS/Smiley-2.svg" width="300" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <div class="p-2 g-col-4">
-                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                        <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
-                                    </div>
-
-                                    <div class="p-2 g-col-4">
-                                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                        <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading10">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">VÍTIMA ERA</span>
-                        </button>
-                    </h2>
-                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-flex justify-content-center">
-                            <div class="btn-group d-inline-block" role="group"
-                                aria-label="Basic checkbox toggle button group">
-
-                                <!-- Linha 1° -->
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_1">Ciclista</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-6">
-                                        <input name="" type="checkbox" class="btn-check" id="btncheck10_2"
+                                        <input name="dispneia" type="checkbox" class="btn-check" id="btncheck4_21"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_2">Condutor de Carro</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 2° -->
-
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_3">Condutor de Moto</label>
+                                        <label class="btn btn-outline-dark" for="btncheck4_21">Dispneia</label>
                                     </div>
 
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_4" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_4">Clínico</label>
-                                    </div>
-                                </div>
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="dor_local" type="checkbox" class="btn-check" id="btncheck4_22"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_22">Dor Local</label>
 
-                                <!-- Linha 3° -->
+                                        <input name="adema_generalizada" type="checkbox" class="btn-check"
+                                            id="btncheck4_23" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_23">Adema
+                                            Generalizada</label>
 
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_5" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_5">Gestante</label>
-                                    </div>
-
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_6" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_6">Trauma</label>
-                                    </div>
-                                </div>
-
-                                <!-- Linha 4° -->
-
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_7" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_7">Pass banco de
-                                            Frente</label>
+                                        <input name="adema_localizada" type="checkbox" class="btn-check"
+                                            id="btncheck4_24" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_24">Adema Localizada</label>
                                     </div>
 
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_8" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_8">Pass banco de
-                                            Atras</label>
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="enfisema_subcutaneo" type="checkbox" class="btn-check"
+                                            id="btncheck4_25" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_25">Enfisema
+                                            Subcutaneo</label>
+
+                                        <input name="estade_jugular" type="checkbox" class="btn-check" id="btncheck4_26"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_26">Estase Jugular</label>
+
+                                        <input name="face_palida" type="checkbox" class="btn-check" id="btncheck4_27"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_27">Face Pálida</label>
                                     </div>
-                                </div>
 
-                                <!-- Linha 5° -->
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="hemorragia_interna" type="checkbox" class="btn-check"
+                                            id="btncheck4_28" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_28">Hemorragia
+                                            Interna</label>
 
-                                <div class="row-cols-12 d-flex justify-content-center grid gap-5">
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_9" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_9">Pass Moto</label>
+                                        <input name="hipertensao" type="checkbox" class="btn-check" id="btncheck4_29"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_29">Hipertensão</label>
+
+                                        <input name="hipotensia" type="checkbox" class="btn-check" id="btncheck4_30"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_30">Hipotensia</label>
                                     </div>
 
-                                    <div class="p-2 g-col-6">
-                                        <input type="checkbox" class="btn-check" id="btncheck10_10" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck10_10">Pedestre</label>
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="nauseas_vomitos" type="checkbox" class="btn-check"
+                                            id="btncheck4_31" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_31">Nauseas e Vomitos</label>
+
+                                        <input name="nasoragia" type="checkbox" class="btn-check" id="btncheck4_32"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_32">Nasoragia</label>
+
+                                        <input name="obito" type="checkbox" class="btn-check" id="btncheck4_33"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_33">Óbito</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="otorreia" type="checkbox" class="btn-check" id="btncheck4_34"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_34">Otorreia</label>
+
+                                        <input name="otorragia" type="checkbox" class="btn-check" id="btncheck4_35"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_35">Otorragia</label>
+
+                                        <input name="o_v_a_c_e" type="checkbox" class="btn-check" id="btncheck4_36"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_36">O.V.A.C.E</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="parada_cardiaca" type="checkbox" class="btn-check"
+                                            id="btncheck4_37" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_37">Parada Cardiaca</label>
+
+                                        <input name="parada_respiratoria" type="checkbox" class="btn-check"
+                                            id="btncheck4_38" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_38">Parada
+                                            Respiratoria</label>
+
+                                        <input name="priaprismo" type="checkbox" class="btn-check" id="btncheck4_39"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_39">Priaprismo</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="prurido_pele" type="checkbox" class="btn-check" id="btncheck4_40"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_40">Prurido na Pele</label>
+
+                                        <input name="pupilas_ansocoria" type="checkbox" class="btn-check"
+                                            id="btncheck4_41" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_41">Pupilas
+                                            Ansiocoria</label>
+
+                                        <input name="pupilas_isocoria" type="checkbox" class="btn-check"
+                                            id="btncheck4_42" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_42">Pupilas Isocoria</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="pupilas_miose" type="checkbox" class="btn-check" id="btncheck4_43"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_43">Pupilas Miose</label>
+
+                                        <input name="pupilas_midriase" type="checkbox" class="btn-check"
+                                            id="btncheck4_44" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_44">Pupilas Midriase</label>
+
+                                        <input name="pupilas_regente" type="checkbox" class="btn-check"
+                                            id="btncheck4_45" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_45">Pupilas Reagente</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="pupilas_n_reagente" type="checkbox" class="btn-check"
+                                            id="btncheck4_46" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_46">Pupilas não
+                                            Reagentes</label>
+
+                                        <input name="sede" type="checkbox" class="btn-check" id="btncheck4_47"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_47">Sede</label>
+
+                                        <input name="sinal_battle" type="checkbox" class="btn-check" id="btncheck4_48"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_48">Sinal Battle</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="sinal_guaxinim" type="checkbox" class="btn-check" id="btncheck4_49"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_49">Sinal Guaxinim</label>
+
+                                        <input name="sudorese" type="checkbox" class="btn-check" id="btncheck4_50"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_50">Sudorese</label>
+
+                                        <input name="taquiapneia" type="checkbox" class="btn-check" id="btncheck4_51"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_51">Taquiapneia</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="taquicardia" type="checkbox" class="btn-check" id="btncheck4_52"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_52">Taquicardia</label>
+
+                                        <input name="tontura" type="checkbox" class="btn-check" id="btncheck4_53"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_53">Tontura</label>
+
+                                        <input name="outro_sinais" type="checkbox" class="btn-check" id="btncheck4_54"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck4_54">Outros</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Dezima Primeira Imformação  -->
+                    <!-- Quinta Imformação  -->
 
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading11">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">OBJETOS
-                                RECOLHIDOS</span>
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
+                                aria-controls="collapse5">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">LOCALIZAÇÃO DOS
+                                    TRAUMAS</span>
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <map name="meu_mapeamento">
+                                    <area href="#" shape="poly" coords="168,221,180,217,184,225,170,229"
+                                        onclick="Gravar('Frente pulso esquerdo',168,221,180,217,184,225,170,229);">
+
+                                    <area href="#" shape="poly"
+                                        coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
+                                        onclick="Gravar('Pe esquerdo',119,377,130,378,131,386,140,394,138,398,119,398,116,395,116,384);">
+                                </map>
+
+                                <div class="d-flex justify-content-center">
+                                    <img src="/IMG/Corpo.png" class="img-fluid rounded-4" usemap="#meu_mapeamento">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sexta Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false"
+                                aria-controls="collapse6">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÂO DO
+                                    PACIENTE (GLASGOW)</span>
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <!-- Linha 1° -->
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3" id="idadepaci">
+                                        <div class="p-2 g-col-4">
+                                            <input name="causado_por_animais" type="checkbox" class="btn-check" value="mais5"
+                                                id="btncheck6_1" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck6_1">Mais de 5 Anos</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="por_meio_de_transporte" type="checkbox" class="btn-check" value="menos5"
+                                                id="btncheck6_2" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck6_2">Menos de 5 Anos</label>
+                                        </div>
+
+                                       
+                                    </div>
+
+                                    <!-- Linha 2° -->
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3" style="display: none;" id="aberturaocu">
+                                        <div class="p-2 g-col-4">
+                                            <input name="emergencia_medica" type="checkbox" class="btn-check"
+                                                id="btncheck2_4" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_4">Abertura Ocular</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck2_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_5">Queda de altura de
+                                                2m</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="tentativa_suicidio" type="checkbox" class="btn-check"
+                                                id="btncheck2_6" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck2_6">Tentativa de
+                                                suicídio</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Septima Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false"
+                                aria-controls="collapse7">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">SINAIS
+                                    VITAIS</span>
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oitava Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading8">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false"
+                                aria-controls="collapse8">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">FORMA DE
+                                    CONDUÇÃO</span>
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input name="emergencia_medica" type="checkbox" class="btn-check"
+                                                id="btncheck8_1" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck8_1">Deitado</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck8_2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck8_2">Semi-Sentado</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input name="tentativa_suicidio" type="checkbox" class="btn-check"
+                                                id="btncheck8_3" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck8_3">Sentado</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nona Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading9">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false"
+                                aria-controls="collapse9">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">DECISÃO
+                                    TRANSPORTE</span>
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                            <img class="img-fluid" src="/ASSETS/Smiley-1.svg" width="300" alt="">
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                            <img class="img-fluid" src="/ASSETS/Smiley-2.svg" width="300" alt="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <div class="p-2 g-col-4">
+                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                            <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                        </div>
+
+                                        <div class="p-2 g-col-4">
+                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                                            <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading10">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false"
+                                aria-controls="collapse10">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">VÍTIMA ERA</span>
+                            </button>
+                        </h2>
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+
+                                    <!-- Linha 1° -->
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_1">Ciclista</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input name="" type="checkbox" class="btn-check" id="btncheck10_2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_2">Condutor de
+                                                Carro</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 2° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_3">Condutor de
+                                                Moto</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_4"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_4">Clínico</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 3° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_5">Gestante</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_6"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_6">Trauma</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 4° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_7"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_7">Pass banco de
+                                                Frente</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_8"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_8">Pass banco de
+                                                Atras</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Linha 5° -->
+
+                                    <div class="row-cols-12 d-flex justify-content-center grid gap-5">
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_9"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_9">Pass Moto</label>
+                                        </div>
+
+                                        <div class="p-2 g-col-6">
+                                            <input type="checkbox" class="btn-check" id="btncheck10_10"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck10_10">Pedestre</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Primeira Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading11">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false"
+                                aria-controls="collapse11">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">OBJETOS
+                                    RECOLHIDOS</span>
+                            </button>
+                        </h2>
+                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Objetos</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Segunda Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading12">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false"
+                                aria-controls="collapse12">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">PROCEDIMENTOS
+                                    EFETUADOS</span>
+                            </button>
+                        </h2>
+
+                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="btn-group d-inline" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck12.1"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.1">Aspiração</label>
+
+                                        <input name="avaliacao_inicial" type="checkbox" class="btn-check"
+                                            id="btncheck12.2" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.2">Avaliação
+                                            Inicial</label>
+
+                                        <input name="avaliacao_dirigida" type="checkbox" class="btn-check"
+                                            id="btncheck12.3" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.3">Avaliação
+                                            Dirigida</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="avaliacao_continua" type="checkbox" class="btn-check"
+                                            id="btncheck12.4" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.4">Avaliação
+                                            Continuada</label>
+
+                                        <input name="chave_rautek" type="checkbox" class="btn-check" id="btncheck12.5"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.5">Chave Rautek</label>
+
+                                        <input name="canula_guedel" type="checkbox" class="btn-check" id="btncheck12.6"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.6">Canula
+                                            Guedel</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="desobstrucao_v_a_" type="checkbox" class="btn-check"
+                                            id="btncheck12.7" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.7">Desobstrução
+                                            V.A</label>
+
+                                        <input name="emprego_d_e_a" type="checkbox" class="btn-check" id="btncheck12.8"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.8">Emprego
+                                            D.E.A</label>
+
+                                        <input name="gerenciamento_risco" type="checkbox" class="btn-check"
+                                            id="btncheck12.9" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.9">Gerenciamento
+                                            Risco</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="limpeza_ferimento" type="checkbox" class="btn-check"
+                                            id="btncheck12.10" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.10">Limpeza de
+                                            Ferimento</label>
+
+                                        <input name="curativo" type="checkbox" class="btn-check" id="btncheck12.11"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.11">Curativo</label>
+
+                                        <input name="compressivo" type="checkbox" class="btn-check" id="btncheck12.12"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.12">Compressivo</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="encravamento" type="checkbox" class="btn-check" id="btncheck12.13"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.13">Encravamento</label>
+
+                                        <input name="ocular" type="checkbox" class="btn-check" id="btncheck12.14"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.14">Ocular</label>
+
+                                        <input name="queimadura" type="checkbox" class="btn-check" id="btncheck12.15"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.15">Queimadura</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="simples" type="checkbox" class="btn-check" id="btncheck12.16"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.16">Simples</label>
+
+                                        <input name="3_pontos" type="checkbox" class="btn-check" id="btncheck12.17"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.17">3 Pontos</label>
+
+                                        <input name="imobilizacoes" type="checkbox" class="btn-check" id="btncheck12.18"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.18">Imobilizações</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.19"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.19">Membro
+                                            Inf.Direito</label>
+
+                                        <input name="membro_inf_esq" type="checkbox" class="btn-check"
+                                            id="btncheck12.20" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.20">Membro
+                                            Inf.Esquerdo</label>
+
+                                        <input name="membro_sup_dir" type="checkbox" class="btn-check"
+                                            id="btncheck12.21" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.21">Membro
+                                            Sup.Direito</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="membro_sup_esq" type="checkbox" class="btn-check"
+                                            id="btncheck12.22" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.22">Membro
+                                            Sup.Esquerdo</label>
+
+                                        <input name="quadril" type="checkbox" class="btn-check" id="btncheck12.23"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.23">Quadril</label>
+
+                                        <input name="cervical" type="checkbox" class="btn-check" id="btncheck12.24"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.24">Cervical</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="maca_sobre_rodas" type="checkbox" class="btn-check"
+                                            id="btncheck12.25" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.25">Maca Sobre
+                                            Rodas</label>
+
+                                        <input name="macas_rigidas" type="checkbox" class="btn-check" id="btncheck12.26"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.26">Macas
+                                            Rigidas</label>
+
+                                        <input name="ponte" type="checkbox" class="btn-check" id="btncheck12.27"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.27">Ponte</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="retirado_capacete" type="checkbox" class="btn-check"
+                                            id="btncheck12.28" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.28">Retirado
+                                            Capacete</label>
+
+                                        <input name="r_c_p" type="checkbox" class="btn-check" id="btncheck12.29"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.29">R.C.P.</label>
+
+                                        <input name="rolamento_90" type="checkbox" class="btn-check" id="btncheck12.30"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.30">Rolamento
+                                            90°</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.31"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.31">Rolamento
+                                            180°</label>
+
+                                        <input name="tomada_decisao" type="checkbox" class="btn-check"
+                                            id="btncheck12.32" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.32">Tomada de
+                                            Decisão</label>
+
+                                        <input name="tratado_choque" type="checkbox" class="btn-check"
+                                            id="btncheck12.33" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.33">Tratado de
+                                            Choque</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="uso_canula" type="checkbox" class="btn-check" id="btncheck12.34"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.34">Uso Canula</label>
+
+                                        <input name="uso_colar" type="checkbox" class="btn-check" id="btncheck12.35"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.35">Uso Colar</label>
+
+                                        <input name="uso_ked" type="checkbox" class="btn-check" id="btncheck12.36"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.36">Uso Ked</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="uso_ttf" type="checkbox" class="btn-check" id="btncheck12.37"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.37">Uso TTF</label>
+
+                                        <input name="ventilacao_suporte" type="checkbox" class="btn-check"
+                                            id="btncheck12.38" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.38">Ventilção
+                                            Suporte</label>
+
+                                        <input name="oxigeniterapia" type="checkbox" class="btn-check"
+                                            id="btncheck12.39" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.39">Oxigenioterapia</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="renimador" type="checkbox" class="btn-check" id="btncheck12.40"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.40">Reanimador</label>
+
+                                        <input name="meios_auxiliares" type="checkbox" class="btn-check"
+                                            id="btncheck12.41" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.41">Meios
+                                            Auxiliares</label>
+
+                                        <input name="celesc" type="checkbox" class="btn-check" id="btncheck12.42"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.42">Celesc</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="def_civil" type="checkbox" class="btn-check" id="btncheck12.43"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.43">Def.Civil</label>
+
+                                        <input name="igp_pc" type="checkbox" class="btn-check" id="btncheck12.44"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.44">IGP PC</label>
+
+                                        <input name="policia_civil" type="checkbox" class="btn-check" id="btncheck12.45"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.45">Policia
+                                            Civil</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="policial_militar" type="checkbox" class="btn-check"
+                                            id="btncheck12.46" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.46">Policia
+                                            Militar</label>
+
+                                        <input name="policial_pre" type="checkbox" class="btn-check" id="btncheck12.47"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.47">Policia PRE</label>
+
+                                        <input name="policia_prf" type="checkbox" class="btn-check" id="btncheck12.48"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.48">Policia PRF</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="samu" type="checkbox" class="btn-check" id="btncheck12.49"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.49">SAMU</label>
+
+                                        <input name="usa" type="checkbox" class="btn-check" id="btncheck12.50"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.50">USA</label>
+
+                                        <input name="usb" type="checkbox" class="btn-check" id="btncheck12.51"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.51">USB</label>
+                                    </div>
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
+                                        <input name="cit" type="checkbox" class="btn-check" id="btncheck12.52"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.52">CIT</label>
+
+                                        <input name="outro" type="checkbox" class="btn-check" id="btncheck12.53"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck12.53">Outro</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Terceira Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading13">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false"
+                                aria-controls="collapse13">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
+                                    UTILIZADOS DESCARÀVEL</span>
+                            </button>
+                        </h2>
+                        <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        ATADURAS
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        CATETER TP.OCÚLOS
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        COMPRESSA COMUM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        KIT´S
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        LUVAS DESCARTÁVEIS
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        MASCARA DESCARTAVEL
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Quarta Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading14">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false"
+                                aria-controls="collapse14">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
+                                    UTILIZADOS DEIXADO NO HOSPITAL</span>
+                            </button>
+                        </h2>
+                        <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Quinta Imformação  -->
+
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading15">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false"
+                                aria-controls="collapse15">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
+                                    DA EMERGÊNCIA MÉDICA</span>
+                            </button>
+                        </h2>
+                        <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dezima Sexta Imformação  -->                    
+                    <div class="accordion-item rounded-4 my-4" style="display: none;" id="anamnesegestacional">
+                        <h2 class="accordion-header" id="heading16">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
+                                    GESTACIONAL</span>
+                            </button>
+                        </h2>
+                        <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="periodoGestacao">Período da Gestação:</label>
+                                        <input type="text" class="form-control" id="periodoGestacao"
+                                            placeholder="Informe o período da gestação">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="preNatal">Fez Pré-Natal?</label>
+                                        <select class="form-control" id="preNatal">
+                                            <option value="nao">Não</option>
+                                            <option value="sim">Sim</option>
+                                            
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group" id="nomedomedicogroup" style="display: none;">
+                                        <label for="nomeMedico">Nome do Médico do Pré-Natal:</label>
+                                        <input type="text" class="form-control" id="nomeMedico"
+                                            placeholder="Informe o nome do médico do pré-natal">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="complicacoes">Existe a Possibilidade de Complicações?</label>
+                                        <select class="form-control" id="complicacoes">
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="primeiroFilho">É o Primeiro Filho?</label>
+                                        <select class="form-control" id="primeiroFilho">
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group" id="quantosFilhosGroup" style="display: none;">
+                                        <label for="quantosFilhos">Quantos Filhos?</label>
+                                        <input type="number" class="form-control" id="quantosFilhos"
+                                            placeholder="Informe o número de filhos">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="horascontracoes">Que Horas Iniciaram as Contrações?</label>
+                                        <input type="text" class="form-control" id="horascontracoes">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tempo das Contrações</label>
+                                        <br>
+                                        <label for="duracao">Duração:</label>
+                                        <input type="text" class="form-control" id="duracao">
+                                        <label for="intervalo">Intervalo:</label>
+                                        <input type="text" class="form-control" id="intervalo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pressao">Sente pressão na região do quadril ou vontade de
+                                            evacuar?</label>
+                                        <select class="form-control" id="pressao">
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ruptura">Já Houve Ruptura da Bolsa?</label>
+                                        <select class="form-control" id="ruptura">
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ruptura">Foi Feita Inspeção Visual?</label>
+                                        <select class="form-control" id="ruptura">
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="parto">Parto Realizado?</label>
+                                        <select class="form-control" id="parto">
+                                            <option value="nao">Não</option>
+                                            <option value="sim">Sim</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group" id="horariopartogroup" style="display: none;">
+                                        <label for="horarioparto">Horário do Parto:</label>
+                                        <input type="time" class="form-control" id="horarioparto">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dezima Septima Imformação  -->
+    
+                    <div class="accordion-item rounded-4 my-4">
+                        <h2 class="accordion-header" id="heading17">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                                <i class="bi bi-percent"></i>
+                                <span class="px-3 text-dark"
+                                    style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO
+                                    CINEMÀTICA</span>
+                            </button>
+                            <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading10"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="btn-group d-inline" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+                                    <div class="row-cols-4 d-flex justify-content-center text-center">
+                                        <input name="ciclista" type="checkbox" class="btn-check" id="btncheck17_1" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_1">Disturbio de Comportamento</label>
+    
+                                        <input name="condutor_moto" name="condutor_moto" type="checkbox" class="btn-check" id="btncheck17_2" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_2">Encontrado de Capacete</label>
+    
+                                        <input name="gestante" type="checkbox" class="btn-check" id="btncheck17_3" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_3">Encontrado de Cinto</label>
+                                    </div>
+                                    <div class="row-cols-4 d-flex justify-content-center text-center">
+                                        <input name="ps_bco_frente" type="checkbox" class="btn-check" id="btncheck17_4" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_4">Para-Brisas Avariado</label>
+    
+                                        <input name="ps_moto" type="checkbox" class="btn-check" id="btncheck17_5" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_5">Caminhando na Cena</label>
+    
+                                        <input name="condutor_carro" type="checkbox" class="btn-check" id="btncheck17_6" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_6">Painel Avariado</label>
+                                    </div>
+                                    <div class="row-cols-4 d-flex justify-content-center text-center">
+                                        <input name="ps_bco_tras" type="checkbox" class="btn-check" id="btncheck17_7" autocomplete="off">
+                                        <label class="btn btn-outline-dark" for="btncheck17_7">Volante Torcido</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <!-- Send Button -->
+                <div class="container d-flex justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-dark btn-lg rounded-5">
+                            <div class="">
+                                <img src="/ASSETS/Arrow.svg" alt="">
+                                Enviar
+                            </div>
                         </button>
-                    </h2>
-                    <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Objetos</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Dezima Segunda Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading12">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">PROCEDIMENTOS
-                                EFETUADOS</span>
-                        </button>
-                    </h2>
-
-                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="btn-group d-inline" role="group"
-                                aria-label="Basic checkbox toggle button group">
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="aspiracao" type="checkbox" class="btn-check" id="btncheck12.1"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.1">Aspiração</label>
-
-                                    <input name="avaliacao_inicial" type="checkbox" class="btn-check" id="btncheck12.2"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.2">Avaliação
-                                        Inicial</label>
-
-                                    <input name="avaliacao_dirigida" type="checkbox" class="btn-check" id="btncheck12.3"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.3">Avaliação
-                                        Dirigida</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="avaliacao_continua" type="checkbox" class="btn-check" id="btncheck12.4"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.4">Avaliação
-                                        Continuada</label>
-
-                                    <input name="chave_rautek" type="checkbox" class="btn-check" id="btncheck12.5"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.5">Chave Rautek</label>
-
-                                    <input name="canula_guedel" type="checkbox" class="btn-check" id="btncheck12.6"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.6">Canula
-                                        Guedel</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="desobstrucao_v_a_" type="checkbox" class="btn-check" id="btncheck12.7"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.7">Desobstrução
-                                        V.A</label>
-
-                                    <input name="emprego_d_e_a" type="checkbox" class="btn-check" id="btncheck12.8"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.8">Emprego
-                                        D.E.A</label>
-
-                                    <input name="gerenciamento_risco" type="checkbox" class="btn-check"
-                                        id="btncheck12.9" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.9">Gerenciamento
-                                        Risco</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="limpeza_ferimento" type="checkbox" class="btn-check" id="btncheck12.10"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.10">Limpeza de
-                                        Ferimento</label>
-
-                                    <input name="curativo" type="checkbox" class="btn-check" id="btncheck12.11"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.11">Curativo</label>
-
-                                    <input name="compressivo" type="checkbox" class="btn-check" id="btncheck12.12"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.12">Compressivo</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="encravamento" type="checkbox" class="btn-check" id="btncheck12.13"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.13">Encravamento</label>
-
-                                    <input name="ocular" type="checkbox" class="btn-check" id="btncheck12.14"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.14">Ocular</label>
-
-                                    <input name="queimadura" type="checkbox" class="btn-check" id="btncheck12.15"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.15">Queimadura</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="simples" type="checkbox" class="btn-check" id="btncheck12.16"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.16">Simples</label>
-
-                                    <input name="3_pontos" type="checkbox" class="btn-check" id="btncheck12.17"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.17">3 Pontos</label>
-
-                                    <input name="imobilizacoes" type="checkbox" class="btn-check" id="btncheck12.18"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.18">Imobilizações</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.19"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.19">Membro
-                                        Inf.Direito</label>
-
-                                    <input name="membro_inf_esq" type="checkbox" class="btn-check" id="btncheck12.20"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.20">Membro
-                                        Inf.Esquerdo</label>
-
-                                    <input name="membro_sup_dir" type="checkbox" class="btn-check" id="btncheck12.21"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.21">Membro
-                                        Sup.Direito</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="membro_sup_esq" type="checkbox" class="btn-check" id="btncheck12.22"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.22">Membro
-                                        Sup.Esquerdo</label>
-
-                                    <input name="quadril" type="checkbox" class="btn-check" id="btncheck12.23"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.23">Quadril</label>
-
-                                    <input name="cervical" type="checkbox" class="btn-check" id="btncheck12.24"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.24">Cervical</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="maca_sobre_rodas" type="checkbox" class="btn-check" id="btncheck12.25"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.25">Maca Sobre
-                                        Rodas</label>
-
-                                    <input name="macas_rigidas" type="checkbox" class="btn-check" id="btncheck12.26"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.26">Macas
-                                        Rigidas</label>
-
-                                    <input name="ponte" type="checkbox" class="btn-check" id="btncheck12.27"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.27">Ponte</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="retirado_capacete" type="checkbox" class="btn-check" id="btncheck12.28"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.28">Retirado
-                                        Capacete</label>
-
-                                    <input name="r_c_p" type="checkbox" class="btn-check" id="btncheck12.29"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.29">R.C.P.</label>
-
-                                    <input name="rolamento_90" type="checkbox" class="btn-check" id="btncheck12.30"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.30">Rolamento
-                                        90°</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="rolamento_180" type="checkbox" class="btn-check" id="btncheck12.31"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.31">Rolamento
-                                        180°</label>
-
-                                    <input name="tomada_decisao" type="checkbox" class="btn-check" id="btncheck12.32"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.32">Tomada de
-                                        Decisão</label>
-
-                                    <input name="tratado_choque" type="checkbox" class="btn-check" id="btncheck12.33"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.33">Tratado de
-                                        Choque</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="uso_canula" type="checkbox" class="btn-check" id="btncheck12.34"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.34">Uso Canula</label>
-
-                                    <input name="uso_colar" type="checkbox" class="btn-check" id="btncheck12.35"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.35">Uso Colar</label>
-
-                                    <input name="uso_ked" type="checkbox" class="btn-check" id="btncheck12.36"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.36">Uso Ked</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="uso_ttf" type="checkbox" class="btn-check" id="btncheck12.37"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.37">Uso TTF</label>
-
-                                    <input name="ventilacao_suporte" type="checkbox" class="btn-check"
-                                        id="btncheck12.38" autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.38">Ventilção
-                                        Suporte</label>
-
-                                    <input name="oxigeniterapia" type="checkbox" class="btn-check" id="btncheck12.39"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.39">Oxigenioterapia</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="renimador" type="checkbox" class="btn-check" id="btncheck12.40"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.40">Reanimador</label>
-
-                                    <input name="meios_auxiliares" type="checkbox" class="btn-check" id="btncheck12.41"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.41">Meios
-                                        Auxiliares</label>
-
-                                    <input name="celesc" type="checkbox" class="btn-check" id="btncheck12.42"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.42">Celesc</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="def_civil" type="checkbox" class="btn-check" id="btncheck12.43"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.43">Def.Civil</label>
-
-                                    <input name="igp_pc" type="checkbox" class="btn-check" id="btncheck12.44"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.44">IGP PC</label>
-
-                                    <input name="policia_civil" type="checkbox" class="btn-check" id="btncheck12.45"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.45">Policia
-                                        Civil</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="policial_militar" type="checkbox" class="btn-check" id="btncheck12.46"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.46">Policia
-                                        Militar</label>
-
-                                    <input name="policial_pre" type="checkbox" class="btn-check" id="btncheck12.47"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.47">Policia PRE</label>
-
-                                    <input name="policia_prf" type="checkbox" class="btn-check" id="btncheck12.48"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.48">Policia PRF</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="samu" type="checkbox" class="btn-check" id="btncheck12.49"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.49">SAMU</label>
-
-                                    <input name="usa" type="checkbox" class="btn-check" id="btncheck12.50"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.50">USA</label>
-
-                                    <input name="usb" type="checkbox" class="btn-check" id="btncheck12.51"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.51">USB</label>
-                                </div>
-
-                                <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                    <input name="cit" type="checkbox" class="btn-check" id="btncheck12.52"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.52">CIT</label>
-
-                                    <input name="outro" type="checkbox" class="btn-check" id="btncheck12.53"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-dark" for="btncheck12.53">Outro</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Terceira Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading13">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
-                                UTILIZADOS DESCARÀVEL</span>
-                        </button>
-                    </h2>
-                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    ATADURAS
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    CATETER TP.OCÚLOS
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    COMPRESSA COMUM
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    KIT´S
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    LUVAS DESCARTÁVEIS
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    MASCARA DESCARTAVEL
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Quarta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading14">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">MATERIAIS
-                                UTILIZADOS DEIXADO NO HOSPITAL</span>
-                        </button>
-                    </h2>
-                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Quinta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading15">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
-                                DA EMERGÊNCIA MÉDICA</span>
-                        </button>
-                    </h2>
-                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Sexta Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading16">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
-                                GESTACIONAL</span>
-                        </button>
-                    </h2>
-                    <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dezima Septima Imformação  -->
-
-                <div class="accordion-item rounded-4 my-4">
-                    <h2 class="accordion-header" id="heading17">
-                        <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
-                            <i class="bi bi-percent"></i>
-                            <span class="px-3 text-dark"
-                                style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO
-                                CINEMÀTICA</span>
-                        </button>
-                    </h2>
-                    <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
-
-            <!-- Send Button -->
-            <div class="container d-flex justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-dark btn-lg rounded-5">
-                        <div class="">
-                            <img src="/ASSETS/Arrow.svg" alt="">
-                            Enviar
-                        </div>
-                    </button>
-                </div>
-            </div>
-
         </section>
     </main>
     <div class="container">
