@@ -780,50 +780,74 @@
                         <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body d-flex justify-content-center">
+
                                 <div class="btn-group d-inline-block" role="group"
                                     aria-label="Basic checkbox toggle button group">
                                     <!-- Linha 1° -->
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3" id="idadepaci">
-                                        <div class="p-2 g-col-4">
-                                            <input name="causado_por_animais" type="checkbox" class="btn-check" value="mais5"
-                                                id="btncheck6_1" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck6_1">Mais de 5 Anos</label>
+
+
+
+                                        
+                                                <input type="radio" class="btn-check" name="tempo" id="maior5"
+                                                    value="mais_que_5_anos" autocomplete="off">
+                                                <label class="btn btn-secondary" for="maior5">Maior que 5 Anos</label>
+
+
+
+
+                                            
+                                            <div >
+                                                <input type="radio" class="btn-check" name="tempo" id="menor5"
+                                                    value="menos_que_5_anos" autocomplete="off">
+                                                <label class="btn btn-secondary" for="menor5">Menor que 5 Anos</label>
+                                            </div>
                                         </div>
 
-                                        <div class="p-2 g-col-4">
-                                            <input name="por_meio_de_transporte" type="checkbox" class="btn-check" value="menos5"
-                                                id="btncheck6_2" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck6_2">Menos de 5 Anos</label>
+                                        <div id="formmenor5" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="ocularmenor5">Abertura Ocular</label>
+                                                <select class="form-control" id="ocularmenor5">
+                                                    <option value="sim">Espontanea</option>
+                                                    <option value="nao">Comando Verbal</option>
+                                                    <option value="nao">Estimulo Doloroso</option>
+                                                    <option value="nao">Comando Ver</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="verbalmenor5">Resposta Verbal</label>
+                                                <select class="form-control" id="verbalmenor5">
+                                                    <option value="sim">Sim</option>
+                                                    <option value="nao">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="motoramenor5">Resposta Motora</label>
+                                                <select class="form-control" id="motoramenor5">
+                                                    <option value="sim">Sim</option>
+                                                    <option value="nao">Não</option>
+                                                </select>
+                                            </div>
                                         </div>
 
-                                       
+                                        <div id="formmaior5" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="menor5group">Campos para menos que 5
+                                                    anos:</label>
+                                                <input type="text" class="form-control" id="menor5group">
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
-                                    <!-- Linha 2° -->
 
-                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3" style="display: none;" id="aberturaocu">
-                                        <div class="p-2 g-col-4">
-                                            <input name="emergencia_medica" type="checkbox" class="btn-check"
-                                                id="btncheck2_4" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck2_4">Abertura Ocular</label>
-                                        </div>
 
-                                        <div class="p-2 g-col-4">
-                                            <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck2_5"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck2_5">Queda de altura de
-                                                2m</label>
-                                        </div>
 
-                                        <div class="p-2 g-col-4">
-                                            <input name="tentativa_suicidio" type="checkbox" class="btn-check"
-                                                id="btncheck2_6" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck2_6">Tentativa de
-                                                suicídio</label>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                
                             </div>
+
                         </div>
                     </div>
 
@@ -912,24 +936,24 @@
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3">
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid" src="/ASSETS/Smiley-1.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-1.svg" width="300" alt="">
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid" src="/ASSETS/Smiley-2.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-2.svg" width="300" alt="">
                                         </div>
                                     </div>
 
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3">
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg" width="300" alt="">
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg" width="300" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -1657,7 +1681,24 @@
         <div class="py-2" style="background-color: #FF0000;"></div>
     </div>
 </body>
+<script>
+    // Adiciona um evento de mudança ao radio button
+    $('input[name="tempo"]').change(function () {
+        // Pega o valor selecionado
+        var selectedValue = $('input[name="tempo"]:checked').val();
 
+        // Esconde todos os formulários
+        $('#formmaior5').hide();
+        $('#formmenor5').hide();
+
+        // Mostra o formulário apropriado com base na seleção
+        if (selectedValue === 'mais_que_5_anos') {
+            $('#formmaior5').show();
+        } else if (selectedValue === 'menos_que_5_anos') {
+            $('#formmenor5').show();
+        }
+    });
+</script>
 </body>
 
 </html>
