@@ -5,6 +5,12 @@ body, html{
     background: #FF0000 !important;
 }
 
+input { 
+    outline: 1px solid black !important;
+    margin-top: -5px !important;
+    margin-bottom: 8px !important;
+}
+
 #user_login{
     height: 520px;
     width: 350px;
