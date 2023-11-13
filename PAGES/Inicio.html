@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
                 </h5>
             </div>
         </div>
-        
+
         <div class="navbar navbar-dark" id="nav__menu">
             <div class="container-fluid" id="nav__container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -65,7 +65,7 @@
 
         <div class="navbar-nav justify-content-end">
             <div class="navbar-nav ml-auto">
-                <a class="" href="/PAGES/Cadastro.html">
+                <a class="" href="/PAGES/Login.html">
                     <img class="" src="/ASSETS/Profile.svg" width="40" height="40" alt="">
                 </a>
             </div>
@@ -102,7 +102,8 @@
                         <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body d-flex justify-content-center">
-                                <div class="btn-group d-inline fw-bold" style="font-family: 'Urbanist', sans-serif;" role="group" id="__form">
+                                <div class="btn-group d-inline fw-bold" style="font-family: 'Urbanist', sans-serif;"
+                                    role="group" id="__form">
                                     <h1>Registro de Paciente</h1>
                                     <div class="form-group">
                                         <label for="data">Data:</label>
@@ -137,15 +138,18 @@
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="acompanhante">Acompanhante:</label>
-                                        <input class="border-1 rounded-2" type="text" id="acompanhante" name="acompanhante">
+                                        <input class="border-1 rounded-2" type="text" id="acompanhante"
+                                            name="acompanhante">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="idade_acompanhante">Idade do Acompanhante:</label>
-                                        <input class="border-1 rounded-2" type="number" id="idade_acompanhante" name="idade_acompanhante">
+                                        <input class="border-1 rounded-2" type="number" id="idade_acompanhante"
+                                            name="idade_acompanhante">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="local_ocorrencia">Local da Ocorrência:</label>
-                                        <input class="border-1 rounded-2" type="text" id="local_ocorrencia" name="local_ocorrencia">
+                                        <input class="border-1 rounded-2" type="text" id="local_ocorrencia"
+                                            name="local_ocorrencia">
                                     </div>
                                 </div>
                             </div>
@@ -362,14 +366,13 @@
                                         <div class="p-2 g-col-6" id="obstetrico">
                                             <div class="form-group">
                                                 <select class="form-control" id="obstetrico_problemas">
-                                                    <option value="obstetrico">Obstétrico</option>
-                                                    <option value="espntanea">Parto Emergencia</option>
-                                                    <option value="comando_verba">Gestante</option>
-                                                    <option value="estimulo_doloso">Hemorragia Excessiva</option>
-                                              
+                                                    <option value="obstetrico">OBSTÉTRICO</option>
+                                                    <option value="espntanea">PARTO EMERGÊNCIA</option>
+                                                    <option value="comando_verba">GESTANTE</option>
+                                                    <option value="estimulo_doloso">HEMORRAGIA EXCESSIVA</option>
                                                 </select>
                                             </div>
-                                    </div>
+                                        </div>
                                     </div>
 
                                     <!-- Linha 2° -->
@@ -440,7 +443,7 @@
                                         <label class="btn btn-outline-dark" for="btncheck4_2">Afundamento de
                                             Cranio</label>
 
-                                    
+
                                     </div>
 
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3">
@@ -707,19 +710,47 @@
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                            <div class="accordion-body d-flex justify-content-center">
                                 <map name="meu_mapeamento">
                                     <area href="#" shape="poly" coords="168,221,180,217,184,225,170,229"
                                         onclick="Gravar('Frente pulso esquerdo',168,221,180,217,184,225,170,229);">
 
                                     <area href="#" shape="poly"
                                         coords="119,377,130,378,131,386,140,394,138,398,119,398116,395,116,384"
-                                        onclick="Gravar('Pe esquerdo',119,377,130,378,131,386,140,394,138,398,119,398,116,395,116,384);">
+                                        onclick="Gravar('Pe esquerdo', );">
                                 </map>
 
-                                <div class="d-flex justify-content-center">
-                                    <img src="/IMG/Corpo.png" class="img-fluid rounded-4" usemap="#meu_mapeamento">
+                                <div class="btn-group d-inline-block" role="group"
+                                    aria-label="Basic checkbox toggle button group">
+
+                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3" id="local">
+                                        <input type="radio" class="btn-check" name="localizacao" id="localizacao_adulto"
+                                            value="adulto" autocomplete="off">
+                                        <label class="btn btn-secondary" for="localizacao_adulto">Adulto</label>
+
+                                        <input type="radio" class="btn-check" name="localizacao"
+                                            id="localizacao_crianca" value="crianca" autocomplete="off">
+                                        <label class="btn btn-secondary" for="localizacao_crianca">Criança</label>
+                                    </div>
+                                
+                                <div id="img__localizaçao_adulto" style="display: none;" class="d-none">
+                                    <div class="mt-4">aaaaaaaaaa</div>
+                                    <h2 class="text-center fw-bold"
+                                        style="font-family: 'Audiowide', cursive; font-family: 'Pixelify Sans', cursive;">
+                                        Corpo Adulto</h2>
+                                    <img src="/IMG/Corpo_Adulto.png" class="img-fluid rounded-4"
+                                        usemap="#meu_mapeamento">
                                 </div>
+
+                                <div id="img__localizaçao_criança" style="display: none;" class="d-none">
+                                    <div class="mt-4">bbbbbbbbbbbb</div>
+                                    <h2 class="text-center fw-bold"
+                                        style="font-family: 'Audiowide', cursive; font-family: 'Pixelify Sans', cursive;">
+                                        Corpo Criança</h2>
+                                    <img src="/IMG/Corpo_Adulto.png" class="img-fluid rounded-4"
+                                        usemap="#meu_mapeamento">
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -743,106 +774,86 @@
 
                                 <div class="btn-group d-inline-block" role="group"
                                     aria-label="Basic checkbox toggle button group">
-                                    <!-- Linha 1° -->
+
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3" id="idadepaci">
+                                        <input type="radio" class="btn-check" name="tempo" id="maior5"
+                                            value="mais_que_5_anos" autocomplete="off">
+                                        <label class="btn btn-secondary" for="maior5">Maior que 5 Anos</label>
 
-
-
-                                        
-                                                <input type="radio" class="btn-check" name="tempo" id="maior5"
-                                                    value="mais_que_5_anos" autocomplete="off">
-                                                <label class="btn btn-secondary" for="maior5">Maior que 5 Anos</label>
-
-
-
-
-                                            
-                                            <div >
-                                                <input type="radio" class="btn-check" name="tempo" id="menor5"
-                                                    value="menos_que_5_anos" autocomplete="off">
-                                                <label class="btn btn-secondary" for="menor5">Menor que 5 Anos</label>
-                                            </div>
-                                        </div>
-
-                                        <div id="formmaior5" style="display: none;">
-                                            <h2>Maior que 5 Anos</h2>
-                                            
-                                            <div class="form-group">
-                                                <label for="ocularmaior5">Abertura Ocular</label>
-                                                <select class="form-control" id="ocularmaior5">
-                                                    <option value="espntanea">Espontanea</option>
-                                                    <option value="comando_verba">Comando Verbal</option>
-                                                    <option value="estimulo_doloso">Estimulo Doloroso</option>
-                                                    <option value="nenhum">Nenhuma</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="verbalmaior5">Resposta Verbal</label>
-                                                <select class="form-control" id="verbalmaior5">
-                                                    <option value="orientado">Orientado</option>
-                                                    <option value="confuso">Confuso</option>
-                                                    <option value="palavras_inap">Palavras Inapropriadas</option>
-                                                    <option value="palavras_incomp">Palavras Incompreensivel</option>
-                                                    <option value="nenhuma">Nenhuma</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="motoramaior5">Resposta Motora</label>
-                                                <select class="form-control" id="motoramaiorr5">
-                                                    <option value="obedece">Obedece Comandos</option>
-                                                    <option value="localiza">Localiza dor</option>
-                                                    <option value="retirada">Movimento de Retirada</option>
-                                                    <option value="flexao_anormal">Flexão Anormal</option>
-                                                    <option value="anormal">Extensão Anormal</option>
-                                                    <option value="nenhuma">Nenhuma</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div id="formmenor5" style="display: none;">
-                                            <h2>Menor que 5 Anos</h2>
-                                            <div class="form-group">
-                                                <label for="ocularmenor5">Abertura Ocular</label>
-                                                <select class="form-control" id="ocularmenor5">
-                                                    <option value="espntanea">Espontanea</option>
-                                                    <option value="comando_verba">Comando Verbal</option>
-                                                    <option value="estimulo_doloso">Estimulo Doloroso</option>
-                                                    <option value="nenhum">Nenhuma</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="verbalmenor5">Resposta Verbal</label>
-                                                <select class="form-control" id="verbalmenor5">
-                                                    <option value="apropriadas">Palavras e Frases Apropriadas</option>
-                                                    <option value="pal_inap">Palavras Inapropriadas</option>
-                                                    <option value="choro_gritos">Choro Persistentes ou Gritos</option>
-                                                    <option value="sons_incomp">Sons Incompreensíveis</option>
-                                                    <option value="nenhuma">Nenhuma Resposta Verbal</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="motoramenor5">Resposta Motora</label>
-                                                <select class="form-control" id="motoramenor5">
-                                                    <option value="sim">Obedece Prontamente</option>
-                                                    <option value="nao">Localiza Dor ou Estímulo Tatil</option>
-                                                    <option value="nao">Retirada do Segmento Estimulado</option>
-                                                    <option value="nao">Flexão Anormal(Decorticação)</option>
-                                                    <option value="nao">Extensão Anormal(Decerebração)</option>
-                                                    <option value="nao">Ausência(Paralisia Flacida, Hipotônia)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-
+                                        <input type="radio" class="btn-check" name="tempo" id="menor5"
+                                            value="menos_que_5_anos" autocomplete="off">
+                                        <label class="btn btn-secondary" for="menor5">Menor que 5 Anos</label>
                                     </div>
 
+                                    <div id="formmaior5" style="display: none;">
+                                        <h2>Maior que 5 Anos</h2>
+                                        <div class="form-group">
+                                            <label for="ocularmaior5">Abertura Ocular</label>
+                                            <select class="form-control" id="ocularmaior5">
+                                                <option value="espntanea">Espontanea</option>
+                                                <option value="comando_verba">Comando Verbal</option>
+                                                <option value="estimulo_doloso">Estimulo Doloroso</option>
+                                                <option value="nenhum">Nenhuma</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="verbalmaior5">Resposta Verbal</label>
+                                            <select class="form-control" id="verbalmaior5">
+                                                <option value="orientado">Orientado</option>
+                                                <option value="confuso">Confuso</option>
+                                                <option value="palavras_inap">Palavras Inapropriadas</option>
+                                                <option value="palavras_incomp">Palavras Incompreensivel</option>
+                                                <option value="nenhuma">Nenhuma</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="motoramaior5">Resposta Motora</label>
+                                            <select class="form-control" id="motoramaiorr5">
+                                                <option value="obedece">Obedece Comandos</option>
+                                                <option value="localiza">Localiza dor</option>
+                                                <option value="retirada">Movimento de Retirada</option>
+                                                <option value="flexao_anormal">Flexão Anormal</option>
+                                                <option value="anormal">Extensão Anormal</option>
+                                                <option value="nenhuma">Nenhuma</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-
-
-
-                                
+                                    <div id="formmenor5" style="display: none;">
+                                        <h2>Menor que 5 Anos</h2>
+                                        <div class="form-group">
+                                            <label for="ocularmenor5">Abertura Ocular</label>
+                                            <select class="form-control" id="ocularmenor5">
+                                                <option value="espntanea">Espontanea</option>
+                                                <option value="comando_verba">Comando Verbal</option>
+                                                <option value="estimulo_doloso">Estimulo Doloroso</option>
+                                                <option value="nenhum">Nenhuma</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="verbalmenor5">Resposta Verbal</label>
+                                            <select class="form-control" id="verbalmenor5">
+                                                <option value="apropriadas">Palavras e Frases Apropriadas</option>
+                                                <option value="pal_inap">Palavras Inapropriadas</option>
+                                                <option value="choro_gritos">Choro Persistentes ou Gritos</option>
+                                                <option value="sons_incomp">Sons Incompreensíveis</option>
+                                                <option value="nenhuma">Nenhuma Resposta Verbal</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="motoramenor5">Resposta Motora</label>
+                                            <select class="form-control" id="motoramenor5">
+                                                <option value="sim">Obedece Prontamente</option>
+                                                <option value="nao">Localiza Dor ou Estímulo Tatil</option>
+                                                <option value="nao">Retirada do Segmento Estimulado</option>
+                                                <option value="nao">Flexão Anormal(Decorticação)</option>
+                                                <option value="nao">Extensão Anormal(Decerebração)</option>
+                                                <option value="nao">Ausência(Paralisia Flacida, Hipotônia)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -890,19 +901,19 @@
                                         <div class="p-2 g-col-4">
                                             <input name="emergencia_medica" type="checkbox" class="btn-check"
                                                 id="btncheck8_1" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck8_1">Deitado</label>
+                                            <label class="btn btn-outline-dark p-3" for="btncheck8_1">Deitado</label>
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input name="queda_de_2M" type="checkbox" class="btn-check" id="btncheck8_2"
                                                 autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck8_2">Semi-Sentado</label>
+                                            <label class="btn btn-outline-dark p-3" for="btncheck8_2">Semi-Sentado</label>
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input name="tentativa_suicidio" type="checkbox" class="btn-check"
                                                 id="btncheck8_3" autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck8_3">Sentado</label>
+                                            <label class="btn btn-outline-dark p-3" for="btncheck8_3">Sentado</label>
                                         </div>
                                     </div>
                                 </div>
@@ -931,24 +942,28 @@
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3">
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-1.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-1.svg"
+                                                width="300" alt="">
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-2.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-2.svg"
+                                                width="300" alt="">
                                         </div>
                                     </div>
 
                                     <div class="row-cols-4 d-flex justify-content-center grid gap-3">
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg"
+                                                width="300" alt="">
                                         </div>
 
                                         <div class="p-2 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg" width="300" alt="">
+                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg"
+                                                width="300" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -1078,8 +1093,9 @@
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Objetos</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">OBJETOS</label>
+                                    <textarea class="form-control textarea" id="exampleFormControlTextarea1"
+                                        rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -1478,11 +1494,12 @@
                         </div>
                     </div>
 
-                    <!-- Dezima Sexta Imformação  -->                    
+                    <!-- Dezima Sexta Imformação  -->
                     <div class="accordion-item rounded-4 my-4" style="display: none;" id="anamnesegestacional">
                         <h2 class="accordion-header" id="heading16">
-                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false"
+                                aria-controls="collapse16">
                                 <i class="bi bi-percent"></i>
                                 <span class="px-3 text-dark"
                                     style="font-family: 'Audiowide', cursive; font-weight: 700;">ANAMNESE
@@ -1493,157 +1510,172 @@
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
 
-                                    <div class="form-group">
-                                        <label for="periodoGestacao">Período da Gestação:</label>
-                                        <input type="text" class="form-control" id="periodoGestacao"
-                                            placeholder="Informe o período da gestação">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="periodoGestacao">Período da Gestação:</label>
+                                    <input type="text" class="form-control" id="periodoGestacao"
+                                        placeholder="Informe o período da gestação">
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="preNatal">Fez Pré-Natal?</label>
-                                        <select class="form-control" id="preNatal">
-                                            <option value="nao">Não</option>
-                                            <option value="sim">Sim</option>
-                                            
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="preNatal">Fez Pré-Natal?</label>
+                                    <select class="form-control" id="preNatal">
+                                        <option value="nao">Não</option>
+                                        <option value="sim">Sim</option>
 
-                                    <div class="form-group" id="nomedomedicogroup" style="display: none;">
-                                        <label for="nomeMedico">Nome do Médico do Pré-Natal:</label>
-                                        <input type="text" class="form-control" id="nomeMedico"
-                                            placeholder="Informe o nome do médico do pré-natal">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="complicacoes">Existe a Possibilidade de Complicações?</label>
-                                        <select class="form-control" id="complicacoes">
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
+                                    </select>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="primeiroFilho">É o Primeiro Filho?</label>
-                                        <select class="form-control" id="primeiroFilho">
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group" id="nomedomedicogroup" style="display: none;">
+                                    <label for="nomeMedico">Nome do Médico do Pré-Natal:</label>
+                                    <input type="text" class="form-control" id="nomeMedico"
+                                        placeholder="Informe o nome do médico do pré-natal">
+                                </div>
 
-                                    <div class="form-group" id="quantosFilhosGroup" style="display: none;">
-                                        <label for="quantosFilhos">Quantos Filhos?</label>
-                                        <input type="number" class="form-control" id="quantosFilhos"
-                                            placeholder="Informe o número de filhos">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="horascontracoes">Que Horas Iniciaram as Contrações?</label>
-                                        <input type="text" class="form-control" id="horascontracoes">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Tempo das Contrações</label>
-                                        <br>
-                                        <label for="duracao">Duração:</label>
-                                        <input type="text" class="form-control" id="duracao">
-                                        <label for="intervalo">Intervalo:</label>
-                                        <input type="text" class="form-control" id="intervalo">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pressao">Sente pressão na região do quadril ou vontade de
-                                            evacuar?</label>
-                                        <select class="form-control" id="pressao">
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="ruptura">Já Houve Ruptura da Bolsa?</label>
-                                        <select class="form-control" id="ruptura">
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="ruptura">Foi Feita Inspeção Visual?</label>
-                                        <select class="form-control" id="ruptura">
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="parto">Parto Realizado?</label>
-                                        <select class="form-control" id="parto">
-                                            <option value="nao">Não</option>
-                                            <option value="sim">Sim</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="complicacoes">Existe a Possibilidade de Complicações?</label>
+                                    <select class="form-control" id="complicacoes">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
 
-                                    <div class="form-group" id="horariopartogroup" style="display: none;">
-                                        <label for="horarioparto">Horário do Parto:</label>
-                                        <input type="time" class="form-control" id="horarioparto">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="primeiroFilho">É o Primeiro Filho?</label>
+                                    <select class="form-control" id="primeiroFilho">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="quantosFilhosGroup" style="display: none;">
+                                    <label for="quantosFilhos">Quantos Filhos?</label>
+                                    <input type="number" class="form-control" id="quantosFilhos"
+                                        placeholder="Informe o número de filhos">
+                                </div>
+                                <div class="form-group">
+                                    <label for="horascontracoes">Que Horas Iniciaram as Contrações?</label>
+                                    <input type="text" class="form-control" id="horascontracoes">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tempo das Contrações</label>
+                                    <br>
+                                    <label for="duracao">Duração:</label>
+                                    <input type="text" class="form-control" id="duracao">
+                                    <label for="intervalo">Intervalo:</label>
+                                    <input type="text" class="form-control" id="intervalo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pressao">Sente pressão na região do quadril ou vontade de
+                                        evacuar?</label>
+                                    <select class="form-control" id="pressao">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ruptura">Já Houve Ruptura da Bolsa?</label>
+                                    <select class="form-control" id="ruptura">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ruptura">Foi Feita Inspeção Visual?</label>
+                                    <select class="form-control" id="ruptura">
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="parto">Parto Realizado?</label>
+                                    <select class="form-control" id="parto">
+                                        <option value="nao">Não</option>
+                                        <option value="sim">Sim</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="horariopartogroup" style="display: none;">
+                                    <label for="horarioparto">Horário do Parto:</label>
+                                    <input type="time" class="form-control" id="horarioparto">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Dezima Septima Imformação  -->
-    
+
                     <div class="accordion-item rounded-4 my-4">
                         <h2 class="accordion-header" id="heading17">
-                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                            <button class="accordion-button collapsed shadow bg-body-tertiary rounded-4" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false"
+                                aria-controls="collapse17">
                                 <i class="bi bi-percent"></i>
                                 <span class="px-3 text-dark"
                                     style="font-family: 'Audiowide', cursive; font-weight: 700;">AVALIAÇÃO
                                     CINEMÀTICA</span>
                             </button>
                             <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading10"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="btn-group d-inline" role="group"
-                                    aria-label="Basic checkbox toggle button group">
-                                    <div class="row-cols-4 d-flex justify-content-center text-center">
-                                        <input name="ciclista" type="checkbox" class="btn-check" id="btncheck17_1" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_1">Disturbio de Comportamento</label>
-    
-                                        <input name="condutor_moto" name="condutor_moto" type="checkbox" class="btn-check" id="btncheck17_2" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_2">Encontrado de Capacete</label>
-    
-                                        <input name="gestante" type="checkbox" class="btn-check" id="btncheck17_3" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_3">Encontrado de Cinto</label>
-                                    </div>
-                                    <div class="row-cols-4 d-flex justify-content-center text-center">
-                                        <input name="ps_bco_frente" type="checkbox" class="btn-check" id="btncheck17_4" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_4">Para-Brisas Avariado</label>
-    
-                                        <input name="ps_moto" type="checkbox" class="btn-check" id="btncheck17_5" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_5">Caminhando na Cena</label>
-    
-                                        <input name="condutor_carro" type="checkbox" class="btn-check" id="btncheck17_6" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_6">Painel Avariado</label>
-                                    </div>
-                                    <div class="row-cols-4 d-flex justify-content-center text-center">
-                                        <input name="ps_bco_tras" type="checkbox" class="btn-check" id="btncheck17_7" autocomplete="off">
-                                        <label class="btn btn-outline-dark" for="btncheck17_7">Volante Torcido</label>
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="btn-group d-inline" role="group"
+                                        aria-label="Basic checkbox toggle button group">
+                                        <div class="row-cols-4 d-flex justify-content-center text-center">
+                                            <input name="ciclista" type="checkbox" class="btn-check" id="btncheck17_1"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_1">Disturbio de
+                                                Comportamento</label>
+
+                                            <input name="condutor_moto" name="condutor_moto" type="checkbox"
+                                                class="btn-check" id="btncheck17_2" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_2">Encontrado de
+                                                Capacete</label>
+
+                                            <input name="gestante" type="checkbox" class="btn-check" id="btncheck17_3"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_3">Encontrado de
+                                                Cinto</label>
+                                        </div>
+                                        <div class="row-cols-4 d-flex justify-content-center text-center">
+                                            <input name="ps_bco_frente" type="checkbox" class="btn-check"
+                                                id="btncheck17_4" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_4">Para-Brisas
+                                                Avariado</label>
+
+                                            <input name="ps_moto" type="checkbox" class="btn-check" id="btncheck17_5"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_5">Caminhando na
+                                                Cena</label>
+
+                                            <input name="condutor_carro" type="checkbox" class="btn-check"
+                                                id="btncheck17_6" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_6">Painel
+                                                Avariado</label>
+                                        </div>
+                                        <div class="row-cols-4 d-flex justify-content-center text-center">
+                                            <input name="ps_bco_tras" type="checkbox" class="btn-check"
+                                                id="btncheck17_7" autocomplete="off">
+                                            <label class="btn btn-outline-dark" for="btncheck17_7">Volante
+                                                Torcido</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                    </div>
+
+
+                    <!-- Send Button -->
+                    <div class="container d-flex justify-content-center">
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-outline-dark btn-lg rounded-5">
+                                <div class="">
+                                    <img src="/ASSETS/Arrow.svg" alt="Arrow">
+                                    Enviar
+                                </div>
+                            </button>
                         </div>
                     </div>
-                
 
-                <!-- Send Button -->
-                <div class="container d-flex justify-content-center">
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-outline-dark btn-lg rounded-5">
-                            <div class="">
-                                <img src="/ASSETS/Arrow.svg" alt="Arrow">
-                                Enviar
-                            </div>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="py-2"></div>
+                    <div class="py-2"></div>
 
             </form>
 
@@ -1659,7 +1691,7 @@
                 <a href="/PAGES/Inicio.html" class="text-decoration-none">
                     <img src="/IMG/logo_pequena.png" alt="logo" width="40" height="40">
                 </a>
-                <strong><span class="text-light">© Todos os direitos reservados - NOAR</span></strong>
+                <span class="text-light fw-bold" style="font-size: 13px;">© Todos os direitos reservados - NOAR</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled">
@@ -1680,7 +1712,8 @@
 </body>
 
 <script>
-     $(document).ready(function () {
+    // Amamnsese Gestacional
+    $(document).ready(function () {
         $('#preNatal').change(function () {
             if ($(this).val() === 'nao') {
                 $('#nomedomedicogroup').hide();
@@ -1716,15 +1749,25 @@
             }
         });
     });
-    $(document).ready(function () {
-        $('#idadepaci').change(function () {
-            if ($(this).val() === 'menos5') {
-                $('#aberturaocu').hide();
-            } else {
-                $('#aberturaocu').show();
-            }
-        });
+
+    // Localização dos Traumas//°°°°
+    $('input[name="localizacao"]').change(function () {
+        // Pega o valor selecionado
+        var selectedValue = $('input[name="localizacao"]:checked').val();
+
+        // Esconde todos os formulários
+        $('#img__localizaçao_adulto').hide();
+        $('#img__localizaçao_criança').hide();
+
+        // Mostra o formulário apropriado com base na seleção
+        if (selectedValue === 'adulto') {
+            $('#img__localizaçao_adulto').show();
+        } else if (selectedValue === 'crianca') {
+            $('#img__localizaçao_criança').show();
+        }
     });
+
+
     // Adiciona um evento de mudança ao radio button
     $('input[name="tempo"]').change(function () {
         // Pega o valor selecionado
@@ -1741,6 +1784,7 @@
             $('#formmenor5').show();
         }
     });
+
 </script>
 </body>
 
