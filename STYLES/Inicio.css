@@ -11,3 +11,7 @@
     background: #f7ee77 !important;
     font-family: 'Audiowide', cursive; font-family: 'Pixelify Sans';
 }
+
+label{
+    font-size: small !important;
+}
