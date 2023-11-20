@@ -2,4 +2,4 @@ font minecraft: "font-family: 'Audiowide', cursive; font-family: 'Pixelify Sans'
 Urbanist: "font-family: 'Urbanist', sans-serif;"
 
 Ideia Localização dos Traumas:
-Fazer um Botao e escolher adulto ou criança para fazer a imagem mais grande. 
+Fazer um Botao e escolher adulto ou criança para fazer a imagem mais grande. http://127.0.0.1:5500/PAGES/

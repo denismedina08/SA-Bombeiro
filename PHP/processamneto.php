@@ -3,6 +3,10 @@ include('conexao.php');
 
 
 // Coleta os dados do formulário paciente
+$data = $_POST['data']
+$sexo_f = $_POST['sexo_f']
+$sexo_m = $_POST
+
 
 //Insere os dados na tabela de paciente
 $sqlPaciente = "INSERT INTO info_paciente  VALUES (null)";
