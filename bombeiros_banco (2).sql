@@ -190,7 +190,7 @@ CREATE TABLE `info_paciente` (
   `desp` varchar(50) NOT NULL,
   `h_ch` int NOT NULL,
   `km_final` int NOT NULL,
-  `cod_sia/sus` int NOT NULL
+  `cod_sia_sus` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -299,10 +299,10 @@ CREATE TABLE `ocorrencia` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pre-hospitalar`
+-- Estrutura da tabela `tipo_de_ocorrencia`
 --
 
-CREATE TABLE `pre-hospitalar` (
+CREATE TABLE `tipo_de_ocorrencia` (
   `id_ocorrencia` int NOT NULL,
   `causado_por_animais` tinyint(1) NOT NULL,
   `por_meio_de_transporte` tinyint(1) NOT NULL,
@@ -324,7 +324,7 @@ CREATE TABLE `pre-hospitalar` (
   `trabalho` tinyint(1) NOT NULL,
   `transaferencia` tinyint(1) NOT NULL,
   `esportivo` tinyint(1) NOT NULL,
-  `ouro` varchar(50) NOT NULL
+  `outro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------

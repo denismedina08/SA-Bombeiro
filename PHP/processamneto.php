@@ -4,20 +4,82 @@ include('conexao.php');
 
 // Coleta os dados do formulário paciente
 $data = $_POST['data']
-$sexo_f = $_POST['sexo_f']
-$sexo_m = $_POST
+$sexo_f = $_POST['sexo_f']=="on" ? 1 : 0 ;
+$sexo_m = $_POST['sexo_m']=="on" ? 1 : 0 ;
+$hospital = $_POST['hospital']
+$nome = $_POST['nome']
+$cpf = $_POST['cpf']
+$acompanhante = $_POST['acompanhante']
+$idade_paciente = $_POST['idade_paciente']
+$fone = $_POST['fone']
+$idade_acompanhante = $_POST['idade_acompanhante']
+$local_ocorrencia = $_POST['local_ocorrencia']
+$n_usb = $_POST['n_usb']
+$n_ocorr = $_POST['n_ocorr']
+$cod_ir = $_POST['cod_ir']
+$cod_ps = $_POST['cod_ps']
+$desp = $_POST['desp']
+$h_ch = $_POST['h_ch']
+$km_final = $_POST['km_final']
+$cod_sia_sus = $_POST['cod_sia_sus']
 
 
 //Insere os dados na tabela de paciente
-$sqlPaciente = "INSERT INTO info_paciente  VALUES (null)";
+$sqlPaciente = "INSERT INTO info_paciente  VALUES (null,'$data', '$sexo_f', '$sexo_m', '$hospital', '$nome', '$cpf', '$acompanhante', '$idade_paciente', '$local_ocorrencia', 
+'$n_usb', '$n_ocorr', '$cod_ir', '$cod_ps', '$desp', '$h_ch', '$km_final', '$cod_sia_sus' )";
 
 
 $conn->query($sqlPaciente);
 
 //$conn->query($sql);
+=======================================================================================================================================================================================
 
+// Coleta os dados do formulário tipo de ocorrencia
+$causado_por_animais = $_POST['causado_por_animais']=="on" ? 1 : 0 ;
+$por_meio_de_transporte = $_POS['por_meio_de_transporte']=="on" ? 1 : 0 ;
+$desmoronamento_deslizamento = $_POST['desmoronamento_deslizamento']=="on" ? 1 : 0 ;
+$emergencia_medica = $_POST['emergencia_medica']=="on" ? 1 : 0 ;
+$queda_de_2M = $_POST['queda_de_2M']=="on" ? 1 : 0 ;
+$tentativa_suicidio = $_POST['tentativa_suicidio']=="on" ? 1 : 0 ;
+$queda_propria_altura = $_POST['queda_propria_altura']=="on" ? 1 : 0 ;
+$afogamento = $_POST['afogamento']=="on" ? 1 : 0 ;
+$agressao = $_POST['agressao']=="on" ? 1 : 0 ;
+$atropelamento = $_POST['atropelamento']=="on" ? 1 : 0 ;
+$choque_eletrico = $_POST['choque_eletrico']=="on" ? 1 : 0 ;
+$desabamento = $_POST['desabamento']=="on" ? 1 : 0 ;
+$domestico = $_POST['domestico']=="on" ? 1 : 0 ;
+$intoxicao = $_POST['intoxicao']=="on" ? 1 : 0 ;
+$queda_bicicleta = $_POST['queda_bicicleta']=="on" ? 1 : 0 ;
+$queda_moto = $_POST['queda_moto']=="on" ? 1 : 0 ;
+$queda_nivel_maior_2M = $_POST['queda_nivel_maior_2M']=="on" ? 1 : 0 ;
+$trabalho = $_POST['trabalho']=="on" ? 1 : 0 ;
+$transaferencia  = $_POST['transaferencia']=="on" ? 1 : 0 ;
+$esportivo = $_POST['esportivo']=="on" ? 1 : 0 ;
+$outro = $_POST['outro']
+
+
+
+//Insere os dados na tabela tipos de ocorrencia
+
+$sqlPaciente = "INSERT INTO tipo_de_ocorrencia VALUES (null, '$causado_por_animais', '$por_meio_de_transporte', '$desmoronamento_deslizamento', '$emergencia_medica', '$queda_de_2M'
+'$tentativa_suicidio', '$queda_propria_altura', '$afogamento', '$agressao', '$atropelamento', '$choque_eletrico', '$desabamento', '$domestico', '$intoxicao', '$queda_bicicleta'
+'$queda_moto', '$queda_nivel_maior_2M', '$trabalho', '$transaferencia', '$esportivo', '$outro')";
+
+//$conn->query($sql); 
+
+=======================================================================================================================================================================================
 
 // Coleta os dados do formulário ...
+
+
+
+//Insere os dados na tabela ...
+
+
+
+//$conn->query($sql); 
+
+=======================================================================================================================================================================================
 
 // Coleta os dados do formulário procedimento efetuado
 $aspiracao = $_POST['aspiracao']=="on" ? 1 : 0 ;
