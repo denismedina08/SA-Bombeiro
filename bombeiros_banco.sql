@@ -45,7 +45,7 @@ CREATE TABLE `anamnses_emergencia` (
 CREATE TABLE `anamnses_gestacional` (
   `id_ocorrencia` int NOT NULL,
   `periodo_gestacao` varchar(50) NOT NULL,
-  `pre-natal` tinyint(1) NOT NULL,
+  `pre_natal` tinyint(1) NOT NULL,
   `nome_medico` int NOT NULL,
   `existe_complicacoes` tinyint(1) NOT NULL,
   `primeiro_filhos` tinyint(1) NOT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE `formas_de_conducao` (
   `id_ocorrencia` int NOT NULL,
   `deitado` tinyint(1) NOT NULL,
   `sentado` tinyint(1) NOT NULL,
-  `semi-sentado` tinyint(1) NOT NULL
+  `semi_sentado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -347,7 +347,7 @@ CREATE TABLE `problemas_encontrados_suspeitos` (
   `transporte_aereo` int NOT NULL,
   `transporte_clinico` int NOT NULL,
   `transporte_emergencial` int NOT NULL,
-  `transporte_pos-trauma` int NOT NULL,
+  `transporte_pos_trauma` int NOT NULL,
   `transporte_samu` int NOT NULL,
   `transporte_outro` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -423,7 +423,7 @@ CREATE TABLE `procedimento_efetuado` (
 
 CREATE TABLE `sinais_sintomas` (
   `id_ocorrencia` int NOT NULL,
-  `abdomen_sensivel/rigido` tinyint(1) NOT NULL,
+  `abdomen_sensivel_rigido` tinyint(1) NOT NULL,
   `afundamento_cranio` tinyint(1) NOT NULL,
   `agitacao` tinyint(1) NOT NULL,
   `amnesia` tinyint(1) NOT NULL,
@@ -431,7 +431,7 @@ CREATE TABLE `sinais_sintomas` (
   `apineia` tinyint(1) NOT NULL,
   `bradicadia` tinyint(1) NOT NULL,
   `bradipneia` tinyint(1) NOT NULL,
-  `bronco-aspirando` tinyint(1) NOT NULL,
+  `bronco_aspirando` tinyint(1) NOT NULL,
   `cefaleia` tinyint(1) NOT NULL,
   `cianose_labial` tinyint(1) NOT NULL,
   `cianose_extremidade` tinyint(1) NOT NULL,
@@ -489,7 +489,7 @@ CREATE TABLE `sinais_vitais` (
   `pressao_arterial_sistolica` int NOT NULL,
   `pressao_arterial_diastolica` int NOT NULL,
   `pulso` int NOT NULL,
-  `repiracao` int NOT NULL,
+  `respiracao` int NOT NULL,
   `temperatura` int NOT NULL,
   `perfusao_menor_2` tinyint(1) NOT NULL,
   `perfusao_maior_2` tinyint(1) NOT NULL
@@ -603,11 +603,9 @@ ALTER TABLE `materias_utilizados_descartaveis`
 ALTER TABLE `ocorrencia`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
---
--- Índices para tabela `pre-hospitalar`
---
-ALTER TABLE `pre-hospitalar`
-  ADD PRIMARY KEY (`id_ocorrencia`);
+
+
+
 
 --
 -- Índices para tabela `problemas_encontrados_suspeitos`
@@ -719,7 +717,7 @@ ALTER TABLE `procedimento_efetuado`
 ALTER TABLE `ocorrencia`
   ADD CONSTRAINT `ocorrencia_ibfk_1` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_emergencia` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_10` FOREIGN KEY (`id_ocorrencia`) REFERENCES `login` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `ocorrencia_ibfk_11` FOREIGN KEY (`id_ocorrencia`) REFERENCES `pre-hospitalar` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  -- ADD CONSTRAINT `ocorrencia_ibfk_11` FOREIGN KEY (`id_ocorrencia`) REFERENCES `pre_hospitalar` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_12` FOREIGN KEY (`id_ocorrencia`) REFERENCES `problemas_encontrados_suspeitos` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_13` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_sintomas` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_14` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_vitais` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,

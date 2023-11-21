@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 // Coleta os dados do formulário
 $nome = $_POST['nome'];
 $matricula = $_POST['matricula'];
-$senha =($_POST['senha']);
+$senha =$_POST['senha'];
 
 // Insere os dados na tabela de usuários
 $sql = "INSERT INTO cadastro (id_cadastro, nome, matricula, senha) VALUES (NULL, '$nome', '$matricula', '$senha')";

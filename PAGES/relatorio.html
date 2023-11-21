@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Relatório</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Relatório</h2>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Idade:</strong> <span id="idade"></span></p>
+    <p><strong>Data de Nascimento:</strong> <span id="dataNascimento"></span></p>
+    <p><strong>CEP:</strong> <span id="cep"></span></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Extrair parâmetros da query string
+    var params = new URLSearchParams(window.location.search);
+    document.getElementById('nome').innerText = params.get('nome');
+    document.getElementById('idade').innerText = params.get('idade');
+    document.getElementById('dataNascimento').innerText = params.get('dataNascimento');
+    document.getElementById('cep').innerText = params.get('cep');
+</script>
+
+</body>
+</html>

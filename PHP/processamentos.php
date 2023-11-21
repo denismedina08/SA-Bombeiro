@@ -26,7 +26,6 @@ $cod_sia_sus = $_POST['cod_sia_sus']
 
 
 //Insere os dados na tabela de paciente
-
 $sqlPaciente = "INSERT INTO info_paciente  VALUES (null,'$data', '$sexo_f', '$sexo_m', '$hospital', '$nome', '$cpf', '$acompanhante', '$idade_paciente', '$local_ocorrencia', 
 '$n_usb', '$n_ocorr', '$cod_ir', '$cod_ps', '$desp', '$h_ch', '$km_final', '$cod_sia_sus' )";
 
@@ -37,7 +36,6 @@ $conn->query($sqlPaciente);
 =======================================================================================================================================================================================
 
 // Coleta os dados do formulário tipo de ocorrencia
-
 $causado_por_animais = $_POST['causado_por_animais']=="on" ? 1 : 0 ;
 $por_meio_de_transporte = $_POS['por_meio_de_transporte']=="on" ? 1 : 0 ;
 $desmoronamento_deslizamento = $_POST['desmoronamento_deslizamento']=="on" ? 1 : 0 ;
@@ -61,18 +59,21 @@ $esportivo = $_POST['esportivo']=="on" ? 1 : 0 ;
 $outro = $_POST['outro']
 
 
+
 //Insere os dados na tabela tipos de ocorrencia
 
 $sqlPaciente = "INSERT INTO tipo_de_ocorrencia VALUES (null, '$causado_por_animais', '$por_meio_de_transporte', '$desmoronamento_deslizamento', '$emergencia_medica', '$queda_de_2M'
 '$tentativa_suicidio', '$queda_propria_altura', '$afogamento', '$agressao', '$atropelamento', '$choque_eletrico', '$desabamento', '$domestico', '$intoxicao', '$queda_bicicleta'
 '$queda_moto', '$queda_nivel_maior_2M', '$trabalho', '$transaferencia', '$esportivo', '$outro')";
 
+
+
+
 //$conn->query($sql); 
 
 =======================================================================================================================================================================================
 
 // Coleta os dados do formulário problemas_encontrados_suspeitos
-
 $psiquiatrico = $_POST['psiquiatrico']=="on" ? 1 : 0 ;
 $respiratorio_dpoc = $_POST['respiratorio_dpoc']=="on" ? 1 : 0 ;
 $respiratorio_inalacao_fumacao = $_POST['respiratorio_inalacao_fumacao']=="on" ? 1 : 0 ;
@@ -291,7 +292,7 @@ $pedestre = $_POST['pedestre']
 
 //Insere os dados na tabela vitima_era
 
-$sqlPaciente = "INSERT INTO vitima_era VALUES (
+$sqlPaciente = "INSERT INTO vitima_era VALUES ()"
 
 
 //$conn->query($sql); 

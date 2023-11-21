@@ -74,3 +74,8 @@ body{
     background-color: lightgrey;
     border-radius: 25px;
 }
+
+#img__desenvolvedores{
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
