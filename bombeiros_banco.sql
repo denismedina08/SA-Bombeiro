@@ -73,7 +73,7 @@ CREATE TABLE `avalicao_da_cinematica` (
   `id_ocorrencia` int NOT NULL,
   `encontrado_de_capacete` tinyint(1) NOT NULL,
   `encontrado_de_cinto` tinyint(1) NOT NULL,
-  `para-brisa_avariado` tinyint(1) NOT NULL,
+  `para_brisa_avariado` tinyint(1) NOT NULL,
   `disturbio_de_comportamento` tinyint(1) NOT NULL,
   `caminhando_na_cena` tinyint(1) NOT NULL,
   `painel_avariado` tinyint(1) NOT NULL,

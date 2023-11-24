@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>NOAR</title>
     <link rel="icon" href="/IMG/logo_grande.png">
     <link rel="stylesheet" href="/STYLES/Header.css">
@@ -61,16 +61,15 @@
             <img class="shadow-sm rounded-circle" src="/IMG/logo_pequena.png" width="160" height="160" alt="logo/brand">
         </a>
 
-        <div class="">
+        <div class="col-lg-4">
             <img src="" alt="">
         </div>
 
-        <div class="navbar-nav justify-content-end">
-            <div class="navbar-nav ml-auto">
-                <a class="" href="/PAGES/Login.html">
-                    <img class="" src="/ASSETS/Profile.svg" width="40" height="40" alt="">
-                </a>
-            </div>
+        <div class="">
+            <a class="" href="/PAGES/Login.html">
+                <img class="img-fluid" src="/ASSETS/Profile.svg" alt="Profile__img">
+            </a>
+        </div>
         </div>
     </nav>
 
@@ -78,7 +77,7 @@
 
     <!-- Accordion -->
 
-    <main class="bg-light d-flex align-items-center">
+    <main class="bg-light d-flex align-items-center p-4">
 
         <!-- Container das Imformações -->
         <section id="sec__principal" class="container-sm" style="max-width: 800px;">
@@ -1007,13 +1006,13 @@
                                         <div class="p-3 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
                                             <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-1.svg"
-                                                width="300" alt="">
+                                                width="300">
                                         </div>
 
                                         <div class="p-3 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
                                             <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-2.svg"
-                                                width="300" alt="">
+                                                width="300">
                                         </div>
                                     </div>
 
@@ -1021,13 +1020,13 @@
                                         <div class="p-3 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
                                             <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg"
-                                                width="300" alt="">
+                                                width="300">
                                         </div>
 
                                         <div class="p-3 g-col-4">
                                             <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
                                             <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-4.svg"
-                                                width="300" alt="">
+                                                width="300">
                                         </div>
                                     </div>
                                 </div>
@@ -1475,42 +1474,117 @@
                         </h2>
                         <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        ATADURAS
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        CATETER TP.OCÚLOS
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        COMPRESSA COMUM
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        KIT´S
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        LUVAS DESCARTÁVEIS
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        MASCARA DESCARTAVEL
-                                    </label>
+                            <div class="container accordion-body d-inline-block">
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <!-- 1 Linha -->
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <h6 class="d-flex justify-content-center"
+                                                    style="background-color: #f7ee77;">Material</h6>
+                                            </div>
+
+                                            <div class="col-2">
+                                                <h6 style="margin-left: -5px; background-color: #FF0000;">Quant</h6>
+                                            </div>
+                                        </div>
+                                        <!-- 2 Linha -->
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        ATADURAS
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        CATETER TP.OCÚLOS
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        COMPRESSA COMUM
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        KIT´S
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        LUVAS DESCARTÁVEIS
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        MASCARA DESCARTAVEL
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="number" style="width: 30px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-6"></div>
+                                    <div class="row">
+                                        <div class="col"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1730,8 +1804,7 @@
                     <!-- Send Button -->
                     <div class="container d-flex justify-content-center">
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-outline-dark btn-lg rounded-5"
-                    >
+                            <button type="submit" class="btn btn-outline-dark btn-lg rounded-5">
                                 <div class="">
                                     <img src="/ASSETS/Arrow.svg" alt="Arrow">
                                     Enviar
@@ -1748,31 +1821,31 @@
     </main>
 
     <div class="py-4"></div>
-
-    <div class="container-sm" style="background-color: #FF0000;">
-        <div class="py-2" style="background-color: #FF0000;"></div>
-        <footer class="d-flex justify-content-between align-items-center py-3" id="fotter">
-            <div class="">
-                <a href="/PAGES/Inicio.html" class="text-decoration-none">
-                    <img src="/IMG/logo_pequena.png" alt="logo" width="40" height="40">
-                </a>
-                <span class="text-light fw-bold" style="font-size: 13px;">© Todos os direitos reservados - NOAR</span>
-            </div>
-
-            <ul class="nav col-md-4 justify-content-end list-unstyled">
-                <li class="ms-3">
-                    <a class="" href="https://www.facebook.com/Bombeirosnoar">
-                        <img src="/ASSETS/Facebook.svg" alt="logo__facebook">
+    <div id="container__bg">
+        <div class="container-sm">
+            <footer class="d-flex justify-content-between align-items-center p-4" id="fotter">
+                <div class="">
+                    <a href="/PAGES/Inicio.html" class="text-decoration-none">
+                        <img src="/IMG/logo_pequena.png" alt="logo" width="40" height="40">
                     </a>
-                </li>
-                <li class="ms-3">
-                    <a class="" href="https://www.instagram.com/p/B8ELg8YFLBB/">
-                        <img src="/ASSETS/Instagram.svg" alt="logo__instagram">
-                    </a>
-                </li>
-            </ul>
-        </footer>
-        <div class="py-2" style="background-color: #FF0000;"></div>
+                    <span class="text-light fw-bold" style="font-size: 13px;">© Todos os direitos reservados -
+                        NOAR</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled">
+                    <li class="ms-3">
+                        <a class="" href="https://www.facebook.com/Bombeirosnoar">
+                            <img src="/ASSETS/Facebook.svg" alt="logo__facebook">
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="" href="https://www.instagram.com/p/B8ELg8YFLBB/">
+                            <img src="/ASSETS/Instagram.svg" alt="logo__instagram">
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </div>
 </body>
 

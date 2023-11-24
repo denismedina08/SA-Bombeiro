@@ -1,11 +1,6 @@
 <?php
 // Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bombeiros_banco";
-
-$conn =   mysqli_connect($servername, $username, $password, $dbname);
+include('conexao.php');
 
 // Verifica a conexão
 if ($conn->connect_error) {
