@@ -15,3 +15,7 @@
 label{
     font-size: small !important;
 }
+
+#row__label{
+    transform: scale(1.6);
+}
