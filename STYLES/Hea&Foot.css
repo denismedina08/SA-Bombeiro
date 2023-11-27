@@ -8,6 +8,10 @@
     }
 }
 
+#container__bg{
+    background-color: #FF0000;
+}
+
 #topNav{
     background-color: #FF0000;
 }
@@ -18,4 +22,9 @@
 
 #nav__container{
     background-color: #FF0000;
+}
+
+#sec__principal{
+    background-color: lightgrey;
+    border-radius: 25px;
 }

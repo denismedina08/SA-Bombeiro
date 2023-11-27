@@ -4,30 +4,30 @@ include('conexao.php');
 
 // Coleta os dados do formulário paciente
 
-$data = $_POST['data']
+$data = $_POST['data'];
 $sexo_f = $_POST['sexo_f']=="on" ? 1 : 0 ;
 $sexo_m = $_POST['sexo_m']=="on" ? 1 : 0 ;
-$hospital = $_POST['hospital']
-$nome = $_POST['nome']
-$cpf = $_POST['cpf']
-$acompanhante = $_POST['acompanhante']
-$idade_paciente = $_POST['idade_paciente']
-$fone = $_POST['fone']
-$idade_acompanhante = $_POST['idade_acompanhante']
-$local_ocorrencia = $_POST['local_ocorrencia']
-$n_usb = $_POST['n_usb']
-$n_ocorr = $_POST['n_ocorr']
-$cod_ir = $_POST['cod_ir']
-$cod_ps = $_POST['cod_ps']
-$desp = $_POST['desp']
-$h_ch = $_POST['h_ch']
-$km_final = $_POST['km_final']
-$cod_sia_sus = $_POST['cod_sia_sus']
-
+$hospital = $_POST['hospital'];
+$nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
+$acompanhante = $_POST['acompanhante'];
+$idade_paciente = $_POST['idade_paciente'];
+$fone = $_POST['fone'];
+$idade_acompanhante = $_POST['idade_acompanhante'];
+$local_ocorrencia = $_POST['local_ocorrencia'];
+$n_usb = $_POST['n_usb'];
+$n_ocorr = $_POST['n_ocorr'];
+$cod_ir = $_POST['cod_ir'];
+$cod_ps = $_POST['cod_ps'];
+$desp = $_POST['desp'];
+$h_ch = $_POST['h_ch'];
+$km_final = $_POST['km_final'];
+$cod_sia_sus = $_POST['cod_sia_sus'];
+//20
 
 //Insere os dados na tabela de paciente
-$sqlPaciente = "INSERT INTO info_paciente  VALUES (null,'$data', '$sexo_f', '$sexo_m', '$hospital', '$nome', '$cpf', '$acompanhante', '$idade_paciente', '$local_ocorrencia', 
-'$n_usb', '$n_ocorr', '$cod_ir', '$cod_ps', '$desp', '$h_ch', '$km_final', '$cod_sia_sus' )";
+$sqlPaciente = "INSERT INTO info_paciente  VALUES ('$data', '$sexo_f', '$sexo_m', '$hospital', '$nome', '$cpf', '$acompanhante','$idade_paciente' , '$fone',  '$idade_acompanhante' ', '$local_ocorrencia', 
+'$n_usb', '$n_ocorr', '$cod_ir', '$cod_ps', '$desp', '$h_ch', '$km_final', '$cod_sia_sus' )"; //20
 
 
 $conn->query($sqlPaciente);
@@ -56,15 +56,15 @@ $queda_nivel_maior_2M = $_POST['queda_nivel_maior_2M']=="on" ? 1 : 0 ;
 $trabalho = $_POST['trabalho']=="on" ? 1 : 0 ;
 $transaferencia  = $_POST['transaferencia']=="on" ? 1 : 0 ;
 $esportivo = $_POST['esportivo']=="on" ? 1 : 0 ;
-$outro = $_POST['outro']
+$outro = $_POST['outro'];
 
-
+//21
 
 //Insere os dados na tabela tipos de ocorrencia
 
 $sqlocorrencia = "INSERT INTO tipo_de_ocorrencia VALUES (null, '$causado_por_animais', '$por_meio_de_transporte', '$desmoronamento_deslizamento', '$emergencia_medica', '$queda_de_2M'
 '$tentativa_suicidio', '$queda_propria_altura', '$afogamento', '$agressao', '$atropelamento', '$choque_eletrico', '$desabamento', '$domestico', '$intoxicao', '$queda_bicicleta'
-'$queda_moto', '$queda_nivel_maior_2M', '$trabalho', '$transaferencia', '$esportivo', '$outro')";
+'$queda_moto', '$queda_nivel_maior_2M', '$trabalho', '$transaferencia', '$esportivo', '$outro')";//21
 
 
 
@@ -87,13 +87,14 @@ $transporte_clinico = $_POST['transporte_clinico']=="on" ? 1 : 0 ;
 $transporte_emergencial = $_POST['transporte_emergencial']=="on" ? 1 : 0 ;
 $transporte_pos_trauma = $_POST['transporte_pos_trauma']=="on" ? 1 : 0 ;
 $transporte_samu = $_POST['transporte_outro']=="on" ? 1 : 0 ;
-$transporte_outro = $_POST['transporte_outro']
+$transporte_outro = $_POST['transporte_outro'];
 
+//14
 //Insere os dados na tabela problemas_encontrados_suspeitos
 
 $sqlsuspeitos = "INSERT INTO problemas_encontrados_suspeitos VALUES( null, '$psiquiatrico', '$$respiratorio_dpoc', '$respiratorio_inalacao_fumacao', '$diabetes_hiperglicemia', '$diabetes_hipoglicemia',
 '$outros_problemas', '$obstetrico_parto_emergencial', '$obstetrico_gestante', '$obstetrico_hemor_excessiva', '$transporte_clinico', '$transporte_emergencial', '$transporte_pos_trauma',
-'$transporte_samu', '$transporte_outro')";
+'$transporte_samu', '$transporte_outro')";//14
 
 
 //$conn->query($sql); 
@@ -156,8 +157,8 @@ $sudorese = $_POST['sudorese']=="on" ? 1 : 0 ;
 $taquiapneia = $_POST['taquiapneia']=="on" ? 1 : 0 ;
 $taquicardia = $_POST['taquicardia']=="on" ? 1 : 0 ;
 $tontura = $_POST['tontura']=="on" ? 1 : 0 ;
-$outro_sinais = $_POST['outro_sinais']=="on" ? 1 : 0 ;
-//53
+$outro_sinais = $_POST['outro_sinais'];
+//52
 
 //Insere os dados na tabela sinais e sintomas
 
@@ -166,7 +167,7 @@ $sqlsintomas = "INSERT INTO sinais e sintomas VALUES( null, '$abdomen_sensivel_r
 '$adema_localizada', '$enfisema_subcutaneo', '$estade_jugular', '$face_palida', '$hemorragia_interna', '$hemorragia_externa', '$hipertensao', '$hipotensia', '$nauseas_vomitos', '$nasoragia'
 , '$obito', '$otorreia', '$otorragia', '$o_v_a_c_e', '$parada_cardiaca', '$parada_respiratoria', '$priaprismo', '$prurido_pele', '$pupilas_ansocoria', '$pupilas_isocoria', '$pupilas_miose',
 '$pupilas_midriase', '$pupilas_regente', '$pupilas_n_reagente', '$sede', '$sinal_battle', '$sinal_guaxinim', '$sudorese', '$taquiapneia', '$taquicardia', '$tontura', '$outro_sinais')";
-//$conn->query($sql); 
+//$conn->query($sql); //52
 
 
 =======================================================================================================================================================================================
@@ -189,11 +190,11 @@ $face_esquerda = $_POST['face_esquerda']=="on" ? 1 : 0 ;
 $face_direita = $_POST['face_direita']=="on" ? 1 : 0 ;
 
 
-
+//12
 //Insere os dados na tabela localizacao_do_trauma
 
 $sqltrauma = "INSERT INTO localizacao_do_trauma VALUES ( null, '$cabeca', '$perna_direita', '$perna_esquerda', '$braco_direito', '$braco_esquerdo', '$torco', '$pe_direito', '$pe_esquerdo',
-'$mao_esquerda', '$mao_direita', '$face_esquerda', '$face_direita' )";
+'$mao_esquerda', '$mao_direita', '$face_esquerda', '$face_direita' )";//12
 
 //$conn->query($sql); 
 
@@ -210,9 +211,10 @@ $abertura_ocular = $_POST['abertura_ocular']=="on" ? 1 : 0 ;
 $resposta_verbal = $_POST['resposta_verbal']=="on" ? 1 : 0 ;
 $resposta_motora = $_POST['resposta_motora']=="on" ? 1 : 0 ;
 
+//6
 //Insere os dados na tabela glasgow
 
-$sqlglasgow = "INSERT INTO glasgow VALUES ( null , '$abertura_ocular_maior', '$resposta_verbal_maior', '$resposta_motora_maior', '$abertura_ocular', '$resposta_verbal', '$resposta_motora' )";
+$sqlglasgow = "INSERT INTO glasgow VALUES ( null , '$abertura_ocular_maior', '$resposta_verbal_maior', '$resposta_motora_maior', '$abertura_ocular', '$resposta_verbal', '$resposta_motora' )";//6
 
 
 //$conn->query($sql); 
@@ -229,7 +231,7 @@ $temperatura = $_POST['temperatura']=="on" ? 1 : 0 ;
 $perfusao_menor_2 = $_POST['perfusao_menor_2']=="on" ? 1 : 0 ;
 $perfusao_maior_2 = $_POST['perfusao_maior_2']=="on" ? 1 : 0 ;
 
-
+//7
 //Insere os dados na tabela sinais_vitais
 
 $sqlvitais = "INSERT INTO sinais_vitais VALUES (null , '$pressao_arterial_sistolica', '$pressao_arterial_diastolica', '$pulso', '$respiracao', '$temperatura', '$perfusao_menor_2',
@@ -246,9 +248,10 @@ $deitado = $_POST['deitado']=="on" ? 1 : 0 ;
 $sentado = $_POST['sentado']=="on" ? 1 : 0 ;
 $semi_sentado = $_POST['semi-sentado']=="on" ? 1 : 0 ;
 
+//3
 //Insere os dados na tabela formas_de_conducao
 
-$sqlconducao = "INSERT INTO formas_de_conducao VALUES (null , '$deitado', '$sentado', '$semi_sentado')";
+$sqlconducao = "INSERT INTO formas_de_conducao VALUES (null , '$deitado', '$sentado', '$semi_sentado')"; //3
 
 
 //$conn->query($sql); 
@@ -268,10 +271,11 @@ $equipe_de_atendimento_s3 = $_POST['equipe_de_atendimento_s3']=="on" ? 1 : 0 ;
 $equipe_de_atendimento_demandante = $_POST['equipe_de_atendimento_demandante']=="on" ? 1 : 0 ;
 $equipe_de_atendimento = $_POST['equipe_de_atendimento']=="on" ? 1 : 0 ;
 
+//10
 //Insere os dados na tabela decisao_transporte
 
 $sqltransporte = "INSERT INTO decisao_transporte VALUES (null, '$critico', '$instavel', '$potencialmente_instavel', '$estavel', '$equipe_de_atendimento_m', '$equipe_de_atendimento_s1',
-'$equipe_de_atendimento_s2', '$equipe_de_atendimento_s3', '$equipe_de_atendimento_demandante', '$equipe_de_atendimento')";
+'$equipe_de_atendimento_s2', '$equipe_de_atendimento_s3', '$equipe_de_atendimento_demandante', '$equipe_de_atendimento')";//10
 
 //$conn->query($sql); 
 
@@ -290,10 +294,11 @@ $clinico = $_POST['clinico']=="on" ? 1 : 0 ;
 $trauma = $_POST['trauma']=="on" ? 1 : 0 ;
 $pedestre = $_POST['pedestre']=="on" ? 1 : 0 ;
 
+//10
 //Insere os dados na tabela vitima_era
 
 $sqlvitima = "INSERT INTO vitima_era VALUES ( null , '$ciclista', '$condutor_moto', '$ps_moto', '$condutor_carr', '$ps_bco_frente', '$ps_bco_tras', '$gestante',
- '$clinico', '$trauma', '$pedestre' )";
+ '$clinico', '$trauma', '$pedestre' )";//10
 
 
 //$conn->query($sql); 
@@ -388,13 +393,14 @@ $sonda_aspiracao =$_POST ['sonda_aspiracao']=="on" ? 1 : 0 ;
 $soro_fisiologico =$_POST ['soro_fisiologico']=="on" ? 1 : 0 ;
 $talas_pap_p =$_POST ['talas_pap_p']=="on" ? 1 : 0 ;
 $talas_pap_g =$_POST ['talas_pap_g']=="on" ? 1 : 0 ;
-$outros_utilizados =$_POST ['outros_utilizados']
+$outros_utilizados =$_POST ['outros_utilizados'];
 
+//17
 //Insere os dados na tabela materias_utilizados_descartaveis
 
 $sqlutilizados_descartaveis = "INSERT INTO materias_utilizados_descartaveis VALUES (null, '$ataduras_8', '$ataduras_12', '$ataduras_8',
 '$ataduras_20', '$cateter_tp_oculos', '$compressa', '$kits_h', '$kits_p', '$kits_q', '$luvas_desc', '$manto_aluminizado', '$pas_do_dea',
-'$sonda_aspiracao', '$soro_fisiologico', '$talas_pap_p', '$talas_pap_g', '$outros_utilizados')";
+'$sonda_aspiracao', '$soro_fisiologico', '$talas_pap_p', '$talas_pap_g', '$outros_utilizados')"; //17
 
 
 //$conn->query($sql); 
@@ -416,14 +422,14 @@ $T_T_F_infa =$_POST ['T_T_F_infa']=="on" ? 1 : 0 ;
 $tirante_ranha =$_POST ['tirante_ranha']=="on" ? 1 : 0 ;
 $tirante_cabeca =$_POST ['tirante_cabeca']=="on" ? 1 : 0 ;
 $canula =$_POST ['canula']=="on" ? 1 : 0 ;
-$outros_deixados =$_POST ['outros_deixados']
+$outros_deixados =$_POST ['outros_deixados'];
 
-
+//15
 //Insere os dados na tabela materias_utilizados_deixados_hospital
 
 $sqldeixados_hospital = "INSERT INTO materias_utilizados_deixados_hospital values(null, '$colar_n', '$colar_pp', '$colar_p', '$colar_m',
 '$colar_g', '$coxins_estabiliza', '$ked_adul', '$ked_infa', '$maca_rigida', '$T_T_F_adul', '$T_T_F_infa', '$tirante_ranha',
-'$tirante_cabeca', '$canula', '$outros_deixados')";
+'$tirante_cabeca', '$canula', '$outros_deixados')";//15
 
 //$conn->query($sql);
 
@@ -432,14 +438,45 @@ $sqldeixados_hospital = "INSERT INTO materias_utilizados_deixados_hospital value
 // Coleta os dados do formulário anamnses_emergencia
 
 $sinais_sintomas =$_POST ['sinais_sintomas']=="on" ? 1 : 0 ;
-$quanto_tempo =$_POST ['quanto_tempo'] 
-$problemas_saude =$_POST ['problemas_saude']
-$alergias =$_POST ['alergias']
-$ingeriu_alimento_liquido =$_POST ['ingeriu_alimento_liquido']
+$quanto_tempo =$_POST ['quanto_tempo']; 
+$problemas_saude =$_POST ['problemas_saude'];
+$alergias =$_POST ['alergias'];
+$ingeriu_alimento_liquido =$_POST ['ingeriu_alimento_liquido'];
 
+//5
 //Insere os dados na tabela anamnses_emergencia
 
-$sqlemergencia = "INSERT INTO anamnses_emergencia values(null, '$sinais_sintomas', '$quanto_tempo', '$problemas_saude', '$alergias', '$ingeriu_alimento_liquido')";
+$sqlemergencia = "INSERT INTO anamnses_emergencia values(null, '$sinais_sintomas', '$quanto_tempo', '$problemas_saude', '$alergias', '$ingeriu_alimento_liquido')";//5
+
+//$conn->query($sql);
+
+=======================================================================================================================================================================================
+// Coleta os dados do formulário anamnses_gestacional
+
+$periodo_gestacao =$_POST ['periodo_gestacao'];
+$pre_nata =$_POST ['pre_nata']=="on" ? 1 : 0 ;
+$nome_medico =$_POST ['nome_medico'];
+$existe_complicacoes =$_POST ['existe_complicacoes']=="on" ? 1 : 0 ;
+$primeiro_filhos =$_POST ['primeiro_filhos']=="on" ? 1 : 0 ;
+$quantos_filhos =$_POST ['quantos_filhos'];
+$horas_contracao =$_POST ['horas_contracao'];
+$contracao_duracao =$_POST ['contracao_duracao'];
+$contracao_intervalo =$_POST ['contracao_intervalo'];
+$pressao_quadril =$_POST ['pressao_quadril']=="on" ? 1 : 0 ;
+$ruptura_bolsa =$_POST ['ruptura_bolsa']=="on" ? 1 : 0 ;
+$inspecao_visual =$_POST ['inspecao_visual']=="on" ? 1 : 0 ;
+$parto_relizado =$_POST ['parto_relizado']=="on" ? 1 : 0 ;
+$sexo_f =$_POST ['sexo_f']=="on" ? 1 : 0 ;
+$sexo_m =$_POST ['sexo_m']=="on" ? 1 : 0 ;
+$hora_nascimento =$_POST ['hora_nascimento'];
+$nome_bebe =$_POST ['nome_bebe'];
+
+//17
+//Insere os dados na tabela anamnses_gestacional
+
+$sqlgestacional = "INSERT INTO anamnses_emergencia values(null, '$periodo_gestacao', '$pre_nata', '$nome_medico', '$existe_complicacoes', '$primeiro_filhos',
+'$quantos_filhos', '$horas_contracao', '$contracao_duracao', '$contracao_intervalo', '$pressao_quadril', '$ruptura_bolsa', '$inspecao_visual',
+'$parto_relizado', '$sexo_f', '$sexo_m', '$hora_nascimento', '$nome_bebe')";//17
 
 //$conn->query($sql);
 
@@ -454,10 +491,11 @@ $caminhando_na_cena =$_POST ['caminhando_na_cena']=="on" ? 1 : 0 ;
 $painel_avariado =$_POST ['painel_avariado']=="on" ? 1 : 0 ;
 $volante_torcido =$_POST ['volante_torcido']=="on" ? 1 : 0 ;
 
+//7
 //Insere os dados na tabela avalicao_da_cinematica
 
 $sqlcinematica = "INSERT INTO avalicao_da_cinematica values(null, '$encontrado_de_capacete', '$encontrado_de_cinto', '$para_brisa_avariado', '$disturbio_de_comportamento',
-'$caminhando_na_cena', '$painel_avariado', '$volante_torcido')";
+'$caminhando_na_cena', '$painel_avariado', '$volante_torcido')";//7
 
 //$conn->query($sql);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Out-2023 às 17:17
+-- Tempo de geração: 27-Nov-2023 às 16:11
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `anamnses_emergencia` (
   `id_ocorrencia` int NOT NULL,
-  `sinais_sintomas` int NOT NULL,
-  `quanto_tempo` varchar(50) NOT NULL,
-  `problemas_saude` varchar(50) NOT NULL,
-  `alergias` varchar(50) NOT NULL,
-  `ingeriu_alimento_liquido` time NOT NULL
+  `sinais_sintomas` int DEFAULT NULL,
+  `quanto_tempo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `problemas_saude` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `alergias` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `ingeriu_alimento_liquido` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -45,7 +45,7 @@ CREATE TABLE `anamnses_emergencia` (
 CREATE TABLE `anamnses_gestacional` (
   `id_ocorrencia` int NOT NULL,
   `periodo_gestacao` varchar(50) NOT NULL,
-  `pre_natal` tinyint(1) NOT NULL,
+  `pre-natal` tinyint(1) NOT NULL,
   `nome_medico` int NOT NULL,
   `existe_complicacoes` tinyint(1) NOT NULL,
   `primeiro_filhos` tinyint(1) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `avalicao_da_cinematica` (
   `id_ocorrencia` int NOT NULL,
   `encontrado_de_capacete` tinyint(1) NOT NULL,
   `encontrado_de_cinto` tinyint(1) NOT NULL,
-  `para_brisa_avariado` tinyint(1) NOT NULL,
+  `para-brisa_avariado` tinyint(1) NOT NULL,
   `disturbio_de_comportamento` tinyint(1) NOT NULL,
   `caminhando_na_cena` tinyint(1) NOT NULL,
   `painel_avariado` tinyint(1) NOT NULL,
@@ -99,7 +99,10 @@ CREATE TABLE `cadastro` (
 
 INSERT INTO `cadastro` (`id_cadastro`, `matricula`, `senha`, `nome`) VALUES
 (1, 'sas', 'sa', 'albertos'),
-(2, '6969', 'cotnire', 'eudoucomcalor');
+(2, '6969', 'cotnire', 'eudoucomcalor'),
+(3, '', '', ''),
+(4, '', '', ''),
+(5, 'alberto27', 'alberto27', 'alberto27');
 
 -- --------------------------------------------------------
 
@@ -145,7 +148,7 @@ CREATE TABLE `formas_de_conducao` (
   `id_ocorrencia` int NOT NULL,
   `deitado` tinyint(1) NOT NULL,
   `sentado` tinyint(1) NOT NULL,
-  `semi_sentado` tinyint(1) NOT NULL
+  `semi-sentado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -299,10 +302,10 @@ CREATE TABLE `ocorrencia` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_de_ocorrencia`
+-- Estrutura da tabela `pre-hospitalar`
 --
 
-CREATE TABLE `tipo_de_ocorrencia` (
+CREATE TABLE `pre-hospitalar` (
   `id_ocorrencia` int NOT NULL,
   `causado_por_animais` tinyint(1) NOT NULL,
   `por_meio_de_transporte` tinyint(1) NOT NULL,
@@ -324,7 +327,7 @@ CREATE TABLE `tipo_de_ocorrencia` (
   `trabalho` tinyint(1) NOT NULL,
   `transaferencia` tinyint(1) NOT NULL,
   `esportivo` tinyint(1) NOT NULL,
-  `outro` varchar(50) NOT NULL
+  `ouro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -347,7 +350,7 @@ CREATE TABLE `problemas_encontrados_suspeitos` (
   `transporte_aereo` int NOT NULL,
   `transporte_clinico` int NOT NULL,
   `transporte_emergencial` int NOT NULL,
-  `transporte_pos_trauma` int NOT NULL,
+  `transporte_pos-trauma` int NOT NULL,
   `transporte_samu` int NOT NULL,
   `transporte_outro` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -360,60 +363,72 @@ CREATE TABLE `problemas_encontrados_suspeitos` (
 
 CREATE TABLE `procedimento_efetuado` (
   `id_ocorrencia` int NOT NULL,
-  `aspiracao` tinyint(1) NOT NULL,
-  `avaliacao_inicial` tinyint(1) NOT NULL,
-  `avaliacao_dirigida` tinyint(1) NOT NULL,
-  `avaliacao_continua` tinyint(1) NOT NULL,
-  `chave_rautek` tinyint(1) NOT NULL,
-  `canula_guedel` tinyint(1) NOT NULL,
-  `desobstrucao_v_a` tinyint(1) NOT NULL,
-  `emprego_d_e_a` tinyint(1) NOT NULL,
-  `gerenciamento_risco` tinyint(1) NOT NULL,
-  `limpeza_ferimento` tinyint(1) NOT NULL,
-  `curativo` tinyint(1) NOT NULL,
-  `compressivo` tinyint(1) NOT NULL,
-  `encravamento` tinyint(1) NOT NULL,
-  `ocular` tinyint(1) NOT NULL,
-  `queimadura` tinyint(1) NOT NULL,
-  `simples` tinyint(1) NOT NULL,
-  `3_pontos` tinyint(1) NOT NULL,
-  `imobilizacoes` tinyint(1) NOT NULL,
-  `membro_inf_dir` tinyint(1) NOT NULL,
-  `membro_inf_esq` tinyint(1) NOT NULL,
-  `membro_sup_dir` tinyint(1) NOT NULL,
-  `membro_sup_esq` tinyint(1) NOT NULL,
-  `quadril` tinyint(1) NOT NULL,
-  `cervical` tinyint(1) NOT NULL,
-  `maca_sobre_rodas` tinyint(1) NOT NULL,
-  `macas_rigidas` tinyint(1) NOT NULL,
-  `ponte` tinyint(1) NOT NULL,
-  `retirado_capacete` tinyint(1) NOT NULL,
-  `r_c_p` tinyint(1) NOT NULL,
-  `rolamento_90` tinyint(1) NOT NULL,
-  `rolamento_180` tinyint(1) NOT NULL,
-  `tomada_decisao` tinyint(1) NOT NULL,
-  `tratado_choque` tinyint(1) NOT NULL,
-  `uso_canula` tinyint(1) NOT NULL,
-  `uso_colar` varchar(1) NOT NULL,
-  `uso_ked` tinyint(1) NOT NULL,
-  `uso_ttf` tinyint(1) NOT NULL,
-  `ventilacao_suporte` tinyint(1) NOT NULL,
-  `oxigeniterapia` varchar(10) NOT NULL,
-  `renimador` varchar(10) NOT NULL,
-  `meios_auxiliares` tinyint(1) NOT NULL,
-  `celesc` tinyint(1) NOT NULL,
-  `def_civil` tinyint(1) NOT NULL,
-  `igp_pc` tinyint(1) NOT NULL,
-  `policia_civil` tinyint(1) NOT NULL,
-  `policial_militar` tinyint(1) NOT NULL,
-  `policial_pre` tinyint(1) NOT NULL,
-  `policia_prf` tinyint(1) NOT NULL,
-  `samu` tinyint(1) NOT NULL,
-  `usa` tinyint(1) NOT NULL,
-  `usb` tinyint(1) NOT NULL,
-  `cit` tinyint(1) NOT NULL,
-  `outros_procedimentos` varchar(30) NOT NULL
+  `aspiracao` tinyint(1) DEFAULT NULL,
+  `avaliacao_inicial` tinyint(1) DEFAULT NULL,
+  `avaliacao_dirigida` tinyint(1) DEFAULT NULL,
+  `avaliacao_continua` tinyint(1) DEFAULT NULL,
+  `chave_rautek` tinyint(1) DEFAULT NULL,
+  `canula_guedel` tinyint(1) DEFAULT NULL,
+  `desobstrucao_v_a` tinyint(1) DEFAULT NULL,
+  `emprego_d_e_a` tinyint(1) DEFAULT NULL,
+  `gerenciamento_risco` tinyint(1) DEFAULT NULL,
+  `limpeza_ferimento` tinyint(1) DEFAULT NULL,
+  `curativo` tinyint(1) DEFAULT NULL,
+  `compressivo` tinyint(1) DEFAULT NULL,
+  `encravamento` tinyint(1) DEFAULT NULL,
+  `ocular` tinyint(1) DEFAULT NULL,
+  `queimadura` tinyint(1) DEFAULT NULL,
+  `simples` tinyint(1) DEFAULT NULL,
+  `3_pontos` tinyint(1) DEFAULT NULL,
+  `imobilizacoes` tinyint(1) DEFAULT NULL,
+  `membro_inf_dir` tinyint(1) DEFAULT NULL,
+  `membro_inf_esq` tinyint(1) DEFAULT NULL,
+  `membro_sup_dir` tinyint(1) DEFAULT NULL,
+  `membro_sup_esq` tinyint(1) DEFAULT NULL,
+  `quadril` tinyint(1) DEFAULT NULL,
+  `cervical` tinyint(1) DEFAULT NULL,
+  `maca_sobre_rodas` tinyint(1) DEFAULT NULL,
+  `macas_rigidas` tinyint(1) DEFAULT NULL,
+  `ponte` tinyint(1) DEFAULT NULL,
+  `retirado_capacete` tinyint(1) DEFAULT NULL,
+  `r_c_p` tinyint(1) DEFAULT NULL,
+  `rolamento_90` tinyint(1) DEFAULT NULL,
+  `rolamento_180` tinyint(1) DEFAULT NULL,
+  `tomada_decisao` tinyint(1) DEFAULT NULL,
+  `tratado_choque` tinyint(1) DEFAULT NULL,
+  `uso_canula` tinyint(1) DEFAULT NULL,
+  `uso_colar` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `uso_ked` tinyint(1) DEFAULT NULL,
+  `uso_ttf` tinyint(1) DEFAULT NULL,
+  `ventilacao_suporte` tinyint(1) DEFAULT NULL,
+  `oxigeniterapia` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `renimador` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `meios_auxiliares` tinyint(1) DEFAULT NULL,
+  `celesc` tinyint(1) DEFAULT NULL,
+  `def_civil` tinyint(1) DEFAULT NULL,
+  `igp_pc` tinyint(1) DEFAULT NULL,
+  `policia_civil` tinyint(1) DEFAULT NULL,
+  `policial_militar` tinyint(1) DEFAULT NULL,
+  `policial_pre` tinyint(1) DEFAULT NULL,
+  `policia_prf` tinyint(1) DEFAULT NULL,
+  `samu` tinyint(1) DEFAULT NULL,
+  `usa` tinyint(1) DEFAULT NULL,
+  `usb` tinyint(1) DEFAULT NULL,
+  `cit` tinyint(1) DEFAULT NULL,
+  `outros_procedimentos` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `procedimento_efetuado`
+--
+
+INSERT INTO `procedimento_efetuado` (`id_ocorrencia`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continua`, `chave_rautek`, `canula_guedel`, `desobstrucao_v_a`, `emprego_d_e_a`, `gerenciamento_risco`, `limpeza_ferimento`, `curativo`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `3_pontos`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_sobre_rodas`, `macas_rigidas`, `ponte`, `retirado_capacete`, `r_c_p`, `rolamento_90`, `rolamento_180`, `tomada_decisao`, `tratado_choque`, `uso_canula`, `uso_colar`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigeniterapia`, `renimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia_civil`, `policial_militar`, `policial_pre`, `policia_prf`, `samu`, `usa`, `usb`, `cit`, `outros_procedimentos`) VALUES
+(1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -423,7 +438,7 @@ CREATE TABLE `procedimento_efetuado` (
 
 CREATE TABLE `sinais_sintomas` (
   `id_ocorrencia` int NOT NULL,
-  `abdomen_sensivel_rigido` tinyint(1) NOT NULL,
+  `abdomen_sensivel/rigido` tinyint(1) NOT NULL,
   `afundamento_cranio` tinyint(1) NOT NULL,
   `agitacao` tinyint(1) NOT NULL,
   `amnesia` tinyint(1) NOT NULL,
@@ -431,7 +446,7 @@ CREATE TABLE `sinais_sintomas` (
   `apineia` tinyint(1) NOT NULL,
   `bradicadia` tinyint(1) NOT NULL,
   `bradipneia` tinyint(1) NOT NULL,
-  `bronco_aspirando` tinyint(1) NOT NULL,
+  `bronco-aspirando` tinyint(1) NOT NULL,
   `cefaleia` tinyint(1) NOT NULL,
   `cianose_labial` tinyint(1) NOT NULL,
   `cianose_extremidade` tinyint(1) NOT NULL,
@@ -489,7 +504,7 @@ CREATE TABLE `sinais_vitais` (
   `pressao_arterial_sistolica` int NOT NULL,
   `pressao_arterial_diastolica` int NOT NULL,
   `pulso` int NOT NULL,
-  `respiracao` int NOT NULL,
+  `repiracao` int NOT NULL,
   `temperatura` int NOT NULL,
   `perfusao_menor_2` tinyint(1) NOT NULL,
   `perfusao_maior_2` tinyint(1) NOT NULL
@@ -603,9 +618,11 @@ ALTER TABLE `materias_utilizados_descartaveis`
 ALTER TABLE `ocorrencia`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
-
-
-
+--
+-- Índices para tabela `pre-hospitalar`
+--
+ALTER TABLE `pre-hospitalar`
+  ADD PRIMARY KEY (`id_ocorrencia`);
 
 --
 -- Índices para tabela `problemas_encontrados_suspeitos`
@@ -663,7 +680,7 @@ ALTER TABLE `avalicao_da_cinematica`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id_cadastro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cadastro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `glasgow`
@@ -705,7 +722,7 @@ ALTER TABLE `ocorrencia`
 -- AUTO_INCREMENT de tabela `procedimento_efetuado`
 --
 ALTER TABLE `procedimento_efetuado`
-  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ocorrencia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas
@@ -717,11 +734,62 @@ ALTER TABLE `procedimento_efetuado`
 ALTER TABLE `ocorrencia`
   ADD CONSTRAINT `ocorrencia_ibfk_1` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_emergencia` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_10` FOREIGN KEY (`id_ocorrencia`) REFERENCES `login` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  -- ADD CONSTRAINT `ocorrencia_ibfk_11` FOREIGN KEY (`id_ocorrencia`) REFERENCES `pre_hospitalar` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_11` FOREIGN KEY (`id_ocorrencia`) REFERENCES `pre-hospitalar` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_12` FOREIGN KEY (`id_ocorrencia`) REFERENCES `problemas_encontrados_suspeitos` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_13` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_sintomas` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_14` FOREIGN KEY (`id_ocorrencia`) REFERENCES `sinais_vitais` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_15` FOREIGN KEY (`id_ocorrencia`) REFERENCES `vitima_era` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_16` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_deixados_hospital` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_17` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_descartaveis` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_18` FOREIGN KEY (`id_ocorrencia`) REFERENCES `procedimento_efetuado` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_19` FOREIGN KEY (`id_ocorrencia`) REFERENCES `info_paciente` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_2` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_gestacional` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_3` FOREIGN KEY (`id_ocorrencia`) REFERENCES `avalicao_da_cinematica` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_4` FOREIGN KEY (`id_ocorrencia`) REFERENCES `cadastro` (`id_cadastro`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_5` FOREIGN KEY (`id_ocorrencia`) REFERENCES `características` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_6` FOREIGN KEY (`id_ocorrencia`) REFERENCES `decisao_transporte` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_7` FOREIGN KEY (`id_ocorrencia`) REFERENCES `formas_de_conducao` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_8` FOREIGN KEY (`id_ocorrencia`) REFERENCES `glasgow` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_9` FOREIGN KEY (`id_ocorrencia`) REFERENCES `localizacao_do_trauma` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  ADD CONSTRAINT `ocorrencia_ibfk_16` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_deixados_hospital` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_17` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_descartaveis` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_18` FOREIGN KEY (`id_ocorrencia`) REFERENCES `procedimento_efetuado` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_19` FOREIGN KEY (`id_ocorrencia`) REFERENCES `info_paciente` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_2` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_gestacional` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_3` FOREIGN KEY (`id_ocorrencia`) REFERENCES `avalicao_da_cinematica` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_4` FOREIGN KEY (`id_ocorrencia`) REFERENCES `cadastro` (`id_cadastro`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_5` FOREIGN KEY (`id_ocorrencia`) REFERENCES `características` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_6` FOREIGN KEY (`id_ocorrencia`) REFERENCES `decisao_transporte` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_7` FOREIGN KEY (`id_ocorrencia`) REFERENCES `formas_de_conducao` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_8` FOREIGN KEY (`id_ocorrencia`) REFERENCES `glasgow` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_9` FOREIGN KEY (`id_ocorrencia`) REFERENCES `localizacao_do_trauma` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  ADD CONSTRAINT `ocorrencia_ibfk_16` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_deixados_hospital` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_17` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_descartaveis` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_18` FOREIGN KEY (`id_ocorrencia`) REFERENCES `procedimento_efetuado` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_19` FOREIGN KEY (`id_ocorrencia`) REFERENCES `info_paciente` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_2` FOREIGN KEY (`id_ocorrencia`) REFERENCES `anamnses_gestacional` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_3` FOREIGN KEY (`id_ocorrencia`) REFERENCES `avalicao_da_cinematica` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_4` FOREIGN KEY (`id_ocorrencia`) REFERENCES `cadastro` (`id_cadastro`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_5` FOREIGN KEY (`id_ocorrencia`) REFERENCES `características` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_6` FOREIGN KEY (`id_ocorrencia`) REFERENCES `decisao_transporte` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_7` FOREIGN KEY (`id_ocorrencia`) REFERENCES `formas_de_conducao` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_8` FOREIGN KEY (`id_ocorrencia`) REFERENCES `glasgow` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `ocorrencia_ibfk_9` FOREIGN KEY (`id_ocorrencia`) REFERENCES `localizacao_do_trauma` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
   ADD CONSTRAINT `ocorrencia_ibfk_16` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_deixados_hospital` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_17` FOREIGN KEY (`id_ocorrencia`) REFERENCES `materias_utilizados_descartaveis` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `ocorrencia_ibfk_18` FOREIGN KEY (`id_ocorrencia`) REFERENCES `procedimento_efetuado` (`id_ocorrencia`) ON DELETE RESTRICT ON UPDATE RESTRICT,

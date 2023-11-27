@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -100,9 +102,9 @@
         <div class="col-md-4">
           <!-- Seção do Perfil -->
           <div class="card">
-            <img src="seu_avatar.jpg" class="card-img-top" alt="Seu Nome" />
+            <img src="seu_avatar.jpg" class="card-img-top" />
             <div class="card-body">
-              <h5 class="card-title">Seu Nome</h5>
+              <h5 class="card-title"><?php echo $_SESSION["matricula"]?></h5>
               <p class="card-text">Sua descrição pessoal</p>
             </div>
           </div>

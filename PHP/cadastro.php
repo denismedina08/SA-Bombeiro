@@ -22,5 +22,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 // Fecha a conexão com o banco de dados
-$conn->close();
+//$conn->close();
 ?>
