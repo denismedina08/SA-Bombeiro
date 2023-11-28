@@ -390,15 +390,24 @@
 
                                     <div class="row-cols-12 d-flex justify-content-around grid gap-5">
                                         <div class="p-2 g-col-6">
-                                            <input type="checkbox" class="btn-check" id="btncheck3_3"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck3_3">RESPIRATORIO</label>
+                                            <select class="form-control" id="">
+                                                <option value="respiratorio">RESPIRATÓRIO</option>
+                                                <option value="DPOC">DPOC</option>
+                                                <option value="inalacao_fumaca">INALAÇÃO FUMAÇA</option>
+                                            </select>
                                         </div>
 
+
                                         <div class="p-2 g-col-6">
-                                            <input type="checkbox" class="btn-check" id="btncheck3_4"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck3_4">TRANSPORTE</label>
+                                            <select class="form-control" id="">
+                                                <option value="transporte">TRANSPORTE</option>
+                                                <option value="aereo">AÉREO</option>
+                                                <option value="clinico">CLÍNICO</option>
+                                                <option value="pos_trauma">PÓS-TRAUMA</option>
+                                                <option value="samu">SAMU</option>
+                                                <option value="sem_remocao">SEM REMOÇÃO</option>
+                                                <option value="outros">OUTROS</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -406,9 +415,12 @@
 
                                     <div class="row-cols-12 d-flex justify-content-around grid gap-5">
                                         <div class="p-2 g-col-6">
-                                            <input type="checkbox" class="btn-check" id="btncheck3_5"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-dark" for="btncheck3_5">DIABETES</label>
+                                            <select class="form-control" id="">
+                                                <option value="obstetrico">DIABETES</option>
+                                                <option value="espntanea">HIPERGLICEMIA</option>
+                                                <option value="comando_verba">HIPOGLICEMIA</option>
+
+                                            </select>
                                         </div>
 
                                         <div class="p-2 g-col-6">
@@ -729,10 +741,9 @@
                                         onclick="Gravar('Pe esquerdo', );">
                                 </map>
 
-                                <div class="btn-group d-inline-block" role="group"
-                                    aria-label="Basic checkbox toggle button group">
+                                <div class="btn-group btn-lg" aria-label="Basic checkbox toggle button group">
                                     <div class="container mt-2">
-                                        <div class="row-cols-4 d-flex justify-content-center grid gap-3" id="local">
+                                        <div class="" id="local">
                                             <input type="radio" class="btn-check" name="localizacao"
                                                 id="localizacao_adulto" value="adulto" autocomplete="off">
                                             <label class="btn btn-secondary" for="localizacao_adulto">Adulto</label>
@@ -1021,31 +1032,38 @@
                             <div class="accordion-body d-flex justify-content-center">
                                 <div class="btn-group d-inline-block" role="group"
                                     aria-label="Basic checkbox toggle button group">
-                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                        <div class="p-3 g-col-4">
-                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-1.svg"
-                                                width="300">
+                                    <div class="button-container">
+
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-12"></div>
+                                                    <button id="boton1" class="btn btn-outline-dark"
+                                                        onclick="cambiarFondo('boton1')"> <img
+                                                            src="/ASSETS/Smiley-1.svg" class="img-fluid" width="150"
+                                                            height="150"> </button>
+                                                    <button id="boton2" class="btn btn-outline-dark"
+                                                        onclick="cambiarFondo('boton2')"> <img
+                                                            src="/ASSETS/Smiley-2.svg" class="img-fluid" width="150"
+                                                            height="150"> </button>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="p-3 g-col-4">
-                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-2.svg"
-                                                width="300">
-                                        </div>
-                                    </div>
-
-                                    <div class="row-cols-4 d-flex justify-content-center grid gap-3">
-                                        <div class="p-3 g-col-4">
-                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-3.svg"
-                                                width="300">
-                                        </div>
-
-                                        <div class="p-3 g-col-4">
-                                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-                                            <img class="img-fluid btn btn-outline-dark" src="/ASSETS/Smiley-4.svg"
-                                                width="300">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-12"></div>
+                                                    <button id="boton3" class="btn btn-outline-dark"
+                                                        onclick="cambiarFondo('boton3')"> <img
+                                                            src="/ASSETS/Smiley-3.svg" class="img-fluid"
+                                                            wwidth="150" height="150"> </button>
+                                                    <button id="boton4" class="btn btn-outline-dark"
+                                                        onclick="cambiarFondo('boton4')"> <img
+                                                            src="/ASSETS/Smiley-4.svg" class="img-fluid"
+                                                            wwidth="150" height="150"> </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2085,14 +2103,78 @@
                                 <div class="row d-inline fw-bold" style="font-family: 'Urbanist', sans-serif;"
                                     role="group" id="__form">
                                     <div class=" w-100">
-                                        <label for="">Pressão Arterial:</label>
-                                        <input type="text">
+                                        <label for="">PERIODO DE GESTAÇÃO:</label>
+                                        <input class="border-1 rounded-2" type="number" placeholder="semanas">
                                         <br>
                                     </div>
                                     <div class="form-group mt-2">
-                                        <label for="">HGT:</label>
-                                        <input class="border-1 rounded-2" type="number" id="" name="">
+                                        <label for="">
+                                            FEX PRÉ-NATAL?
+                                            <div class="form-check form-check-inline" style="margin-left: 10px">
+                                                <label class="form-check-label" for="inlineRadio1">
+                                                    <input class="form-check-input CTMR border border-black"
+                                                        type="radio" name="inlineRadioOptions7" id="inlineRadio7"
+                                                        value="option7">SIM</label>
+                                            </div>
+                                        </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label" for="inlineRadio7">
+                                                <input class="form-check-input CTMR border border-black" type="radio"
+                                                    name="inlineRadioOptions7" id="inlineRadio7" value="option7">
+                                                NÃO</label>
+                                        </div>
                                     </div>
+
+                                    <div class="form-group mt-2">
+                                        <label for="">NOME DO MÉDICO:</label>
+                                        <input class="border-1 rounded-2" type="text" id="" name="">
+                                    </div>
+
+                                    <div class="form-group mt-2">
+                                        <label for="">
+                                            EXISTE POSSIBILIDADE DE COMPLICAÇÕES?
+                                            <div class="form-check form-check-inline" style="margin-left: 10px">
+                                                <label class="form-check-label" for="inlineRadio1">
+                                                    <input class="form-check-input CTMR border border-black"
+                                                        type="radio" name="inlineRadioOptions7" id="inlineRadio7"
+                                                        value="option7">SIM</label>
+                                            </div>
+                                        </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label" for="inlineRadio7">
+                                                <input class="form-check-input CTMR border border-black" type="radio"
+                                                    name="inlineRadioOptions7" id="inlineRadio7" value="option7">
+                                                NÃO</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mt-2">
+                                        <label for="">
+                                            E O PRIMEIRO FILHO?
+                                            <div class="form-check form-check-inline" style="margin-left: 10px">
+                                                <label class="form-check-label" for="inlineRadio1">
+                                                    <input class="form-check-input CTMR border border-black"
+                                                        type="radio" name="inlineRadioOptions7" id="inlineRadio7"
+                                                        value="option7">SIM</label>
+                                            </div>
+                                        </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label" for="inlineRadio7">
+                                                <input class="form-check-input CTMR border border-black" type="radio"
+                                                    name="inlineRadioOptions7" id="inlineRadio7" value="option7">
+                                                NÃO
+                                            </label>
+                                            <div class="form-group mt-2">
+                                                <label for="">QUANTOS:</label>
+                                                <input class="border-1 rounded-2" style="width: 0px;" type="NUMBER"
+                                                    id="" name="">
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group mt-2">
                                         <label for="">Temperatura:</label>
                                         <input class="border-1 rounded-2" placeholder="celcius" type="number" id=""
@@ -2104,22 +2186,6 @@
                                     <div class="form-group mt-2">
                                         <label for="">Local da Ocorrência:</label>
                                         <input class="border-1 rounded-2" type="text" id="" name="">
-                                    </div>
-                                    <div class="form-group mt-2">
-                                        <label for="">
-                                            INGERIU ALIMENTO OU LÍQUIDO &le; 6 HORAS:
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio"
-                                                name="inlineRadioOptions7" id="inlineRadio7" value="option7">
-                                                <label class="form-check-label" for="inlineRadio1">ADUL</label>
-                                            </div>
-                                        </label>
-                                        
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio"
-                                                name="inlineRadioOptions7" id="inlineRadio7" value="option7">
-                                            <label class="form-check-label" for="inlineRadio7">INFA</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2476,6 +2542,14 @@
         }
     }
 
+    // Desição de Transporte
+
+    function cambiarFondo(id) {
+        var boton = document.getElementById(id);
+        var colores = ['yellow', 'green', 'orange', 'red'];
+        var nuevoColor = colores[Math.floor(Math.random() * colores.length)];
+        boton.style.backgroundColor = nuevoColor;
+    }
 
 
 </script>
